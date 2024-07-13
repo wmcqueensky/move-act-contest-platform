@@ -1,47 +1,129 @@
 import { Link, NavLink } from "react-router-dom";
+import { Navbar, Nav, Dropdown } from "react-bootstrap";
+import { FiMenu } from "react-icons/fi";
+import { FaUser } from "react-icons/fa";
 import { HOME_PATH, PROJECTS_PATH, INFO_PATH, CONTACT_PATH } from "../paths";
+import { useState } from "react";
 import logo from "../images/logo.svg";
+import "flag-icons/css/flag-icons.min.css";
 import "./styles.css";
 
-// const Drawer = ({ isOpen, onClose }) => (
-// 	<div className={`drawer ${isOpen ? "open" : ""}`}>
-// 		<div className="d-flex flex-column p-3">
-// 			<NavLink to={HOME_PATH} className="nav-link" onClick={onClose}>
-// 				Strona Główna
-// 			</NavLink>
-// 			<NavLink to={PROJECTS_PATH} className="nav-link" onClick={onClose}>
-// 				Statystyki
-// 			</NavLink>
-// 			<NavLink to={INFO_PATH} className="nav-link" onClick={onClose}>
-// 				Zapisy
-// 			</NavLink>
-// 			<NavLink to={CONTACT_PATH} className="nav-link" onClick={onClose}>
-// 				Kontakt
-// 			</NavLink>
-// 		</div>
-// 	</div>
-// );
+const MainNavbar = () => {
+	const [expanded, setExpanded] = useState(false);
 
-const Navbar = () => {
+	const handleSelect = () => {
+		setExpanded(false);
+	};
+
 	return (
-		<div className="navbar">
-			<div className="container-fluid d-flex justify-content-between align-items-center">
-				<Link to={HOME_PATH}>
-					<img
-						src={logo}
-						alt="Logo"
-						style={{ maxWidth: "120px", maxHeight: "88px", marginLeft: "12px" }}
-					/>
-				</Link>
-				<div className="d-none d-md-flex align-items-center">
-					<NavLink to={HOME_PATH}>Home</NavLink>
-					<NavLink to={PROJECTS_PATH}>Projects</NavLink>
-					<NavLink to={INFO_PATH}>Info</NavLink>
-					<NavLink to={CONTACT_PATH}>Contact</NavLink>
-				</div>
-			</div>
-		</div>
+		<Navbar fixed="top" expand="md" className="navbar" expanded={expanded}>
+			<Link to={HOME_PATH} onClick={handleSelect}>
+				<img src={logo} alt="Logo" className="img-fluid ml-12 logo" />
+			</Link>
+
+			<Navbar.Toggle
+				aria-controls="responsive-navbar-nav"
+				className="menu-icon"
+				onClick={() => setExpanded(!expanded)}
+			>
+				<FiMenu color="#840000" />
+			</Navbar.Toggle>
+
+			<Navbar.Collapse id="responsive-navbar-nav" className="custom-collapse">
+				<Nav className="mx-auto">
+					<Nav.Link
+						as={NavLink}
+						to={HOME_PATH}
+						className="nav-link mx-2"
+						onClick={handleSelect}
+					>
+						Home
+					</Nav.Link>
+
+					<Nav.Link
+						as={NavLink}
+						to={PROJECTS_PATH}
+						className="nav-link mx-2"
+						onClick={handleSelect}
+					>
+						Projects
+					</Nav.Link>
+
+					<Nav.Link
+						as={NavLink}
+						to={INFO_PATH}
+						className="nav-link mx-2"
+						onClick={handleSelect}
+					>
+						Info
+					</Nav.Link>
+
+					<Nav.Link
+						as={NavLink}
+						to={CONTACT_PATH}
+						className="nav-link mx-2"
+						onClick={handleSelect}
+					>
+						Contact
+					</Nav.Link>
+
+					<Dropdown onSelect={handleSelect}>
+						<Dropdown.Toggle
+							variant="none"
+							className="nav-link mx-2 dropdown-toggle"
+						>
+							<span className="fi fi-gb"></span> English
+						</Dropdown.Toggle>
+
+						<Dropdown.Menu className="dropdown-menu">
+							<Dropdown.Item href="#/action-1" className="dropdown-item">
+								<span className="fi fi-gb"></span> English
+							</Dropdown.Item>
+
+							<Dropdown.Item href="#/action-2" className="dropdown-item">
+								<span className="fi fi-pl"></span> Polski
+							</Dropdown.Item>
+
+							<Dropdown.Item href="#/action-3" className="dropdown-item">
+								<span className="fi fi-gr"></span> Ελληνικά
+							</Dropdown.Item>
+
+							<Dropdown.Item href="#/action-4" className="dropdown-item">
+								<span className="fi fi-it"></span> Italiano
+							</Dropdown.Item>
+
+							<Dropdown.Item href="#/action-5" className="dropdown-item">
+								<span className="fi fi-es"></span> Español
+							</Dropdown.Item>
+
+							<Dropdown.Item href="#/action-6" className="dropdown-item">
+								<span className="fi fi-lt"></span> Lietuvių
+							</Dropdown.Item>
+						</Dropdown.Menu>
+					</Dropdown>
+				</Nav>
+
+				<Dropdown onSelect={handleSelect}>
+					<Dropdown.Toggle
+						variant="none"
+						className="dropdown-toggle-second d-flex align-items-center mx-3"
+					>
+						<FaUser size={32} />
+					</Dropdown.Toggle>
+
+					<Dropdown.Menu>
+						<Dropdown.Item href="#/action-1" className="dropdown-item">
+							Sign In
+						</Dropdown.Item>
+
+						<Dropdown.Item href="#/action-2" className="dropdown-item">
+							Sign Up
+						</Dropdown.Item>
+					</Dropdown.Menu>
+				</Dropdown>
+			</Navbar.Collapse>
+		</Navbar>
 	);
 };
 
-export default Navbar;
+export default MainNavbar;
