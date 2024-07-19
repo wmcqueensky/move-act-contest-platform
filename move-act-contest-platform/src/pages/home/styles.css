@@ -1,0 +1,65 @@
+.welcome-header {
+	color: var(--bordo-color);
+	font-weight: bold;
+	font-family: "Montserrat", sans-serif;
+	font-size: clamp(30px, 5vw, 68px);
+}
+
+.project-number {
+	color: #3e4c59;
+}
+
+.home-image {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 55vh;
+	width: 100%;
+	background: var(--yellow-color) url("images/HomeImage3.png") no-repeat center;
+	background-blend-mode: screen;
+	background-size: cover;
+}
+
+.platform-info-header {
+	color: var(--bordo-color);
+	font-weight: bold;
+	font-size: 1.8rem;
+}
+
+.button-group {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+@media (min-width: 768px) {
+	.button-group {
+		flex-direction: row;
+	}
+}
+
+.custom-button {
+	padding: 0.75rem 1.5rem;
+	height: 90px;
+	width: 280px;
+	font-size: 1.4rem;
+	border-radius: 20px;
+	background-color: var(--bordo-color);
+	border: 2px solid var(--yellow-color);
+	color: var(--yellow-color);
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	line-height: normal;
+	box-shadow: none;
+}
+
+.custom-button:hover {
+	background-color: white !important;
+	border-color: var(--yellow-color) !important;
+	color: var(--yellow-color);
+	box-shadow: none;
+}

@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import { Navbar, Nav, Dropdown } from "react-bootstrap";
+import { Navbar, Nav, Dropdown, Image } from "react-bootstrap";
 import { FiMenu } from "react-icons/fi";
 import { FaUser } from "react-icons/fa";
 import { HOME_PATH, PROJECTS_PATH, INFO_PATH, CONTACT_PATH } from "../paths";
@@ -18,7 +18,7 @@ const MainNavbar = () => {
 	return (
 		<Navbar fixed="top" expand="md" className="navbar" expanded={expanded}>
 			<Link to={HOME_PATH} onClick={handleSelect}>
-				<img src={logo} alt="Logo" className="img-fluid ml-12 logo" />
+				<Image src={logo} alt="Logo" fluid className="logo" />
 			</Link>
 
 			<Navbar.Toggle
@@ -55,7 +55,7 @@ const MainNavbar = () => {
 						className="nav-link mx-2"
 						onClick={handleSelect}
 					>
-						Info
+						About
 					</Nav.Link>
 
 					<Nav.Link
