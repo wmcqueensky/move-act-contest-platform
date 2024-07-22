@@ -1,3 +1,4 @@
+/* Navbar Styles */
 .navbar {
 	width: 100%;
 	font-size: x-large;
@@ -126,5 +127,82 @@
 
 	.dropdown-toggle-second {
 		margin: 0 !important;
+	}
+}
+
+/* Footer Styles */
+.eu-container {
+	width: 100%;
+	height: auto;
+	margin: 0;
+	padding: 40px 24px 10px;
+	background-color: var(--white-color) !important;
+}
+
+.eu-image {
+	width: 245px;
+	height: 55px;
+}
+
+.eu-info {
+	font-size: 10px;
+	padding: 10px 0px 20px;
+	margin-top: 20px;
+}
+
+.faq-container {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--bordo-color);
+	padding: 20px 10px;
+	gap: 125px;
+}
+
+.icon-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 15px;
+	color: var(--yellow-color);
+	font-size: 15px;
+}
+
+.copyright-text {
+	margin: 0 15px;
+}
+
+.social-icon {
+	color: var(--yellow-color);
+	transition: color 0.3s;
+}
+
+.social-icon:hover {
+	color: var(--orange-color);
+}
+
+.faq-image {
+	max-width: 400px;
+	max-height: 152px;
+}
+
+.cc-image {
+	width: 100px;
+	height: 45px;
+	padding: 10px 0px 0px;
+}
+
+@media (max-width: 767px) {
+	.faq-container {
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	.faq-image,
+	.cc-image {
+		max-width: 80%;
+		height: auto;
 	}
 }

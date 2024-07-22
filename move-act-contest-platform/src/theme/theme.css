@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 
 body {
-	background-color: white;
+	background-color: var(--light-grey-color);
 	font-family: "Roboto", sans-serif;
 	margin: 0;
 }
@@ -12,6 +12,9 @@ body {
 	--orange-color: #f14902;
 	--yellow-color: #f4b324;
 	--light-yellow-color: #ffde59;
+	--grey-color: #3e4c59;
+	--light-grey-color: #f3f4f7;
+	--white-color: white;
 }
 
 ::-webkit-scrollbar {
@@ -20,12 +23,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-	background-color: white;
+	background-color: var(--white-color);
 	border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background-color: white;
+	background-color: var(--white-color);
 }
 
 ::-webkit-scrollbar-track {
@@ -35,11 +38,4 @@ body {
 
 .glow-white {
 	box-shadow: 0px 0px 18px 0px rgba(125, 181, 228, 1);
-}
-
-.container-fluid,
-.row,
-.col {
-	padding: 0;
-	margin: 0;
 }

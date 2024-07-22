@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import { Navbar, Nav, Dropdown, Image } from "react-bootstrap";
 import { FiMenu } from "react-icons/fi";
 import { FaUser } from "react-icons/fa";
-import { HOME_PATH, PROJECTS_PATH, INFO_PATH, CONTACT_PATH } from "../paths";
+import { HOME_PATH, PROJECTS_PATH, ABOUT_PATH, CONTACT_PATH } from "../paths";
 import { useState } from "react";
 import logo from "../images/logo.svg";
 import "flag-icons/css/flag-icons.min.css";
@@ -51,7 +51,7 @@ const MainNavbar = () => {
 
 					<Nav.Link
 						as={NavLink}
-						to={INFO_PATH}
+						to={ABOUT_PATH}
 						className="nav-link mx-2"
 						onClick={handleSelect}
 					>
