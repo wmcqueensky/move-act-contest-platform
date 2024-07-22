@@ -53,7 +53,7 @@ const Home = () => {
 				<Button
 					className="custom-button mx-3 my-2 my-md-0"
 					as="a"
-					href="/projects"
+					href="/works"
 					rel="noopener noreferrer"
 				>
 					Go to voting page
