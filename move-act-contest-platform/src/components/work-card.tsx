@@ -8,6 +8,9 @@ type WorkCardProps = {
 	description: string;
 	voteButtonText: string;
 	detailsButtonText: string;
+	isVoted: boolean;
+	onVote: () => void;
+	onDetails: () => void;
 };
 
 const WorkCard = ({
@@ -18,6 +21,9 @@ const WorkCard = ({
 	description,
 	voteButtonText,
 	detailsButtonText,
+	isVoted,
+	onVote,
+	onDetails,
 }: WorkCardProps) => {
 	return (
 		<Card className="card">
@@ -29,8 +35,12 @@ const WorkCard = ({
 				</Card.Subtitle>
 				<Card.Text className="card-description">{description}</Card.Text>
 				<div className="card-buttons-container">
-					<Button className="vote-button">{voteButtonText}</Button>
-					<Button className="details-button">{detailsButtonText}</Button>
+					<Button className="vote-button" onClick={onVote}>
+						{isVoted ? "Voted" : voteButtonText}
+					</Button>
+					<Button className="details-button" onClick={onDetails}>
+						{detailsButtonText}
+					</Button>
 				</div>
 			</Card.Body>
 		</Card>

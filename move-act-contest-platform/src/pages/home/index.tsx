@@ -2,7 +2,7 @@ import { Container, Button, Col } from "react-bootstrap";
 import { IoIosArrowForward } from "react-icons/io";
 import "./styles.css";
 
-const Home = () => {
+const HomePage = () => {
 	return (
 		<>
 			<Container fluid className="home-image mb-5">
@@ -74,4 +74,4 @@ const Home = () => {
 	);
 };
 
-export default Home;
+export default HomePage;

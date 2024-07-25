@@ -1,21 +1,32 @@
 import { Container, Col } from "react-bootstrap";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import WorkCard from "../../components/work-card";
 import cardImage1 from "./images/card-image-1.png";
 import cardImage2 from "./images/card-image-2.png";
 import cardImage3 from "./images/card-image-3.png";
 import cardImage4 from "./images/card-image-4.png";
 import cardImage5 from "./images/card-image-5.png";
-
+import { DETAILS_PATH } from "../../router/paths.ts";
 import "./styles.css";
 
 type FlagType = "pl" | "gr" | "it" | "es" | "lt";
 
-const Works = () => {
+const WorksPage = () => {
 	const [activeFlag, setActiveFlag] = useState<FlagType | null>(null);
+	const [votedWork, setVotedWork] = useState<number | null>(null);
+	const navigate = useNavigate();
 
 	const handleFlagClick = (flag: FlagType) => {
 		setActiveFlag(flag);
+	};
+
+	const handleVote = (workIndex: number) => {
+		setVotedWork(workIndex);
+	};
+
+	const handleDetails = () => {
+		navigate(DETAILS_PATH);
 	};
 
 	return (
@@ -109,12 +120,13 @@ const Works = () => {
 					title="Card Title 1"
 					participantName="Participant 1"
 					category="Category 1"
-					description="Some quick example text to build on the card title and make up the bulk of the card's content. 
-					Some quick example text to build and make up the bulk of the card's content."
+					description="Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build and make up the bulk of the card's content."
 					voteButtonText="Vote"
 					detailsButtonText="Details"
+					isVoted={votedWork === 1}
+					onVote={() => handleVote(1)}
+					onDetails={handleDetails}
 				/>
-
 				<WorkCard
 					image={cardImage2}
 					title="Card Title 2"
@@ -123,8 +135,10 @@ const Works = () => {
 					description="Some quick example text to build on the card title and make up the bulk of the card's content."
 					voteButtonText="Vote"
 					detailsButtonText="Details"
+					isVoted={votedWork === 2}
+					onVote={() => handleVote(2)}
+					onDetails={handleDetails}
 				/>
-
 				<WorkCard
 					image={cardImage3}
 					title="Card Title 3"
@@ -133,8 +147,10 @@ const Works = () => {
 					description="Some quick example text to build on the card title and make up the bulk of the card's content."
 					voteButtonText="Vote"
 					detailsButtonText="Details"
+					isVoted={votedWork === 3}
+					onVote={() => handleVote(3)}
+					onDetails={handleDetails}
 				/>
-
 				<WorkCard
 					image={cardImage4}
 					title="Card Title 4"
@@ -143,8 +159,10 @@ const Works = () => {
 					description="Some quick example text to build on the card title and make up the bulk of the card's content."
 					voteButtonText="Vote"
 					detailsButtonText="Details"
+					isVoted={votedWork === 4}
+					onVote={() => handleVote(4)}
+					onDetails={handleDetails}
 				/>
-
 				<WorkCard
 					image={cardImage5}
 					title="Card Title 5"
@@ -153,10 +171,13 @@ const Works = () => {
 					description="Some quick example text to build on the card title and make up the bulk of the card's content."
 					voteButtonText="Vote"
 					detailsButtonText="Details"
+					isVoted={votedWork === 5}
+					onVote={() => handleVote(5)}
+					onDetails={handleDetails}
 				/>
 			</Container>
 		</>
 	);
 };
 
-export default Works;
+export default WorksPage;
