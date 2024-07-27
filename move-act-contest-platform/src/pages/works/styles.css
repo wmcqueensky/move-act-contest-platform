@@ -218,3 +218,30 @@
 	color: var(--yellow-color) !important;
 	box-shadow: none;
 }
+
+/* Details Styles */
+.details-title {
+	color: var(--bordo-color);
+}
+
+.details-description {
+	text-align: justify;
+}
+
+.votes {
+	font-weight: bold;
+	font-size: 1.2rem;
+	color: var(--bordo-color);
+}
+
+.details-button {
+	flex-wrap: wrap;
+}
+
+.details-buttons > .btn {
+	margin-left: 10px;
+}
+
+.details-buttons > .btn:first-child {
+	margin-left: 0;
+}

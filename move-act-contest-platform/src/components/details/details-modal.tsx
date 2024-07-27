@@ -16,7 +16,7 @@ type DetailsModalProps = {
 
 const DetailsModal = ({ show, onHide, work }: DetailsModalProps) => {
 	return (
-		<Modal show={show} onHide={onHide} size="lg" centered>
+		<Modal show={show} onHide={onHide} size="xl" centered>
 			<Modal.Body>
 				<Details
 					image={work.image}
@@ -27,10 +27,14 @@ const DetailsModal = ({ show, onHide, work }: DetailsModalProps) => {
 					stlFile={work.stlFile}
 				/>
 			</Modal.Body>
-			<Modal.Footer>
-				<Button variant="secondary" onClick={onHide}>
-					Close
-				</Button>
+			<Modal.Footer className="d-flex justify-content-between">
+				<span className="votes">Votes: 0</span>
+				<div className="details-buttons">
+					<Button className="vote-button">Vote</Button>
+					<Button className="details-button" onClick={onHide}>
+						Close
+					</Button>
+				</div>
 			</Modal.Footer>
 		</Modal>
 	);
