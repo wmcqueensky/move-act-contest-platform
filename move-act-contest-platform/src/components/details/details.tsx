@@ -22,8 +22,9 @@ const Details = ({
 			<Col className="text-center details-sheet">
 				<Image src={image} className="details-image" fluid />
 				<h1 className="details-title">{title}</h1>
-				<h3 className="details-participant">{participantName}</h3>
-				<h4 className="details-category">{category}</h4>
+				<h3 className="details-participant text-muted">
+					{participantName} - {category}
+				</h3>
 				<p className="details-description">{description}</p>
 				<a href={stlFile} download>
 					<Button className="details-download-button">Download STL File</Button>

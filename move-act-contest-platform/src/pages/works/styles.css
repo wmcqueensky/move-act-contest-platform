@@ -147,8 +147,25 @@
 	font-size: 1.4rem;
 }
 
-.card-description {
+.votes {
+	color: var(--bordo-color);
+}
+
+.card-content {
 	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.card-description {
+	display: -webkit-box;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-bottom: 1rem;
+	line-clamp: 4;
 }
 
 .card-buttons-container {
@@ -157,6 +174,7 @@
 	align-items: center;
 	text-align: center;
 	gap: 2rem;
+	margin-top: auto; /* Ensure buttons are pushed to the bottom */
 }
 
 .vote-button {
@@ -194,8 +212,7 @@
 	box-shadow: none;
 }
 
-.details-button:hover,
-.details-button:focus {
+.details-button:hover {
 	background-color: var(--bordo-color) !important;
 	border: 1px solid var(--bordo-color) !important;
 	color: var(--yellow-color) !important;
