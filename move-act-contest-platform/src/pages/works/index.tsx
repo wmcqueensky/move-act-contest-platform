@@ -42,7 +42,7 @@ const WorksPage = () => {
 	};
 
 	return (
-		<>
+		<div className="works-background">
 			<Container fluid className="projects-image mb-5">
 				<Col className="text-center">
 					<h1 className="welcome-header display-1">
@@ -222,7 +222,7 @@ const WorksPage = () => {
 					title="Card Title 5"
 					participantName="Participant 5"
 					category="Category 5"
-					description="Some quick example text to build on the card title and make up the bulk of the card's content."
+					description="Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content."
 					voteButtonText="Vote"
 					detailsButtonText="Details"
 					isVoted={votedWork === 5}
@@ -234,7 +234,7 @@ const WorksPage = () => {
 							participantName: "Participant 5",
 							category: "Category 5",
 							description:
-								"Some quick example text to build on the card title and make up the bulk of the card's content.",
+								"Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.",
 							stlFile: "path/to/stlFile5.stl",
 						})
 					}
@@ -242,7 +242,7 @@ const WorksPage = () => {
 			</Container>
 
 			<DetailsModal show={showModal} onHide={handleClose} work={currentWork} />
-		</>
+		</div>
 	);
 };
 

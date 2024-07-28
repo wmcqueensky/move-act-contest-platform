@@ -1,4 +1,5 @@
-import { Container, Col, Image, Button } from "react-bootstrap";
+import { useEffect, useRef } from "react";
+import { Container, Image } from "react-bootstrap";
 
 type DetailsProps = {
 	image: string;
@@ -17,19 +18,30 @@ const Details = ({
 	description,
 	stlFile,
 }: DetailsProps) => {
+	const viewerRef = useRef<HTMLDivElement>(null);
+
+	// useEffect(() => {
+	// 	if (viewerRef.current) {
+	// 		// Initialize the STL viewer
+	// 		new (window as any).StlViewer(viewerRef.current, {
+	// 			models: [{ id: 0, filename: stlFile }],
+	// 		});
+	// 	}
+	// }, [stlFile]);
+
 	return (
-		<Container className="details-container">
-			<Col className="text-center details-sheet">
-				<Image src={image} className="details-image" fluid />
-				<h1 className="details-title">{title}</h1>
-				<h3 className="details-participant text-muted">
-					{participantName} - {category}
-				</h3>
-				<p className="details-description">{description}</p>
-				<a href={stlFile} download>
-					<Button className="details-download-button">Download STL File</Button>
-				</a>
-			</Col>
+		<Container className="details-container text-center">
+			<Image src={image} fluid />
+			<h1 className="details-title">{title}</h1>
+			<h3 className="details-participant text-muted">
+				{participantName} - {category}
+			</h3>
+			<p className="details-description">{description}</p>
+			{/* <div
+				id="stl_cont"
+				ref={viewerRef}
+				style={{ height: "500px", width: "100%" }}
+			></div> */}
 		</Container>
 	);
 };
