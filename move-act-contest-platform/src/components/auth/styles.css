@@ -60,3 +60,16 @@
 .terms-checkbox {
 	color: var(--bordo-color);
 }
+
+/* SignUpToast Styles */
+
+.custom-toast {
+	width: 400px;
+	height: auto;
+	font-size: 1.05rem;
+	border-radius: 20px;
+}
+
+.custom-toast .toast-body {
+	padding: 20px;
+}

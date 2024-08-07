@@ -42,6 +42,28 @@ const Details = ({
 				ref={viewerRef}
 				style={{ height: "500px", width: "100%" }}
 			></div> */}
+			{/* <iframe
+				id="vs_iframe"
+				src="https://www.viewstl.com/?embedded"
+				style={{
+					border: "0",
+					margin: "0",
+					width: "1080px",
+					height: "500px",
+				}}
+				title="ViewSTL Embedded Frame"
+			/> */}
+
+			<iframe
+				id="vs_iframe"
+				src="https://www.viewstl.com/?embedded"
+				style={{
+					border: "0",
+					margin: "0",
+					width: "1080px",
+					height: "500px",
+				}}
+			></iframe>
 		</Container>
 	);
 };
