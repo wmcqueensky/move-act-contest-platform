@@ -1,4 +1,4 @@
-import supabase from "/Users/goodylabs/Desktop/move-act-contest-platform/move-act-contest-platform/src/config/supabase-client.ts";
+import supabase from "../../config/supabase-client.ts";
 import { useState, useEffect } from "react";
 
 const Contact = () => {

@@ -3,7 +3,7 @@ import { Navbar, Nav, Dropdown, Image } from "react-bootstrap";
 import { FiMenu } from "react-icons/fi";
 import { FaUser } from "react-icons/fa";
 import { HOME_PATH, WORKS_PATH, ABOUT_PATH, CONTACT_PATH } from "../paths";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import logo from "../images/logo.svg";
 import "flag-icons/css/flag-icons.min.css";
 import "./styles.css";
@@ -11,6 +11,7 @@ import AuthModal, {
 	LOGIN_TAB,
 	REGISTER_TAB,
 } from "../../components/auth/auth-modal.tsx";
+import supabase from "../../config/supabase-client.ts";
 
 const MainNavbar: React.FC = () => {
 	const [expanded, setExpanded] = useState(false);
@@ -18,6 +19,11 @@ const MainNavbar: React.FC = () => {
 	const [activeTab, setActiveTab] = useState<
 		typeof LOGIN_TAB | typeof REGISTER_TAB
 	>(LOGIN_TAB);
+
+	// Update the type to handle email being possibly undefined
+	const [user, setUser] = useState<{ email: string | undefined | null } | null>(
+		null
+	);
 
 	const handleSelect = () => setExpanded(false);
 
@@ -27,6 +33,31 @@ const MainNavbar: React.FC = () => {
 	};
 
 	const handleAuthClose = () => setShowAuthModal(false);
+
+	const handleLogout = async () => {
+		await supabase.auth.signOut();
+		setUser(null);
+	};
+
+	useEffect(() => {
+		const checkUser = async () => {
+			const { data } = await supabase.auth.getUser();
+			setUser({ email: data?.user?.email ?? null });
+		};
+
+		checkUser();
+
+		const { data: authListener } = supabase.auth.onAuthStateChange(
+			(_event, session) => {
+				setUser({ email: session?.user?.email ?? null });
+			}
+		);
+
+		// Access unsubscribe method from the subscription object
+		return () => {
+			authListener?.subscription.unsubscribe();
+		};
+	}, []);
 
 	return (
 		<>
@@ -93,23 +124,18 @@ const MainNavbar: React.FC = () => {
 								<Dropdown.Item href="#/action-1" className="dropdown-item">
 									<span className="fi fi-gb"></span> English
 								</Dropdown.Item>
-
 								<Dropdown.Item href="#/action-2" className="dropdown-item">
 									<span className="fi fi-pl"></span> Polski
 								</Dropdown.Item>
-
 								<Dropdown.Item href="#/action-3" className="dropdown-item">
 									<span className="fi fi-gr"></span> Ελληνικά
 								</Dropdown.Item>
-
 								<Dropdown.Item href="#/action-4" className="dropdown-item">
 									<span className="fi fi-it"></span> Italiano
 								</Dropdown.Item>
-
 								<Dropdown.Item href="#/action-5" className="dropdown-item">
 									<span className="fi fi-es"></span> Español
 								</Dropdown.Item>
-
 								<Dropdown.Item href="#/action-6" className="dropdown-item">
 									<span className="fi fi-lt"></span> Lietuvių
 								</Dropdown.Item>
@@ -122,23 +148,38 @@ const MainNavbar: React.FC = () => {
 							variant="none"
 							className="dropdown-toggle-second d-flex align-items-center mx-3"
 						>
-							<FaUser size={32} />
+							{user?.email ? user.email : <FaUser size={32} />}
 						</Dropdown.Toggle>
 
 						<Dropdown.Menu>
-							<Dropdown.Item
-								onClick={() => handleAuthShow(LOGIN_TAB)}
-								className="dropdown-item"
-							>
-								Login
-							</Dropdown.Item>
-
-							<Dropdown.Item
-								onClick={() => handleAuthShow(REGISTER_TAB)}
-								className="dropdown-item"
-							>
-								Register
-							</Dropdown.Item>
+							{user ? (
+								<>
+									<Dropdown.Item className="dropdown-item">
+										Account details
+									</Dropdown.Item>
+									<Dropdown.Item
+										onClick={handleLogout}
+										className="dropdown-item"
+									>
+										Log out
+									</Dropdown.Item>
+								</>
+							) : (
+								<>
+									<Dropdown.Item
+										onClick={() => handleAuthShow(LOGIN_TAB)}
+										className="dropdown-item"
+									>
+										Login
+									</Dropdown.Item>
+									<Dropdown.Item
+										onClick={() => handleAuthShow(REGISTER_TAB)}
+										className="dropdown-item"
+									>
+										Register
+									</Dropdown.Item>
+								</>
+							)}
 						</Dropdown.Menu>
 					</Dropdown>
 				</Navbar.Collapse>

@@ -2,14 +2,14 @@ import { Toast, ToastContainer } from "react-bootstrap";
 import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
 import React from "react";
 
-interface SignUpToastProps {
+interface AuthToastProps {
 	show: boolean;
 	message: string;
 	type: "success" | "error";
 	onClose: () => void;
 }
 
-const SignUpToast: React.FC<SignUpToastProps> = ({
+const AuthToast: React.FC<AuthToastProps> = ({
 	show,
 	message,
 	type,
@@ -38,4 +38,4 @@ const SignUpToast: React.FC<SignUpToastProps> = ({
 	);
 };
 
-export default SignUpToast;
+export default AuthToast;

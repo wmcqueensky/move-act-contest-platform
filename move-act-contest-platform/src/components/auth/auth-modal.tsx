@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import supabase from "/Users/goodylabs/Desktop/move-act-contest-platform/move-act-contest-platform/src/config/supabase-client.ts";
-import SignUpToast from "./toasts/sign-up-toast.tsx";
+import supabase from "../../config/supabase-client.ts";
+import AuthToast from "./auth-toast.tsx";
 import "./styles.css";
 import { Modal, Button, Form, ButtonGroup } from "react-bootstrap";
 
@@ -57,7 +57,7 @@ const AuthModal: React.FC<AuthModalProps> = ({
 		setFormData({ ...formData, [event.target.name]: value });
 	}
 
-	async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+	async function handleSignIn(event: React.FormEvent<HTMLFormElement>) {
 		event.preventDefault();
 		setError(null);
 
@@ -80,45 +80,70 @@ const AuthModal: React.FC<AuthModalProps> = ({
 		}
 
 		try {
-			if (activeTab === LOGIN_TAB) {
-				const { data, error } = await supabase.auth.signInWithPassword({
-					email: formData.email,
-					password: formData.password,
-				});
-				if (error) {
-					setError(error.message);
-					setToast({ show: true, message: error.message, type: "error" });
-				} else {
-					console.log("Login successful, data:", data);
-					setToast({
-						show: true,
-						message: "Login successful!",
-						type: "success",
-					});
-					handleClose();
-				}
+			const { data, error } = await supabase.auth.signInWithPassword({
+				email: formData.email,
+				password: formData.password,
+			});
+			if (error) {
+				setError(error.message);
+				setToast({ show: true, message: error.message, type: "error" });
 			} else {
-				const { data, error } = await supabase.auth.signUp({
-					email: formData.email,
-					password: formData.password,
-					options: {
-						data: {
-							name: formData.name,
-							surname: formData.surname,
-						},
-					},
+				console.log("Login successful, data:", data);
+				setToast({
+					show: true,
+					message: "Login successful!",
+					type: "success",
 				});
-				if (error) {
-					setError(error.message);
-					setToast({ show: true, message: error.message, type: "error" });
-				} else {
-					setToast({
-						show: true,
-						message: "Sign up successful!",
-						type: "success",
-					});
-					handleClose();
-				}
+				handleClose();
+			}
+		} catch (error) {
+			const errorMessage = (error as Error).message;
+			setError(errorMessage);
+			setToast({ show: true, message: errorMessage, type: "error" });
+		}
+	}
+
+	async function handleSignUp(event: React.FormEvent<HTMLFormElement>) {
+		event.preventDefault();
+		setError(null);
+
+		if (formData.email !== formData.confirmEmail) {
+			setError("Emails do not match");
+			setToast({ show: true, message: "Emails do not match", type: "error" });
+			return;
+		}
+
+		if (formData.password !== formData.confirmPassword) {
+			setError("Passwords do not match");
+			setToast({
+				show: true,
+				message: "Passwords do not match",
+				type: "error",
+			});
+			return;
+		}
+
+		try {
+			const { data, error } = await supabase.auth.signUp({
+				email: formData.email,
+				password: formData.password,
+				options: {
+					data: {
+						name: formData.name,
+						surname: formData.surname,
+					},
+				},
+			});
+			if (error) {
+				setError(error.message);
+				setToast({ show: true, message: error.message, type: "error" });
+			} else {
+				setToast({
+					show: true,
+					message: "Sign up successful!",
+					type: "success",
+				});
+				handleClose();
 			}
 		} catch (error) {
 			const errorMessage = (error as Error).message;
@@ -129,7 +154,7 @@ const AuthModal: React.FC<AuthModalProps> = ({
 
 	return (
 		<>
-			<SignUpToast
+			<AuthToast
 				show={toast.show}
 				message={toast.message}
 				type={toast.type}
@@ -163,7 +188,7 @@ const AuthModal: React.FC<AuthModalProps> = ({
 					</ButtonGroup>
 					{error && <div className="alert alert-danger">{error}</div>}
 					{activeTab === LOGIN_TAB ? (
-						<Form onSubmit={handleSubmit}>
+						<Form onSubmit={handleSignIn}>
 							<Form.Control
 								type="email"
 								placeholder="Email"
@@ -190,7 +215,7 @@ const AuthModal: React.FC<AuthModalProps> = ({
 							</Button>
 						</Form>
 					) : (
-						<Form onSubmit={handleSubmit}>
+						<Form onSubmit={handleSignUp}>
 							<Form.Group className="d-flex mb-4">
 								<Form.Control
 									type="text"
