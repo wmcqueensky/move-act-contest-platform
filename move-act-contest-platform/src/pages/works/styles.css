@@ -256,3 +256,9 @@
 .details-buttons > .btn:first-child {
 	margin-left: 0;
 }
+
+/* STLViewer Styles */
+.stl-viewer {
+	width: 100%;
+	height: 70vh;
+}
