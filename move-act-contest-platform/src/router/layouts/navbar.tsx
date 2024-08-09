@@ -41,23 +41,33 @@ const MainNavbar: React.FC = () => {
 
 	useEffect(() => {
 		const checkUser = async () => {
-			const { data } = await supabase.auth.getUser();
-			setUser({ email: data?.user?.email ?? null });
+			const { data, error } = await supabase.auth.getUser();
+
+			if (error || !data.user) {
+				setUser(null); // Set to null if there's no user
+			} else {
+				setUser({ email: data.user.email });
+			}
 		};
 
 		checkUser();
 
 		const { data: authListener } = supabase.auth.onAuthStateChange(
 			(_event, session) => {
-				setUser({ email: session?.user?.email ?? null });
+				if (session) {
+					setUser({ email: session.user?.email });
+				} else {
+					setUser(null);
+				}
 			}
 		);
 
-		// Access unsubscribe method from the subscription object
 		return () => {
 			authListener?.subscription.unsubscribe();
 		};
 	}, []);
+
+	console.log(user);
 
 	return (
 		<>

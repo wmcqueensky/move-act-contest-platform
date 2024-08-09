@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import WorkCard from "../../components/work-card";
 import DetailsModal from "../../components/details/details-modal";
 import supabase from "../../config/supabase-client";
+import AuthModal, { LOGIN_TAB } from "../../components/auth/auth-modal.tsx";
 import "./styles.css";
 
 type FlagType = "Poland" | "Greece" | "Italy" | "Spain" | "Lithuania";
@@ -20,6 +21,8 @@ const WorksPage = () => {
 		description: "",
 		stlFile: "",
 	});
+	const [showAuthModal, setShowAuthModal] = useState(false);
+	const [user, setUser] = useState<any>(null);
 
 	useEffect(() => {
 		const fetchWorks = async () => {
@@ -40,12 +43,55 @@ const WorksPage = () => {
 		fetchWorks();
 	}, [activeFlag]);
 
+	useEffect(() => {
+		const checkUser = async () => {
+			const {
+				data: { user },
+			} = await supabase.auth.getUser();
+			setUser(user);
+		};
+
+		checkUser();
+	}, []);
+
 	const handleFlagClick = (flag: FlagType) => {
 		setActiveFlag(flag);
 	};
 
-	const handleVote = (workIndex: number) => {
-		setVotedWork(workIndex);
+	const handleVote = async (workIndex: number) => {
+		if (!user) {
+			setShowAuthModal(true);
+			return;
+		}
+
+		const { data: existingVotes, error } = await supabase
+			.from("votes")
+			.select("work_id")
+			.eq("user_id", user.id);
+
+		if (error) {
+			console.error("Error checking existing votes:", error);
+			return;
+		}
+
+		if (existingVotes.length > 0) {
+			alert("You have already voted for a work from this country.");
+			return;
+		}
+
+		// Proceed with voting
+		const work = works[workIndex];
+		const { error: voteError } = await supabase.from("votes").insert({
+			work_id: work.work_id,
+			user_id: user.id,
+		});
+
+		if (voteError) {
+			console.error("Error voting:", voteError);
+		} else {
+			setVotedWork(workIndex);
+			alert("Vote recorded successfully!");
+		}
 	};
 
 	const handleDetails = (work: any) => {
@@ -167,6 +213,11 @@ const WorksPage = () => {
 			</Container>
 
 			<DetailsModal show={showModal} onHide={handleClose} work={currentWork} />
+			<AuthModal
+				show={showAuthModal}
+				handleClose={() => setShowAuthModal(false)}
+				activeTab={LOGIN_TAB}
+			/>
 		</div>
 	);
 };

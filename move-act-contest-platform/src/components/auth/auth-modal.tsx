@@ -63,13 +63,11 @@ const AuthModal: React.FC<AuthModalProps> = ({
 
 		if (activeTab === REGISTER_TAB) {
 			if (formData.email !== formData.confirmEmail) {
-				setError("Emails do not match");
 				setToast({ show: true, message: "Emails do not match", type: "error" });
 				return;
 			}
 
 			if (formData.password !== formData.confirmPassword) {
-				setError("Passwords do not match");
 				setToast({
 					show: true,
 					message: "Passwords do not match",
@@ -85,7 +83,6 @@ const AuthModal: React.FC<AuthModalProps> = ({
 				password: formData.password,
 			});
 			if (error) {
-				setError(error.message);
 				setToast({ show: true, message: error.message, type: "error" });
 			} else {
 				console.log("Login successful, data:", data);
@@ -98,7 +95,6 @@ const AuthModal: React.FC<AuthModalProps> = ({
 			}
 		} catch (error) {
 			const errorMessage = (error as Error).message;
-			setError(errorMessage);
 			setToast({ show: true, message: errorMessage, type: "error" });
 		}
 	}
@@ -108,13 +104,11 @@ const AuthModal: React.FC<AuthModalProps> = ({
 		setError(null);
 
 		if (formData.email !== formData.confirmEmail) {
-			setError("Emails do not match");
 			setToast({ show: true, message: "Emails do not match", type: "error" });
 			return;
 		}
 
 		if (formData.password !== formData.confirmPassword) {
-			setError("Passwords do not match");
 			setToast({
 				show: true,
 				message: "Passwords do not match",
@@ -135,7 +129,6 @@ const AuthModal: React.FC<AuthModalProps> = ({
 				},
 			});
 			if (error) {
-				setError(error.message);
 				setToast({ show: true, message: error.message, type: "error" });
 			} else {
 				setToast({
@@ -147,7 +140,6 @@ const AuthModal: React.FC<AuthModalProps> = ({
 			}
 		} catch (error) {
 			const errorMessage = (error as Error).message;
-			setError(errorMessage);
 			setToast({ show: true, message: errorMessage, type: "error" });
 		}
 	}

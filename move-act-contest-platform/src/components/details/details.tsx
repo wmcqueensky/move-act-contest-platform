@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from "react";
 import { Container, Image } from "react-bootstrap";
 import { StlViewer } from "react-stl-viewer";
 
