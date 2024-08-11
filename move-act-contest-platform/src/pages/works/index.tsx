@@ -98,7 +98,7 @@ const WorksPage = () => {
 			if (existingVotes.length > 0) {
 				setVotedWorkId(existingVotes[0].work_id);
 			} else {
-				setVotedWorkId(null); // No votes for this country
+				setVotedWorkId(null);
 			}
 		};
 
@@ -182,6 +182,15 @@ const WorksPage = () => {
 				});
 			});
 		} else {
+			setCurrentWork((prevWork) => {
+				if (prevWork.workId === newWorkId) {
+					return { ...prevWork, voteCount: prevWork.voteCount + 1 };
+				}
+				if (prevWork.workId === previousWorkId) {
+					return { ...prevWork, voteCount: prevWork.voteCount - 1 };
+				}
+				return prevWork;
+			});
 			setVotedWorkId(newWorkId);
 		}
 	};
@@ -204,6 +213,7 @@ const WorksPage = () => {
 					</h1>
 				</Col>
 			</Container>
+
 			<Container className="voting-info-container">
 				<h1 className="voting-info-header text-center mb-5">How to vote?</h1>
 				<ul>
@@ -213,24 +223,29 @@ const WorksPage = () => {
 							Lithuania.
 						</h3>
 					</li>
+
 					<li>
 						<h3>You can vote for 5 works, each from a different country.</h3>
 					</li>
+
 					<li>
 						<h3>
 							To choose works from specific select one of the 5 flags. The
 							highlighted flag will indicate the origin of the displayed works.
 						</h3>
 					</li>
+
 					<li>
 						<h3>
 							After selecting the flag you will see 5 works from the selected
 							country.
 						</h3>
 					</li>
+
 					<li>
 						<h3>To vote for a specific work click Vote button.</h3>
 					</li>
+
 					<li>
 						<h3>
 							To see more details about the work click the Details button.
@@ -276,6 +291,7 @@ const WorksPage = () => {
 					<span className="fi fi-lt flag"></span>
 				</button>
 			</Container>
+
 			<Container className="card-container">
 				{works.map((work) => (
 					<WorkCard
