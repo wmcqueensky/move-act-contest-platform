@@ -94,11 +94,28 @@ const WorksPage = () => {
 			return;
 		}
 
-		// Proceed with voting
-		const work = works[workIndex];
+		const selectedWork = works[workIndex];
+
+		const { data: existingVotes, error: votesError } = await supabase
+			.from("votes")
+			.select("work_id")
+			.eq("user_id", user.id)
+			.eq("country", activeFlag);
+
+		if (votesError) {
+			console.error("Error fetching votes:", votesError);
+			return;
+		}
+
+		if (existingVotes.length > 0) {
+			alert("You have already voted for a work from this country.");
+			return;
+		}
+
 		const { error: voteError } = await supabase.from("votes").insert({
-			work_id: work.work_id,
+			work_id: selectedWork.work_id,
 			user_id: user.id,
+			country: activeFlag,
 		});
 
 		if (voteError) {
