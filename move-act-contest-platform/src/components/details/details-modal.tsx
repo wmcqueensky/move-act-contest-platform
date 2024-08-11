@@ -9,13 +9,21 @@ type DetailsModalProps = {
 		title: string;
 		participantName: string;
 		category: string;
-		voteCount: string;
+		voteCount: number;
 		description: string;
 		stlFile: string;
 	};
+	isVoted: boolean;
+	onVote: () => void;
 };
 
-const DetailsModal = ({ show, onHide, work }: DetailsModalProps) => {
+const DetailsModal = ({
+	show,
+	onHide,
+	work,
+	isVoted,
+	onVote,
+}: DetailsModalProps) => {
 	return (
 		<Modal show={show} onHide={onHide} size="xl" centered>
 			<Modal.Body>
@@ -31,7 +39,13 @@ const DetailsModal = ({ show, onHide, work }: DetailsModalProps) => {
 			<Modal.Footer className="d-flex justify-content-between">
 				<p className="votes">Votes: {work.voteCount}</p>
 				<div className="details-buttons">
-					<Button className="vote-button">Vote</Button>
+					<Button
+						className={`vote-button ${isVoted ? "voted" : ""}`}
+						onClick={onVote}
+						disabled={isVoted}
+					>
+						{isVoted ? "Voted" : "Vote"}
+					</Button>
 					<Button className="details-button" onClick={onHide}>
 						Close
 					</Button>

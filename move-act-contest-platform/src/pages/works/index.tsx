@@ -14,11 +14,12 @@ const WorksPage = () => {
 	const [votedWorkId, setVotedWorkId] = useState<number | null>(null);
 	const [showModal, setShowModal] = useState(false);
 	const [currentWork, setCurrentWork] = useState({
+		workId: 0,
 		image: "",
 		title: "",
 		participantName: "",
 		category: "",
-		voteCount: "",
+		voteCount: 0,
 		description: "",
 		stlFile: "",
 	});
@@ -127,7 +128,6 @@ const WorksPage = () => {
 
 		let previousWorkId: any = null;
 
-		// If the user has already voted for a different work, decrease its vote count
 		if (existingVotes.length > 0) {
 			previousWorkId = existingVotes[0].work_id;
 
@@ -153,7 +153,6 @@ const WorksPage = () => {
 			}
 		}
 
-		// Optimistically increase the vote count for the new work
 		setWorks((prevWorks) => {
 			return prevWorks.map((work) => {
 				if (work.work_id === newWorkId) {
@@ -163,7 +162,6 @@ const WorksPage = () => {
 			});
 		});
 
-		// Insert the new vote
 		const { error: voteError } = await supabase.from("votes").insert({
 			work_id: newWorkId,
 			user_id: user.id,
@@ -172,7 +170,6 @@ const WorksPage = () => {
 
 		if (voteError) {
 			console.error("Error voting:", voteError);
-			// Revert optimistic update if voting fails
 			setWorks((prevWorks) => {
 				return prevWorks.map((work) => {
 					if (work.work_id === newWorkId) {
@@ -207,7 +204,6 @@ const WorksPage = () => {
 					</h1>
 				</Col>
 			</Container>
-
 			<Container className="voting-info-container">
 				<h1 className="voting-info-header text-center mb-5">How to vote?</h1>
 				<ul>
@@ -242,7 +238,6 @@ const WorksPage = () => {
 					</li>
 				</ul>
 			</Container>
-
 			<Container className="flag-container text-center">
 				<button
 					className={`flag-button ${activeFlag === "Poland" ? "active" : ""}`}
@@ -281,7 +276,6 @@ const WorksPage = () => {
 					<span className="fi fi-lt flag"></span>
 				</button>
 			</Container>
-
 			<Container className="card-container">
 				{works.map((work) => (
 					<WorkCard
@@ -298,10 +292,11 @@ const WorksPage = () => {
 						onVote={() => handleVote(work.work_id)}
 						onDetails={() =>
 							handleDetails({
+								workId: work.work_id,
 								image: work.image_url,
 								title: work.title,
 								participantName: work.participant_name,
-								voteCount: work.vote_count.toString(),
+								voteCount: work.vote_count,
 								category: work.category,
 								description: work.description,
 								stlFile: work.stl_url,
@@ -311,7 +306,14 @@ const WorksPage = () => {
 				))}
 			</Container>
 
-			<DetailsModal show={showModal} onHide={handleClose} work={currentWork} />
+			<DetailsModal
+				show={showModal}
+				onHide={handleClose}
+				work={currentWork}
+				isVoted={votedWorkId === currentWork.workId}
+				onVote={() => handleVote(currentWork.workId)}
+			/>
+
 			<AuthModal
 				show={showAuthModal}
 				handleClose={() => setShowAuthModal(false)}
