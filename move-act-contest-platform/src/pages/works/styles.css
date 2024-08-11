@@ -195,7 +195,7 @@
 	font-size: 1.1rem;
 	border-radius: 16px;
 	background-color: var(--bordo-color);
-	border: 0px;
+	border: 0;
 	color: var(--yellow-color);
 	font-weight: bold;
 	box-shadow: none;
@@ -208,6 +208,13 @@
 	border-color: var(--yellow-color) !important;
 	color: var(--bordo-color) !important;
 	box-shadow: none;
+}
+
+.vote-button.voted {
+	background-color: var(--yellow-color) !important;
+	color: var(--bordo-color) !important;
+	cursor: not-allowed;
+	opacity: 0.9;
 }
 
 .details-button {

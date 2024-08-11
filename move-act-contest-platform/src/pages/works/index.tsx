@@ -11,7 +11,7 @@ type FlagType = "Poland" | "Greece" | "Italy" | "Spain" | "Lithuania";
 const WorksPage = () => {
 	const [activeFlag, setActiveFlag] = useState<FlagType | null>("Poland");
 	const [works, setWorks] = useState<any[]>([]);
-	const [votedWork, setVotedWork] = useState<number | null>(null);
+	const [votedWorkId, setVotedWorkId] = useState<number | null>(null);
 	const [showModal, setShowModal] = useState(false);
 	const [currentWork, setCurrentWork] = useState({
 		image: "",
@@ -28,7 +28,6 @@ const WorksPage = () => {
 	useEffect(() => {
 		const fetchWorksAndVotes = async () => {
 			if (activeFlag) {
-				// Fetch works for the selected country
 				const { data: worksData, error: worksError } = await supabase
 					.from("works")
 					.select("*")
@@ -39,7 +38,6 @@ const WorksPage = () => {
 					return;
 				}
 
-				// Fetch all votes for these works
 				const workIds = worksData.map((work) => work.work_id);
 				const { data: votesData, error: votesError } = await supabase
 					.from("votes")
@@ -51,7 +49,6 @@ const WorksPage = () => {
 					return;
 				}
 
-				// Count the votes for each work
 				const voteCounts = workIds.reduce((acc, workId) => {
 					acc[workId] = votesData.filter(
 						(vote) => vote.work_id === workId
@@ -59,7 +56,6 @@ const WorksPage = () => {
 					return acc;
 				}, {});
 
-				// Merge vote counts into works
 				const worksWithVotes = worksData.map((work) => ({
 					...work,
 					vote_count: voteCounts[work.work_id] || 0,
@@ -81,24 +77,46 @@ const WorksPage = () => {
 		};
 
 		checkUser();
-		console.log(user);
 	}, []);
+
+	useEffect(() => {
+		const checkUserVotes = async () => {
+			if (!user || !activeFlag) return;
+
+			const { data: existingVotes, error: votesError } = await supabase
+				.from("votes")
+				.select("*")
+				.eq("user_id", user.id)
+				.eq("country", activeFlag);
+
+			if (votesError) {
+				console.error("Error fetching votes:", votesError);
+				return;
+			}
+
+			if (existingVotes.length > 0) {
+				setVotedWorkId(existingVotes[0].work_id);
+			} else {
+				setVotedWorkId(null); // No votes for this country
+			}
+		};
+
+		checkUserVotes();
+	}, [user, activeFlag]);
 
 	const handleFlagClick = (flag: FlagType) => {
 		setActiveFlag(flag);
 	};
 
-	const handleVote = async (workIndex: number) => {
+	const handleVote = async (workId: number) => {
 		if (!user) {
 			setShowAuthModal(true);
 			return;
 		}
 
-		const selectedWork = works[workIndex];
-
 		const { data: existingVotes, error: votesError } = await supabase
 			.from("votes")
-			.select("work_id")
+			.select("*")
 			.eq("user_id", user.id)
 			.eq("country", activeFlag);
 
@@ -108,12 +126,20 @@ const WorksPage = () => {
 		}
 
 		if (existingVotes.length > 0) {
-			alert("You have already voted for a work from this country.");
-			return;
+			const previousVote = existingVotes[0];
+			const { error: deleteError } = await supabase
+				.from("votes")
+				.delete()
+				.eq("vote_id", previousVote.vote_id);
+
+			if (deleteError) {
+				console.error("Error deleting previous vote:", deleteError);
+				return;
+			}
 		}
 
 		const { error: voteError } = await supabase.from("votes").insert({
-			work_id: selectedWork.work_id,
+			work_id: workId,
 			user_id: user.id,
 			country: activeFlag,
 		});
@@ -121,7 +147,7 @@ const WorksPage = () => {
 		if (voteError) {
 			console.error("Error voting:", voteError);
 		} else {
-			setVotedWork(workIndex);
+			setVotedWorkId(workId);
 			alert("Vote recorded successfully!");
 		}
 	};
@@ -155,7 +181,7 @@ const WorksPage = () => {
 						</h3>
 					</li>
 					<li>
-						<h3>You can vote for 5 works, each from different country.</h3>
+						<h3>You can vote for 5 works, each from a different country.</h3>
 					</li>
 					<li>
 						<h3>
@@ -173,7 +199,9 @@ const WorksPage = () => {
 						<h3>To vote for a specific work click Vote button.</h3>
 					</li>
 					<li>
-						<h3>To see more details about work click Details button.</h3>
+						<h3>
+							To see more details about the work click the Details button.
+						</h3>
 					</li>
 				</ul>
 			</Container>
@@ -218,7 +246,7 @@ const WorksPage = () => {
 			</Container>
 
 			<Container className="card-container">
-				{works.map((work, index) => (
+				{works.map((work) => (
 					<WorkCard
 						key={work.work_id}
 						image={work.image_url}
@@ -228,9 +256,9 @@ const WorksPage = () => {
 						description={work.description}
 						voteButtonText="Vote"
 						detailsButtonText="Details"
-						isVoted={votedWork === index}
 						voteCount={work.vote_count}
-						onVote={() => handleVote(index)}
+						isVoted={votedWorkId === work.work_id}
+						onVote={() => handleVote(work.work_id)}
 						onDetails={() =>
 							handleDetails({
 								image: work.image_url,

@@ -39,7 +39,11 @@ const WorkCard = ({
 				<div className="card-content">
 					<Card.Text className="card-description">{description}</Card.Text>
 					<div className="card-buttons-container">
-						<Button className="vote-button" onClick={onVote}>
+						<Button
+							className={`vote-button ${isVoted ? "voted" : ""}`}
+							onClick={onVote}
+							disabled={isVoted}
+						>
 							{isVoted ? "Voted" : voteButtonText}
 						</Button>
 						<Button className="details-button" onClick={onDetails}>
