@@ -9,6 +9,7 @@ type DetailsModalProps = {
 		title: string;
 		participantName: string;
 		category: string;
+		voteCount: string;
 		description: string;
 		stlFile: string;
 	};
@@ -28,7 +29,7 @@ const DetailsModal = ({ show, onHide, work }: DetailsModalProps) => {
 				/>
 			</Modal.Body>
 			<Modal.Footer className="d-flex justify-content-between">
-				<span className="votes">Votes: 0</span>
+				<p className="votes">Votes: {work.voteCount}</p>
 				<div className="details-buttons">
 					<Button className="vote-button">Vote</Button>
 					<Button className="details-button" onClick={onHide}>

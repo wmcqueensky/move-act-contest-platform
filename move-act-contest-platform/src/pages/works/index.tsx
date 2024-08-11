@@ -18,6 +18,7 @@ const WorksPage = () => {
 		title: "",
 		participantName: "",
 		category: "",
+		voteCount: "",
 		description: "",
 		stlFile: "",
 	});
@@ -25,22 +26,50 @@ const WorksPage = () => {
 	const [user, setUser] = useState<any>(null);
 
 	useEffect(() => {
-		const fetchWorks = async () => {
+		const fetchWorksAndVotes = async () => {
 			if (activeFlag) {
-				const { data, error } = await supabase
+				// Fetch works for the selected country
+				const { data: worksData, error: worksError } = await supabase
 					.from("works")
 					.select("*")
 					.eq("country", activeFlag);
 
-				if (error) {
-					console.error("Error fetching works:", error);
-				} else {
-					setWorks(data || []);
+				if (worksError) {
+					console.error("Error fetching works:", worksError);
+					return;
 				}
+
+				// Fetch all votes for these works
+				const workIds = worksData.map((work) => work.work_id);
+				const { data: votesData, error: votesError } = await supabase
+					.from("votes")
+					.select("work_id")
+					.in("work_id", workIds);
+
+				if (votesError) {
+					console.error("Error fetching votes:", votesError);
+					return;
+				}
+
+				// Count the votes for each work
+				const voteCounts = workIds.reduce((acc, workId) => {
+					acc[workId] = votesData.filter(
+						(vote) => vote.work_id === workId
+					).length;
+					return acc;
+				}, {});
+
+				// Merge vote counts into works
+				const worksWithVotes = worksData.map((work) => ({
+					...work,
+					vote_count: voteCounts[work.work_id] || 0,
+				}));
+
+				setWorks(worksWithVotes);
 			}
 		};
 
-		fetchWorks();
+		fetchWorksAndVotes();
 	}, [activeFlag]);
 
 	useEffect(() => {
@@ -52,6 +81,7 @@ const WorksPage = () => {
 		};
 
 		checkUser();
+		console.log(user);
 	}, []);
 
 	const handleFlagClick = (flag: FlagType) => {
@@ -61,21 +91,6 @@ const WorksPage = () => {
 	const handleVote = async (workIndex: number) => {
 		if (!user) {
 			setShowAuthModal(true);
-			return;
-		}
-
-		const { data: existingVotes, error } = await supabase
-			.from("votes")
-			.select("work_id")
-			.eq("user_id", user.id);
-
-		if (error) {
-			console.error("Error checking existing votes:", error);
-			return;
-		}
-
-		if (existingVotes.length > 0) {
-			alert("You have already voted for a work from this country.");
 			return;
 		}
 
@@ -197,12 +212,14 @@ const WorksPage = () => {
 						voteButtonText="Vote"
 						detailsButtonText="Details"
 						isVoted={votedWork === index}
+						voteCount={work.vote_count}
 						onVote={() => handleVote(index)}
 						onDetails={() =>
 							handleDetails({
 								image: work.image_url,
 								title: work.title,
 								participantName: work.participant_name,
+								voteCount: work.vote_count.toString(),
 								category: work.category,
 								description: work.description,
 								stlFile: work.stl_url,
