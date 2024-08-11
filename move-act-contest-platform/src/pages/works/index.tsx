@@ -108,7 +108,7 @@ const WorksPage = () => {
 		setActiveFlag(flag);
 	};
 
-	const handleVote = async (workId: number) => {
+	const handleVote = async (newWorkId: number) => {
 		if (!user) {
 			setShowAuthModal(true);
 			return;
@@ -125,30 +125,67 @@ const WorksPage = () => {
 			return;
 		}
 
-		if (existingVotes.length > 0) {
-			const previousVote = existingVotes[0];
-			const { error: deleteError } = await supabase
-				.from("votes")
-				.delete()
-				.eq("vote_id", previousVote.vote_id);
+		let previousWorkId: any = null;
 
-			if (deleteError) {
-				console.error("Error deleting previous vote:", deleteError);
-				return;
+		// If the user has already voted for a different work, decrease its vote count
+		if (existingVotes.length > 0) {
+			previousWorkId = existingVotes[0].work_id;
+
+			if (previousWorkId !== newWorkId) {
+				setWorks((prevWorks) => {
+					return prevWorks.map((work) => {
+						if (work.work_id === previousWorkId) {
+							return { ...work, vote_count: work.vote_count - 1 };
+						}
+						return work;
+					});
+				});
+
+				const { error: deleteError } = await supabase
+					.from("votes")
+					.delete()
+					.eq("vote_id", existingVotes[0].vote_id);
+
+				if (deleteError) {
+					console.error("Error deleting previous vote:", deleteError);
+					return;
+				}
 			}
 		}
 
+		// Optimistically increase the vote count for the new work
+		setWorks((prevWorks) => {
+			return prevWorks.map((work) => {
+				if (work.work_id === newWorkId) {
+					return { ...work, vote_count: work.vote_count + 1 };
+				}
+				return work;
+			});
+		});
+
+		// Insert the new vote
 		const { error: voteError } = await supabase.from("votes").insert({
-			work_id: workId,
+			work_id: newWorkId,
 			user_id: user.id,
 			country: activeFlag,
 		});
 
 		if (voteError) {
 			console.error("Error voting:", voteError);
+			// Revert optimistic update if voting fails
+			setWorks((prevWorks) => {
+				return prevWorks.map((work) => {
+					if (work.work_id === newWorkId) {
+						return { ...work, vote_count: work.vote_count - 1 };
+					}
+					if (work.work_id === previousWorkId) {
+						return { ...work, vote_count: work.vote_count + 1 };
+					}
+					return work;
+				});
+			});
 		} else {
-			setVotedWorkId(workId);
-			alert("Vote recorded successfully!");
+			setVotedWorkId(newWorkId);
 		}
 	};
 
