@@ -92,6 +92,7 @@ const AuthModal: React.FC<AuthModalProps> = ({
 					type: "success",
 				});
 				handleClose();
+				window.location.reload();
 			}
 		} catch (error) {
 			const errorMessage = (error as Error).message;

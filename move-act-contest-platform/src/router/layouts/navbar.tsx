@@ -37,6 +37,7 @@ const MainNavbar: React.FC = () => {
 	const handleLogout = async () => {
 		await supabase.auth.signOut();
 		setUser(null);
+		window.location.reload();
 	};
 
 	useEffect(() => {
