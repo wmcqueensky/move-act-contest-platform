@@ -257,6 +257,7 @@ const AuthModal: React.FC<AuthModalProps> = ({
 							/>
 							<div className="text-center mb-4">
 								<a
+									href="#"
 									className="forgot-password-link text-center"
 									onClick={() => handleTabSwitch(RESET_PASSWORD_TAB)}
 								>
@@ -337,7 +338,9 @@ const AuthModal: React.FC<AuthModalProps> = ({
 					)}
 					{activeTab === RESET_PASSWORD_TAB && (
 						<Form onSubmit={handleForgotPassword}>
-							<h3 className="">Reset Password</h3>
+							<h3 className="reset-password-modal-header text-center">
+								Reset Password
+							</h3>
 
 							<Form.Control
 								type="email"
@@ -354,6 +357,7 @@ const AuthModal: React.FC<AuthModalProps> = ({
 
 							<div className="text-center mt-4">
 								<a
+									href="#"
 									className="forgot-password-link"
 									onClick={() => handleTabSwitch(LOGIN_TAB)}
 								>

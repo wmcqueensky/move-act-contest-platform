@@ -73,3 +73,7 @@
 .custom-toast .toast-body {
 	padding: 20px;
 }
+
+.reset-password-modal-header {
+	color: var(--bordo-color);
+}

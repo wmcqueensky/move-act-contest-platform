@@ -4,7 +4,15 @@ import HomePage from "../pages/home";
 import WorksPage from "../pages/works";
 import AboutPage from "../pages/about";
 import ContactPage from "../pages/contact";
-import { WORKS_PATH, ABOUT_PATH, CONTACT_PATH, HOME_PATH } from "./paths";
+import ResetPasswordPage from "../pages/reset-password";
+
+import {
+	WORKS_PATH,
+	ABOUT_PATH,
+	CONTACT_PATH,
+	HOME_PATH,
+	RESET_PASSWORD_PATH,
+} from "./paths";
 
 const Router = () => (
 	<Routes>
@@ -14,6 +22,7 @@ const Router = () => (
 			<Route path={ABOUT_PATH} element={<AboutPage />} />
 			<Route path={CONTACT_PATH} element={<ContactPage />} />
 		</Route>
+		<Route path={RESET_PASSWORD_PATH} element={<ResetPasswordPage />} />
 		<Route path="*" element={<Navigate to={{ pathname: HOME_PATH }} />} />
 	</Routes>
 );
