@@ -202,7 +202,6 @@
 }
 
 .vote-button:hover,
-.vote-button:focus,
 .vote-button:active {
 	background-color: var(--yellow-color) !important;
 	border-color: var(--yellow-color) !important;

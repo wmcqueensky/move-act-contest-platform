@@ -6,6 +6,7 @@ import { Modal, Button, Form, ButtonGroup } from "react-bootstrap";
 
 export const LOGIN_TAB = "login";
 export const REGISTER_TAB = "register";
+export const RESET_PASSWORD_TAB = "reset-password";
 
 interface AuthModalProps {
 	show: boolean;
@@ -19,8 +20,15 @@ const AuthModal: React.FC<AuthModalProps> = ({
 	activeTab: parentActiveTab,
 }) => {
 	const [activeTab, setActiveTab] = useState<
-		typeof LOGIN_TAB | typeof REGISTER_TAB
+		typeof LOGIN_TAB | typeof REGISTER_TAB | typeof RESET_PASSWORD_TAB
 	>(parentActiveTab);
+
+	const [forgotPasswordEmail, setForgotPasswordEmail] = useState("");
+	const [forgotPasswordToast, setForgotPasswordToast] = useState<{
+		show: boolean;
+		message: string;
+		type: "success" | "error";
+	}>({ show: false, message: "", type: "success" });
 
 	useEffect(() => {
 		if (show) {
@@ -28,7 +36,9 @@ const AuthModal: React.FC<AuthModalProps> = ({
 		}
 	}, [show, parentActiveTab]);
 
-	const handleTabSwitch = (tab: typeof LOGIN_TAB | typeof REGISTER_TAB) => {
+	const handleTabSwitch = (
+		tab: typeof LOGIN_TAB | typeof REGISTER_TAB | typeof RESET_PASSWORD_TAB
+	) => {
 		setActiveTab(tab);
 	};
 
@@ -145,6 +155,42 @@ const AuthModal: React.FC<AuthModalProps> = ({
 		}
 	}
 
+	// Forgot Password
+	async function handleForgotPassword(event: React.FormEvent<HTMLFormElement>) {
+		event.preventDefault();
+
+		try {
+			const { error } = await supabase.auth.resetPasswordForEmail(
+				forgotPasswordEmail,
+				{
+					redirectTo: window.location.origin + "/reset-password", // Replace with your redirect URL
+				}
+			);
+
+			if (error) {
+				setForgotPasswordToast({
+					show: true,
+					message: error.message,
+					type: "error",
+				});
+			} else {
+				setForgotPasswordToast({
+					show: true,
+					message: "Password reset link sent!",
+					type: "success",
+				});
+				handleTabSwitch(LOGIN_TAB);
+			}
+		} catch (error) {
+			const errorMessage = (error as Error).message;
+			setForgotPasswordToast({
+				show: true,
+				message: errorMessage,
+				type: "error",
+			});
+		}
+	}
+
 	return (
 		<>
 			<AuthToast
@@ -154,6 +200,15 @@ const AuthModal: React.FC<AuthModalProps> = ({
 				onClose={() => setToast({ ...toast, show: false })}
 			/>
 
+			<AuthToast
+				show={forgotPasswordToast.show}
+				message={forgotPasswordToast.message}
+				type={forgotPasswordToast.type}
+				onClose={() =>
+					setForgotPasswordToast({ ...forgotPasswordToast, show: false })
+				}
+			/>
+
 			<Modal
 				show={show}
 				onHide={handleClose}
@@ -161,26 +216,28 @@ const AuthModal: React.FC<AuthModalProps> = ({
 				centered
 			>
 				<Modal.Body className="auth-modal-content">
-					<ButtonGroup className="w-100 mb-4">
-						<Button
-							className={`w-50 ${
-								activeTab === LOGIN_TAB ? "auth-button" : "details-button"
-							}`}
-							onClick={() => handleTabSwitch(LOGIN_TAB)}
-						>
-							Login
-						</Button>
-						<Button
-							className={`w-50 ${
-								activeTab === REGISTER_TAB ? "auth-button" : "details-button"
-							}`}
-							onClick={() => handleTabSwitch(REGISTER_TAB)}
-						>
-							Register
-						</Button>
-					</ButtonGroup>
+					{activeTab !== RESET_PASSWORD_TAB && (
+						<ButtonGroup className="w-100 mb-4">
+							<Button
+								className={`w-50 ${
+									activeTab === LOGIN_TAB ? "auth-button" : "details-button"
+								}`}
+								onClick={() => handleTabSwitch(LOGIN_TAB)}
+							>
+								Login
+							</Button>
+							<Button
+								className={`w-50 ${
+									activeTab === REGISTER_TAB ? "auth-button" : "details-button"
+								}`}
+								onClick={() => handleTabSwitch(REGISTER_TAB)}
+							>
+								Register
+							</Button>
+						</ButtonGroup>
+					)}
 					{error && <div className="alert alert-danger">{error}</div>}
-					{activeTab === LOGIN_TAB ? (
+					{activeTab === LOGIN_TAB && (
 						<Form onSubmit={handleSignIn}>
 							<Form.Control
 								type="email"
@@ -199,7 +256,10 @@ const AuthModal: React.FC<AuthModalProps> = ({
 								required
 							/>
 							<div className="text-center mb-4">
-								<a href="#" className="forgot-password-link text-center">
+								<a
+									className="forgot-password-link text-center"
+									onClick={() => handleTabSwitch(RESET_PASSWORD_TAB)}
+								>
 									Forgot Password?
 								</a>
 							</div>
@@ -207,7 +267,8 @@ const AuthModal: React.FC<AuthModalProps> = ({
 								Login
 							</Button>
 						</Form>
-					) : (
+					)}
+					{activeTab === REGISTER_TAB && (
 						<Form onSubmit={handleSignUp}>
 							<Form.Group className="d-flex mb-4">
 								<Form.Control
@@ -272,6 +333,33 @@ const AuthModal: React.FC<AuthModalProps> = ({
 							<Button className="vote-button w-100" type="submit">
 								Register
 							</Button>
+						</Form>
+					)}
+					{activeTab === RESET_PASSWORD_TAB && (
+						<Form onSubmit={handleForgotPassword}>
+							<h3 className="">Reset Password</h3>
+
+							<Form.Control
+								type="email"
+								placeholder="Email"
+								className="mb-4 form-control"
+								value={forgotPasswordEmail}
+								onChange={(e) => setForgotPasswordEmail(e.target.value)}
+								required
+							/>
+
+							<Button className="vote-button w-100" type="submit">
+								Send Reset Link
+							</Button>
+
+							<div className="text-center mt-4">
+								<a
+									className="forgot-password-link"
+									onClick={() => handleTabSwitch(LOGIN_TAB)}
+								>
+									Back to Login
+								</a>
+							</div>
 						</Form>
 					)}
 				</Modal.Body>

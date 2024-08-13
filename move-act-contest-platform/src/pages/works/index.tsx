@@ -216,6 +216,7 @@ const WorksPage = () => {
 
 			<Container className="voting-info-container">
 				<h1 className="voting-info-header text-center mb-5">How to vote?</h1>
+
 				<ul>
 					<li>
 						<h3>
@@ -253,6 +254,7 @@ const WorksPage = () => {
 					</li>
 				</ul>
 			</Container>
+
 			<Container className="flag-container text-center">
 				<button
 					className={`flag-button ${activeFlag === "Poland" ? "active" : ""}`}

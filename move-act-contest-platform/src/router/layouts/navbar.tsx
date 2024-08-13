@@ -68,8 +68,6 @@ const MainNavbar: React.FC = () => {
 		};
 	}, []);
 
-	console.log(user);
-
 	return (
 		<>
 			<Navbar fixed="top" expand="md" className="navbar" expanded={expanded}>
