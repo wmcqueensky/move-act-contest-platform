@@ -1,0 +1,10 @@
+.about-image {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 55vh;
+	width: 100%;
+	background: var(--yellow-color) url("images/about-image.png") no-repeat center;
+	background-blend-mode: screen;
+	background-size: cover;
+}

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Form, Button, Alert } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 import AuthToast from "../../components/auth/auth-toast.tsx";
 import supabase from "../../config/supabase-client.ts";
 
@@ -58,7 +58,6 @@ const ResetPasswordPage = () => {
 				justifyContent: "center",
 				alignItems: "center",
 				height: "100vh",
-				backgroundColor: "white",
 			}}
 		>
 			<div
@@ -67,6 +66,7 @@ const ResetPasswordPage = () => {
 					maxWidth: "400px",
 					padding: "20px",
 					boxShadow: "0 0 10px rgba(0,0,0,0.1)",
+					backgroundColor: "var(--white-color)",
 				}}
 			>
 				<h3 className="reset-password-modal-header text-center">

@@ -5,7 +5,7 @@ import "./styles.css";
 const HomePage = () => {
 	return (
 		<>
-			<Container fluid className="home-image mb-5">
+			<Container fluid className="home-image text-center mb-5">
 				<Col className="text-center">
 					<h1 className="welcome-header display-1">
 						PHOTOVOICE CONTEST <br /> AND EXHIBITION PLATFORM
