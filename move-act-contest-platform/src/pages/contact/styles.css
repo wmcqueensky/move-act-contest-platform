@@ -1,0 +1,39 @@
+.contact-image {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 55vh;
+	width: 100%;
+	background: var(--yellow-color) url("images/contact-image.png") no-repeat
+		center;
+	background-blend-mode: screen;
+	background-size: cover;
+}
+
+.rules-contact-button {
+	padding: 0.75rem 1.5rem;
+	height: 90px;
+	width: 280px;
+	font-size: 1.3rem;
+	border-radius: 20px;
+	background-color: var(--yellow-color);
+	border: none;
+	color: var(--bordo-color);
+	font-weight: 500;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	line-height: normal;
+	box-shadow: none;
+}
+
+.rules-contact-button:hover {
+	background-color: var(--bordo-color) !important;
+	color: var(--yellow-color);
+	box-shadow: none;
+}
+
+.mb-7 {
+	margin-bottom: 6.2rem;
+}

@@ -555,7 +555,7 @@ const AboutPage = () => {
 							<h6 style={{ fontWeight: "bold" }}>
 								Eligibility to participate:
 							</h6>
-							<p>
+							<div>
 								<ul>
 									<li>
 										It will be checked whether the participant is between 18 and
@@ -564,12 +564,12 @@ const AboutPage = () => {
 										Lithuania).
 									</li>
 								</ul>
-							</p>
+							</div>
 						</div>
 
 						<div>
 							<h6 style={{ fontWeight: "bold" }}>Completeness of the entry:</h6>
-							<p>
+							<div>
 								<ul>
 									<li>
 										The image has a{" "}
@@ -597,7 +597,7 @@ const AboutPage = () => {
 										<span style={{ textDecoration: "underline" }}>theme</span>.
 									</li>
 								</ul>
-							</p>
+							</div>
 						</div>
 
 						<p>
