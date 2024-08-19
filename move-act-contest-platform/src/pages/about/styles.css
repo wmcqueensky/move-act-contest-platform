@@ -8,3 +8,46 @@
 	background-blend-mode: screen;
 	background-size: cover;
 }
+
+.about-introduction {
+	color: var(--bordo-color);
+}
+
+.accordion-main-header {
+	color: var(--bordo-color);
+	font-weight: 800;
+	font-size: 1.2rem;
+}
+
+.accordion-header button {
+	color: var(--gray-color);
+	font-weight: 500;
+}
+
+.accordion-header button:hover {
+	background-color: var(--bordo-color);
+	color: var(--yellow-color);
+}
+
+.accordion-header button:focus {
+	box-shadow: none;
+}
+
+.accordion-header button:not(.collapsed) {
+	background-color: var(--bordo-color);
+	color: var(--yellow-color);
+}
+
+.accordion-body {
+	text-align: justify;
+	color: var(--gray-color);
+	background-color: var(--very-light-yellow-color);
+}
+
+.rules-button {
+	color: var(--bordo-color);
+}
+
+.rules-button:hover {
+	color: var(--yellow-color);
+}

@@ -1,84 +1,119 @@
-import { Container, Accordion } from "react-bootstrap";
+import { Container, Accordion, Table } from "react-bootstrap";
+import rulesPdf from "./docs/rules.pdf";
 import "./styles.css";
 
 const AboutPage = () => {
 	return (
-		<div className="text-center">
-			<Container fluid className="about-image text-center x">
+		<div className="works-background text-center ">
+			<Container fluid className="about-image text-center mb-5">
 				<h1 className="welcome-header display-1">
 					EVERYTHING YOU NEED TO <br />
 					KNOW ABOUT THE CONTEST
 				</h1>
 			</Container>
 
-			<h4 className="about-introduction mb-5">
-				Welcome to the Move&Act Photo-Voice Contest, part of the Erasmus+
-				project "Move & Act - Empower Youth through Entrepreneurial and Digital
-				Skills."
-			</h4>
+			<h2 className="about-introduction mb-5">
+				Welcome to the Move&Act&nbsp;
+				<span style={{ color: "var(--yellow-color)" }}>
+					Photo-Voice Contest
+				</span>
+				! Part of the Erasmus+ project <br />
+				<span style={{ color: "var(--orange-color)" }}>
+					"Move & Act - Empower Youth through Entrepreneurial and Digital
+					Skills."
+				</span>
+			</h2>
 
-			<h6>General Information</h6>
+			<h6 className="accordion-main-header">General Information</h6>
 			<Accordion
 				className="text-left mb-5"
-				style={{ maxWidth: "800px", margin: "0 auto" }}
+				style={{ maxWidth: "900px", margin: "0 auto" }}
+				flush
 			>
 				<Accordion.Item eventKey="0">
-					<Accordion.Header>
+					<Accordion.Header className="accordion-header">
 						What is the The Move&Act Photo-Voice Contest?
 					</Accordion.Header>
-					<Accordion.Body>
-						The Move&Act Photo-Voice Contest is part of the Erasmus+ project
-						"Move & Act- Empower Youth through Entrepreneurial and Digital
-						Skills" This initiative aims to develop digital, creative and
+					<Accordion.Body className="accordion-body">
+						The Move&Act
+						<span style={{ fontWeight: "bold" }}> Photo-Voice Contest</span> is
+						part of the Erasmus+ project{" "}
+						<span style={{ fontWeight: "bold" }}>
+							"Move & Act- Empower Youth through Entrepreneurial and Digital
+							Skills"
+						</span>{" "}
+						This initiative aims to develop digital, creative and
 						entrepreneurial skills among young people, especially those who are
 						at risk due to disabilities, migration status or as NEETs (Not in
-						Education, Employment, or Training). The contest provides a platform
-						for participants to express their challenges and experiences through
-						photography, thereby improving their employability, fostering a
-						European identity and encouraging interaction with the local,
-						national and European community.
+						Education, Employment, or Training). The contest provides a{" "}
+						<span style={{ fontWeight: "bold" }}>
+							platform for participants to express their challenges and
+							experiences through photography
+						</span>
+						, thereby improving their employability, fostering a European
+						identity and{" "}
+						<span style={{ fontWeight: "bold" }}>encouraging interaction</span>{" "}
+						with the local, national and European community.
 					</Accordion.Body>
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="1">
-					<Accordion.Header>Purpose of the Contest</Accordion.Header>
+					<Accordion.Header className="accordion-header">
+						Purpose of the Contest
+					</Accordion.Header>
 					<Accordion.Body>
-						Photo-Voice is a qualitative research method that combines
-						photography and storytelling to document and address social issues.
-						This method was developed in the 1990s by Caroline Wang and Mary Ann
-						Burris and enables communities to share their experiences and make
-						their voices heard. Participants are invited to take photos that
-						reflect their experiences, challenges or perspectives on specific
-						topics such as poverty, unemployment, education, environmental
-						issues and more. These photos will be accompanied by narratives that
-						contextualise the images and provide deeper insight into community
-						issues.
+						<p>
+							Photo-Voice is a qualitative research method that combines
+							<span style={{ fontWeight: "bold" }}> photography</span> and{" "}
+							<span style={{ fontWeight: "bold" }}>storytelling</span> to
+							document and address social issues. This method was developed in
+							the 1990s by Caroline Wang and Mary Ann Burris and enables
+							communities to{" "}
+							<span style={{ fontWeight: "bold" }}>
+								share their experiences
+							</span>{" "}
+							and{" "}
+							<span style={{ fontWeight: "bold" }}>
+								make their voices heard
+							</span>
+							.{" "}
+						</p>
+
+						<p>
+							Participants are{" "}
+							<span style={{ fontWeight: "bold" }}>invited to take photos</span>{" "}
+							that reflect their experiences, challenges or perspectives on
+							specific topics such as poverty, unemployment, education,
+							environmental issues and more. These photos will be accompanied by
+							narratives that{" "}
+							<span style={{ fontWeight: "bold" }}>
+								contextualise the images and provide deeper insight
+							</span>{" "}
+							into community issues.
+						</p>
 					</Accordion.Body>
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="2">
-					<Accordion.Header>Themes of the Contest</Accordion.Header>
-					<Accordion.Body>
+					<Accordion.Header className="accordion-header">
+						Themes of the Contest
+					</Accordion.Header>
+					<Accordion.Body className="accordion-body">
 						Participants must submit photos that fit one of the following
 						themes:
 						<ul>
-							<li>Poverty</li>
-
-							<li>Unemployment</li>
-
-							<li>Education</li>
-
-							<li>
+							<li style={{ fontWeight: "bold" }}>Poverty</li>
+							<li style={{ fontWeight: "bold" }}>Unemployment</li>
+							<li style={{ fontWeight: "bold" }}>Education</li>
+							<li style={{ fontWeight: "bold" }}>
 								Environment (protection and/or degradation of biodiversity)
 							</li>
-
-							<li>Problems in Europe</li>
-
-							<li>Accessibility</li>
-
-							<li>Realities of the different generations</li>
-
-							<li>
+							<li style={{ fontWeight: "bold" }}>Problems in Europe</li>
+							<li style={{ fontWeight: "bold" }}>Accessibility</li>
+							<li style={{ fontWeight: "bold" }}>
+								Realities of the different generations
+							</li>
+							<li style={{ fontWeight: "bold" }}>
 								Introspective images (e.g. self-portraits, LGBTQ+, mental
 								health)
 							</li>
@@ -87,226 +122,403 @@ const AboutPage = () => {
 				</Accordion.Item>
 			</Accordion>
 
-			<h6>Admission Criteria</h6>
+			<h6 className="accordion-main-header">Admission Criteria</h6>
 			<Accordion
 				className="text-left mb-5"
-				style={{ maxWidth: "800px", margin: "0 auto" }}
+				style={{ maxWidth: "900px", margin: "0 auto" }}
 			>
 				<Accordion.Item eventKey="0">
-					<Accordion.Header>Age</Accordion.Header>
-					<Accordion.Body>
-						Eligible participants must be between 18 and 30 years old at the
-						start of the contest.
+					<Accordion.Header className="accordion-header">Age</Accordion.Header>
+					<Accordion.Body className="accordion-body">
+						Eligible participants must be between{" "}
+						<span style={{ fontWeight: "bold" }}>18 and 30 years old</span> at
+						the start of the contest.
 					</Accordion.Body>
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="1">
-					<Accordion.Header>Nationality</Accordion.Header>
-					<Accordion.Body>
-						Eligible participants must reside in one of the participating
-						European countries: Poland, Italy, Spain, Greece and Lithuania.
+					<Accordion.Header className="accordion-header">
+						Nationality
+					</Accordion.Header>
+					<Accordion.Body className="accordion-body">
+						Eligible participants must{" "}
+						<span style={{ fontWeight: "bold" }}>reside</span> in one of the
+						participating European countries:{" "}
+						<span style={{ fontWeight: "bold" }}>
+							Poland, Italy, Spain, Greece
+						</span>{" "}
+						and <span style={{ fontWeight: "bold" }}>Lithuania</span>.
 					</Accordion.Body>
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="2">
-					<Accordion.Header>Traits</Accordion.Header>
-					<Accordion.Body>
+					<Accordion.Header className="accordion-header">
+						Traits
+					</Accordion.Header>
+					<Accordion.Body className="accordion-body">
 						Eligible participants must be interested in raising public awareness
 						of local community challenges.
 					</Accordion.Body>
 				</Accordion.Item>
 			</Accordion>
 
-			<h6>Criteria for Submission</h6>
+			<h6 className="accordion-main-header">Criteria for Submission</h6>
 			<Accordion
 				className="text-left mb-5"
-				style={{ maxWidth: "800px", margin: "0 auto" }}
+				style={{ maxWidth: "900px", margin: "0 auto" }}
 			>
 				<Accordion.Item eventKey="0">
-					<Accordion.Header>Technical Requirements</Accordion.Header>
-					<Accordion.Body>
+					<Accordion.Header className="accordion-header">
+						Technical Requirements
+					</Accordion.Header>
+					<Accordion.Body className="accordion-body">
 						<ul>
 							<li>
-								Only 1 photo must be submitted in .jpg or .png format with a
-								resolution of 1920x1080 pixels.
+								<span style={{ fontWeight: "bold" }}>
+									Only 1 photo must be submitted
+								</span>{" "}
+								in <span style={{ fontWeight: "bold" }}>.jpg</span> or{" "}
+								<span style={{ fontWeight: "bold" }}>.png</span> format with a
+								resolution of{" "}
+								<span style={{ fontWeight: "bold" }}>1920x1080 pixels</span>.
 							</li>
 							<li>
-								A (1) 3D file (.stl) of the photo should also be submitted (no
-								larger than 10 MB).
+								A (1){" "}
+								<span style={{ fontWeight: "bold" }}>
+									{" "}
+									3D file (.stl) of the photo
+								</span>{" "}
+								should also be submitted{" "}
+								<span style={{ fontWeight: "bold" }}>
+									(no larger than 10 MB)
+								</span>
+								.
 							</li>
 						</ul>
 					</Accordion.Body>
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="1">
-					<Accordion.Header>Submission Method</Accordion.Header>
-					<Accordion.Body>
-						Entries should be submitted via email and photos should be sent via
-						a link to a shared drive folder.
+					<Accordion.Header className="accordion-header">
+						Submission Method
+					</Accordion.Header>
+					<Accordion.Body className="accordion-body">
+						Entries should be submitted{" "}
+						<span style={{ fontWeight: "bold" }}>via email</span> and{" "}
+						<span style={{ fontWeight: "bold" }}>photos</span> should{" "}
+						<span style={{ fontWeight: "bold" }}>be sent via a link</span> to a
+						shared drive folder.
 					</Accordion.Body>
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="2">
-					<Accordion.Header>Accompanying Information</Accordion.Header>
-					<Accordion.Body>
-						Include a title (up to 5 words), a short bio of the author (250-350
-						words) and a brief description of the photo (250-500 words). The
-						message must also explicitly state which of the competition themes
-						the photo belongs to.
+					<Accordion.Header className="accordion-header">
+						Accompanying Information
+					</Accordion.Header>
+					<Accordion.Body className="accordion-body">
+						Include a <span style={{ fontWeight: "bold" }}>title</span> (up to{" "}
+						<span style={{ fontWeight: "bold" }}>5 words</span>), a{" "}
+						<span style={{ fontWeight: "bold" }}>short bio</span> of the author
+						(250-350 words) and{" "}
+						<span style={{ fontWeight: "bold" }}>
+							a brief description of the photo
+						</span>{" "}
+						(250-500 words). The message must also explicitly state which of the
+						competition <span style={{ fontWeight: "bold" }}>themes</span> the
+						photo belongs to.
 					</Accordion.Body>
 				</Accordion.Item>
 			</Accordion>
 
-			<h6>Course of Contest</h6>
+			<h6 className="accordion-main-header">Course of Contest</h6>
 			<Accordion
 				className="text-left mb-5"
-				style={{ maxWidth: "800px", margin: "0 auto" }}
+				style={{ maxWidth: "900px", margin: "0 auto" }}
 			>
 				<Accordion.Item eventKey="0">
-					<Accordion.Header>Submission Phase</Accordion.Header>
-					<Accordion.Body>
+					<Accordion.Header className="accordion-header">
+						Submission Phase
+					</Accordion.Header>
+					<Accordion.Body className="accordion-body">
 						<p>
-							Participants must submit their photo (.jpg or .png) and their .stl
-							file by email [WHEN].
+							Participants must submit their{" "}
+							<span style={{ fontWeight: "bold" }}>photo</span> (.jpg or .png)
+							and their{" "}
+							<span style={{ fontWeight: "bold" }}>.stl file by email</span>{" "}
+							<span style={{ fontWeight: "bold", color: "var(--bordo-color)" }}>
+								[WHEN]
+							</span>
+							.
 						</p>
 
-						<p>
+						<p
+							style={{
+								backgroundColor: "var(--bordo-color)",
+								color: "var(--yellow-color)",
+								padding: "10px",
+								paddingLeft: "4px",
+								borderRadius: "10px",
+							}}
+						>
 							In this phase, participants prepare their entries, access the
-							contest guidelines and resources, and receive personalised support
-							if needed.
+							contest <span style={{ fontWeight: "bold" }}>guidelines</span> and
+							resources, and receive personalised support{" "}
+							<span style={{ fontWeight: "bold" }}>if needed</span>.
 						</p>
 
 						<p>
 							The key dates for judging and award announcements will be
-							communicated to participants via the project's official channels:
-							[Facebook , Instagram and WEBSITE].
+							communicated to participants via the project's official channels:{" "}
+							<span style={{ fontWeight: "bold", color: "var(--bordo-color)" }}>
+								[Facebook , Instagram and WEBSITE]
+							</span>
+							.
 						</p>
 					</Accordion.Body>
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="1">
-					<Accordion.Header>Judging Phase</Accordion.Header>
-					<Accordion.Body>
+					<Accordion.Header className="accordion-header">
+						Judging Phase
+					</Accordion.Header>
+					<Accordion.Body className="accordion-body">
 						<p>
-							The jury will select 5 finalists from each participating country,
-							resulting in a total of 25 finalist photos. The finalists will be
-							announced via the official channels of the project: [Facebook ,
-							Instagram and WEBSITE/platform]
+							The <span style={{ fontWeight: "bold" }}>jury</span> will select{" "}
+							<span style={{ fontWeight: "bold" }}>5 finalists from each</span>{" "}
+							participating country, resulting in a{" "}
+							<span style={{ fontWeight: "bold" }}>
+								total of 25 finalist photos
+							</span>
+							. The finalists will be announced via the official channels of the
+							project:{" "}
+							<span style={{ fontWeight: "bold", color: "var(--bordo-color)" }}>
+								[Facebook, Instagram and WEBSITE/platform]
+							</span>
+							.
 						</p>
 
 						<p>
-							These 25 photos will be uploaded to [the platform] and showcased
-							as part of the contest's online exhibition.
+							These <span style={{ fontWeight: "bold" }}>25 photos</span> will
+							be uploaded to{" "}
+							<span style={{ fontWeight: "bold", color: "var(--bordo-color)" }}>
+								"Works" section at this platform
+							</span>{" "}
+							and showcased as part of the contest's{" "}
+							<span style={{ fontWeight: "bold" }}>online exhibition</span>.
 						</p>
 					</Accordion.Body>
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="2">
-					<Accordion.Header>Photo-Voice Exhibition</Accordion.Header>
-					<Accordion.Body>
-						The (25) finalists' works will be presented in the online exhibition
-						on this website in the "Works" section.
+					<Accordion.Header className="accordion-header">
+						Photo-Voice Exhibition
+					</Accordion.Header>
+					<Accordion.Body className="accordion-body">
+						The (25) <span style={{ fontWeight: "bold" }}>finalists'</span>{" "}
+						works will be presented in the{" "}
+						<span style={{ fontWeight: "bold" }}>
+							online exhibition on this
+						</span>{" "}
+						website{" "}
+						<span style={{ fontWeight: "bold", color: "var(--bordo-color)" }}>
+							in the "Works" section
+						</span>
+						.
 					</Accordion.Body>
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="3">
-					<Accordion.Header>Voting Phase</Accordion.Header>
-					<Accordion.Body>
+					<Accordion.Header className="accordion-header">
+						Voting Phase
+					</Accordion.Header>
+					<Accordion.Body className="accordion-body">
 						<p>
-							Anyone with access to the contest platform can participate in
-							voting. Each voter can cast one vote for their favorite work from
-							each participating country. The public voting period will take
-							place during [specified voting period].
+							Anyone with access to the contest platform can{" "}
+							<span style={{ fontWeight: "bold" }}>participate in voting</span>.
+							Each voter can cast{" "}
+							<span style={{ fontWeight: "bold" }}>one vote</span> for their
+							favorite work from{" "}
+							<span style={{ fontWeight: "bold" }}>each</span> participating{" "}
+							<span style={{ fontWeight: "bold" }}>country</span>. The public
+							voting period will take place during{" "}
+							<span style={{ fontWeight: "bold", color: "var(--bordo-color)" }}>
+								[specified voting period]
+							</span>
+							.
 						</p>
 
 						<p>
-							The 5 winners will be determined based on the highest number of
-							votes received.
+							The <span style={{ fontWeight: "bold" }}>5 winners</span> will be
+							determined based on the highest number of votes received.
 						</p>
 					</Accordion.Body>
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="4">
-					<Accordion.Header>Prizes and Awards</Accordion.Header>
-					<Accordion.Body>
-						<p>5 winners will receive recognition for their entries.</p>
+					<Accordion.Header className="accordion-header">
+						Prizes and Awards
+					</Accordion.Header>
+					<Accordion.Body className="accordion-body">
+						<p>
+							<span style={{ fontWeight: "bold" }}>5 winners</span> will receive
+							recognition for their entries.
+						</p>
 
 						<p>
-							The winning photo from each country (Poland, Italy, Spain, Greece,
-							and Lithuania) will be specially recognised by being 3D printed as
-							a lithophane and exhibited during national events. These events
-							will celebrate the culmination of the project and the contest.
+							The{" "}
+							<span style={{ fontWeight: "bold" }}>
+								winning photo from each country
+							</span>{" "}
+							<span style={{ textDecoration: "underline" }}>
+								(Poland, Italy, Spain, Greece, and Lithuania){" "}
+							</span>
+							will be specially recognised by being{" "}
+							<span style={{ fontWeight: "bold" }}>
+								3D printed as a lithophane{" "}
+							</span>
+							and exhibited during national events. These events will celebrate
+							the culmination of the project and the contest.
 						</p>
 					</Accordion.Body>
 				</Accordion.Item>
 			</Accordion>
 
-			<h6>Instructions for Submitting Entries</h6>
+			<h6 className="accordion-main-header">
+				Instructions for Submitting Entries
+			</h6>
 			<Accordion
 				className="text-left mb-5"
-				style={{ maxWidth: "800px", margin: "0 auto" }}
+				style={{ maxWidth: "900px", margin: "0 auto" }}
 			>
 				<Accordion.Item eventKey="0">
-					<Accordion.Header>Email Contact</Accordion.Header>
-					<Accordion.Body>
+					<Accordion.Header className="accordion-header">
+						Email Contact
+					</Accordion.Header>
+					<Accordion.Body className="accordion-body">
 						<p>
 							In order to be eligible to participate and avoid disqualification,
-							participants must adhere to the following guidelines when
-							submitting their entries by email:
+							participants{" "}
+							<span style={{ fontWeight: "bold" }}>must adhere</span> to the
+							following guidelines when{" "}
+							<span style={{ fontWeight: "bold" }}>
+								submitting their entries
+							</span>{" "}
+							by email:
 						</p>
 
-						<p>moveandact2022@gmail.com</p>
+						<p
+							style={{
+								backgroundColor: "var(--bordo-color)",
+								color: "var(--yellow-color)",
+								padding: "10px",
+								borderRadius: "10px",
+								fontWeight: "bold",
+							}}
+							className="text-center"
+						>
+							moveandact2022@gmail.com
+						</p>
 					</Accordion.Body>
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="1">
-					<Accordion.Header>Email Subject</Accordion.Header>
-					<Accordion.Body>
+					<Accordion.Header className="accordion-header">
+						Email Subject
+					</Accordion.Header>
+					<Accordion.Body className="accordion-body">
 						<p>
 							Participants must use the following format for the subject of
 							their email:
 						</p>
 
-						<p>
+						<p
+							style={{
+								backgroundColor: "var(--yellow-color)",
+								padding: "10px",
+								borderRadius: "10px",
+								fontWeight: "bold",
+							}}
+							className="text-center"
+						>
 							[country code]_[contest entry]_[participant's name and surname]
 						</p>
 
-						<p>
-							Country codes: Spain: ES Greece: GR Lithuania: LT Poland: PL
-							Italy: IT
-						</p>
+						<div>
+							<h6 style={{ fontWeight: "bold" }}>Country codes:</h6>
+							<ul>
+								<li>Spain: ES</li>
+								<li>Greece: GR</li>
+								<li>Lithuania: LT</li>
+								<li>Poland: PL</li>
+								<li>Italy: IT</li>
+							</ul>
+						</div>
 
-						<p>
-							Example: ES_Contest Entry_Manuel García (for participants from
-							Spain) IT_Contest Entry_Giovanna Russo (for participants from
-							Italy)
-						</p>
+						<div>
+							<h6 style={{ fontWeight: "bold" }}>Example:</h6>
+							ES_Contest Entry_Manuel García (for participants from Spain){" "}
+							<br />
+							IT_Contest Entry_Giovanna Russo (for participants from Italy)
+						</div>
 					</Accordion.Body>
 				</Accordion.Item>
+
 				<Accordion.Item eventKey="2">
-					<Accordion.Header>File Submission</Accordion.Header>
+					<Accordion.Header className="accordion-header">
+						File Submission
+					</Accordion.Header>
 					<Accordion.Body>
 						<p>
-							The files, i.e. the photo and .stl file, should be uploaded to a
-							Google Drive folder. The link to this folder should be included in
-							the email and shared with the email:
+							The files, i.e.{" "}
+							<span style={{ fontWeight: "bold" }}>
+								the photo and .stl file
+							</span>
+							, should be uploaded to a Google Drive folder. The{" "}
+							<span style={{ fontWeight: "bold" }}>link to this folder</span>{" "}
+							should be included in the email and{" "}
+							<span style={{ fontWeight: "bold" }}>shared with the email</span>:
 						</p>
 
-						<p>moveandact2022@gmail.com</p>
+						<p
+							style={{
+								backgroundColor: "var(--bordo-color)",
+								color: "var(--yellow-color)",
+								padding: "10px",
+								borderRadius: "10px",
+								fontWeight: "bold",
+							}}
+							className="text-center"
+						>
+							moveandact2022@gmail.com
+						</p>
 
 						<p>The files must be named in the following format:</p>
-						<p>[country code]_[file format]_[participant's name and surname]</p>
-
-						<p>
-							File codes: For photos: use "jpg" or "png" For .stl files (3D
-							models): "stl"
+						<p
+							style={{
+								backgroundColor: "var(--yellow-color)",
+								padding: "10px",
+								borderRadius: "10px",
+								fontWeight: "bold",
+							}}
+							className="text-center"
+						>
+							[country code]_[file format]_[participant's name and surname]
 						</p>
 
-						<p>
-							Example: IT_jpg_Giovanna Russo (for a photo submission from Italy)
+						<div className="mb-3">
+							<h6 style={{ fontWeight: "bold" }}>File codes:</h6>
+							For photos: use "<span style={{ fontWeight: "bold" }}>jpg</span>"
+							or "<span style={{ fontWeight: "bold" }}>png</span>" <br />
+							For .stl files (3D models): "
+							<span style={{ fontWeight: "bold" }}>stl</span>"
+						</div>
+
+						<div>
+							<h6 style={{ fontWeight: "bold" }}>Example:</h6>
+							IT_jpg_Giovanna Russo (for a photo submission from Italy) <br />
 							LT_stl_Emiljia Kazlauskaite (for the submission of an .stl file
 							from Lithuania)
-						</p>
+						</div>
 
 						<p>
 							These naming conventions help to ensure that submissions are
@@ -316,102 +528,397 @@ const AboutPage = () => {
 				</Accordion.Item>
 			</Accordion>
 
-			<h6>Key dates and phases</h6>
+			<h6 className="accordion-main-header">Judging Procedure</h6>
 			<Accordion
 				className="text-left mb-5"
-				style={{ maxWidth: "800px", margin: "0 auto" }}
+				style={{ maxWidth: "900px", margin: "0 auto" }}
 			>
 				<Accordion.Item eventKey="0">
-					<Accordion.Header>Contest Overview</Accordion.Header>
-					<Accordion.Body>
-						Learn about the contest, its purpose, and what you can expect by
-						participating.
+					<Accordion.Header className="accordion-header">
+						Step 1: Initial Screening
+					</Accordion.Header>
+					<Accordion.Body className="accordion-body">
+						<p
+							style={{
+								backgroundColor: "var(--bordo-color)",
+								color: "var(--yellow-color)",
+								padding: "10px",
+								borderRadius: "10px",
+								fontWeight: "bold",
+							}}
+						>
+							All entries will undergo an initial screening to ensure tht they
+							fulfill the basic entry and submission criteria.
+						</p>
+
+						<div>
+							<h6 style={{ fontWeight: "bold" }}>
+								Eligibility to participate:
+							</h6>
+							<p>
+								<ul>
+									<li>
+										It will be checked whether the participant is between 18 and
+										30 years old and is a national/resident in one of the
+										participating countries (Poland, Italy, Spain, Greece,
+										Lithuania).
+									</li>
+								</ul>
+							</p>
+						</div>
+
+						<div>
+							<h6 style={{ fontWeight: "bold" }}>Completeness of the entry:</h6>
+							<p>
+								<ul>
+									<li>
+										The image has a{" "}
+										<span style={{ fontWeight: "bold" }}>title</span> and
+										includes an{" "}
+										<span style={{ fontWeight: "bold" }}>author bio</span> with
+										a{" "}
+										<span style={{ fontWeight: "bold" }}>
+											description or story
+										</span>
+										of the image.
+									</li>
+									<li>
+										The uploaded files are in the{" "}
+										<span style={{ fontWeight: "bold" }}>
+											required formats{" "}
+										</span>
+										(photo: <span style={{ fontWeight: "bold" }}>.jpg </span>
+										or <span style={{ fontWeight: "bold" }}>.png </span>; 3D
+										file: <span style={{ fontWeight: "bold" }}>.stl </span>
+										).
+									</li>
+									<li>
+										The image matches the selected{" "}
+										<span style={{ textDecoration: "underline" }}>theme</span>.
+									</li>
+								</ul>
+							</p>
+						</div>
+
+						<p>
+							Only entries that pass this first check will make it to the next
+							round.
+						</p>
+					</Accordion.Body>
+				</Accordion.Item>
+
+				<Accordion.Item eventKey="1">
+					<Accordion.Header className="accordion-header">
+						Step 2: Selection of Finalists
+					</Accordion.Header>
+					<Accordion.Body className="accordion-body">
+						<p
+							style={{
+								backgroundColor: "var(--bordo-color)",
+								color: "var(--yellow-color)",
+								padding: "10px",
+								borderRadius: "10px",
+								fontWeight: "bold",
+							}}
+						>
+							Entries will be evaluated by a jury of seven professionals based
+							on the following criteria:
+						</p>
+
+						<ul>
+							<li>
+								<span style={{ fontWeight: "bold" }}>Visual Impact</span> (30
+								points): The striking and memorable overall effect of the image.
+							</li>
+							<li>
+								<span style={{ fontWeight: "bold" }}>Creativity</span> (30
+								points): Originality of composition, lighting and subject
+								matter.
+							</li>
+							<li>
+								<span style={{ fontWeight: "bold" }}>Storytelling Ability</span>{" "}
+								(30 points): The ability of the photograph and written
+								description to convey a story or message.
+							</li>
+							<li>
+								<span style={{ fontWeight: "bold" }}>Technical Skills</span> (10
+								points): Evaluation of technical aspects such as image
+								composition, focus and use of light or editing.
+							</li>
+						</ul>
+
+						<p>
+							Each criterion is scored from{" "}
+							<span style={{ fontWeight: "bold" }}>6 (Fair)</span> to{" "}
+							<span style={{ fontWeight: "bold" }}>30 (Excellent)</span> or{" "}
+							<span style={{ fontWeight: "bold" }}>2 (Fair)</span> to{" "}
+							<span style={{ fontWeight: "bold" }}>10 (Excellent)</span>, with a
+							maximum of{" "}
+							<span style={{ fontWeight: "bold" }}>100 points possible</span>.
+						</p>
 					</Accordion.Body>
 				</Accordion.Item>
 			</Accordion>
 
-			<h6>Support</h6>
+			<h6 className="accordion-main-header">Key Dates and Phases</h6>
 			<Accordion
 				className="text-left mb-5"
-				style={{ maxWidth: "800px", margin: "0 auto" }}
+				style={{ maxWidth: "900px", margin: "0 auto" }}
 			>
 				<Accordion.Item eventKey="0">
-					<Accordion.Header>Guidelines</Accordion.Header>
-					<Accordion.Body>
+					<Accordion.Header className="accordion-header">
+						Contest Overview
+					</Accordion.Header>
+					<Accordion.Body className="accordion-body">
+						<p>
+							To ensure a smooth participation process, it's important to know
+							the important dates and phases of the Move&Act Photo-Voice
+							Contest. Below are the most important dates that participants need
+							to be aware of.
+						</p>
+
+						<Table bordered hover responsive="md" style={{ border: "none" }}>
+							<thead>
+								<tr>
+									<th
+										style={{
+											backgroundColor: "black",
+											color: "#fff",
+											border: "none",
+										}}
+									>
+										Phase
+									</th>
+									<th
+										style={{
+											backgroundColor: "black",
+											color: "#fff",
+											border: "none",
+										}}
+									>
+										Action
+									</th>
+									<th
+										style={{
+											backgroundColor: "black",
+											color: "#fff",
+											border: "none",
+										}}
+									>
+										Date
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Submission/ Orientation Phase</td>
+									<td>
+										Participants prepare their entries, access the contest
+										guidelines and resources, and receive personalised support
+										if needed.
+									</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>Judging Period</td>
+									<td>
+										The jury reviews all entries and selects the finalists.
+									</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>Announcement of the Finalists</td>
+									<td>
+										The 25 finalists are announced on the project's Social Media
+										channels.
+									</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>Online Exhibition</td>
+									<td>
+										The works of the selected finalists are presented on the
+										contest platform so that the public can view and vote for
+										their favourite works.
+									</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>Voting Period</td>
+									<td>
+										Participants are encouraged to engage, share the news and
+										motivate people to vote.
+									</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>National Winners: Announcement</td>
+									<td>
+										The 5 national winners are announced on the contest platform
+										and Social Media channels. Each winner is also notified by
+										email.
+									</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>Award Ceremony</td>
+									<td>
+										The project partners organise an event in each country and
+										present the winners' printed works (lithophane format). The
+										winners (are welcome to) attend the event(s) and share their
+										experiences.
+									</td>
+									<td></td>
+								</tr>
+							</tbody>
+						</Table>
+					</Accordion.Body>
+				</Accordion.Item>
+			</Accordion>
+
+			<h6 className="accordion-main-header">Support</h6>
+			<Accordion
+				className="text-left mb-5"
+				style={{ maxWidth: "900px", margin: "0 auto" }}
+			>
+				<Accordion.Item eventKey="0">
+					<Accordion.Header className="accordion-header">
+						Guidelines
+					</Accordion.Header>
+					<Accordion.Body className="accordion-body">
 						<p>
 							Step-by-step instructions to help them with technical aspects,
 							along with storytelling techniques and other useful information.
 						</p>
 
-						<p>Website: (URL)</p>
+						<p style={{ fontWeight: "bold", color: "var(--bordo-color)" }}>
+							Website: (URL)
+						</p>
 					</Accordion.Body>
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="1">
-					<Accordion.Header>Email Support</Accordion.Header>
-					<Accordion.Body>
+					<Accordion.Header className="accordion-header">
+						Email Support
+					</Accordion.Header>
+					<Accordion.Body className="accordion-body">
 						<p>
-							For personalised guidance, participants can contact the official
-							project support team by email using the following format for the
-							subject line:
+							For{" "}
+							<span style={{ fontWeight: "bold" }}>personalised guidance</span>,
+							participants can contact the official project support team by
+							email using the following format for the subject line:
 						</p>
 
-						<p>[country code]_[enquiry]_[Participant's Name and surname]</p>
+						<p
+							style={{
+								backgroundColor: "var(--yellow-color)",
+								padding: "10px",
+								borderRadius: "10px",
+								fontWeight: "bold",
+							}}
+							className="text-center"
+						>
+							[country code]_[enquiry]_[Participant's Name and surname]
+						</p>
 
-						<p>Example: GR_Query_Georgios Papadopoulos (Greece)</p>
+						<div className="mb-3">
+							<h6 style={{ fontWeight: "bold" }}>Example:</h6>
+							GR_Query_Georgios Papadopoulos (Greece)
+						</div>
 
-						<p>Email: moveandact2022@gmail.com</p>
+						<h6 style={{ fontWeight: "bold" }}>Email: </h6>
+						<p
+							style={{
+								backgroundColor: "var(--bordo-color)",
+								color: "var(--yellow-color)",
+								padding: "10px",
+								borderRadius: "10px",
+								fontWeight: "bold",
+							}}
+							className="text-center"
+						>
+							moveandact2022@gmail.com
+						</p>
 					</Accordion.Body>
 				</Accordion.Item>
 			</Accordion>
 
-			<h6>Regulations & Ethics</h6>
+			<h6 className="accordion-main-header">Regulations & Ethics</h6>
 			<Accordion
 				className="text-left mb-5"
-				style={{ maxWidth: "800px", margin: "0 auto" }}
+				style={{ maxWidth: "900px", margin: "0 auto" }}
 			>
 				<Accordion.Item eventKey="0">
-					<Accordion.Header>Ethical Considerations</Accordion.Header>
-					<Accordion.Body>
+					<Accordion.Header className="accordion-header">
+						Ethical Considerations
+					</Accordion.Header>
+					<Accordion.Body className="accordion-body">
 						Participants must:
 						<ul>
-							<li>respect intellectual property rights,</li>
 							<li>
-								ensure that consent has been obtained from those depicted in the
-								photos, and
+								<span style={{ fontWeight: "bold" }}>
+									respect intellectual property rights
+								</span>
+								,
 							</li>
 							<li>
-								follow guidelines on data protection and sensitive issues (click
-								here for detailed information).
+								ensure that{" "}
+								<span style={{ fontWeight: "bold" }}>
+									consent has been obtained{" "}
+								</span>
+								from those depicted in the photos, and
+							</li>
+							<li>
+								<span style={{ fontWeight: "bold" }}>follow guidelines</span> on{" "}
+								<span style={{ fontWeight: "bold" }}>data protection</span> and
+								sensitive issues (click here for detailed information).
 							</li>
 						</ul>
-						<p>
-							Photo editing and AI-generated content is allowed up to 25% and
-							must be disclosed (e.g. "...this is an AI-generated image").
+						<p
+							style={{
+								backgroundColor: "var(--yellow-color)",
+								padding: "10px",
+								borderRadius: "10px",
+							}}
+						>
+							<span style={{ fontWeight: "bold" }}>Photo editing</span> and{" "}
+							<span style={{ fontWeight: "bold" }}>AI-generated content</span>{" "}
+							is <span style={{ fontWeight: "bold" }}>allowed up to 20%</span>{" "}
+							and <span style={{ fontWeight: "bold" }}>must be disclosed</span>{" "}
+							(e.g. "...this is an AI-generated image").
 						</p>
 					</Accordion.Body>
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="1">
-					<Accordion.Header>
+					<Accordion.Header className="accordion-header">
 						Acceptance of Terms and Conditions
 					</Accordion.Header>
-					<Accordion.Body>
-						By entering, participants agree to the Contest Rules, including the
-						privacy and copyright policies, and grant Move&Act the right to use
-						the submitted images for educational and promotional purposes.
+					<Accordion.Body className="accordion-body">
+						By entering, participants{" "}
+						<span style={{ fontWeight: "bold", textDecoration: "underline" }}>
+							agree to the Contest Rules
+						</span>
+						, including the <span style={{ fontWeight: "bold" }}>privacy </span>
+						and copyright policies, and{" "}
+						<span style={{ fontWeight: "bold" }}>
+							grant Move&Act the right to use the submitted images{" "}
+						</span>{" "}
+						for educational and promotional purposes.
 					</Accordion.Body>
 				</Accordion.Item>
 			</Accordion>
 
-			<h6>Contest Rules</h6>
+			<h6 className="accordion-main-header">Contest Rules</h6>
 			<Accordion
 				className="text-left mb-5"
-				style={{ maxWidth: "800px", margin: "0 auto" }}
+				style={{ maxWidth: "900px", margin: "0 auto" }}
 			>
 				<Accordion.Item eventKey="0">
-					<Accordion.Header>Submission channel</Accordion.Header>
-					<Accordion.Body>
+					<Accordion.Header className="accordion-header">
+						Submission channel
+					</Accordion.Header>
+					<Accordion.Body className="accordion-body">
 						<ul>
 							<li>
 								Entries must be submitted via the official contest channel.
@@ -425,8 +932,10 @@ const AboutPage = () => {
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="1">
-					<Accordion.Header>Original Work</Accordion.Header>
-					<Accordion.Body>
+					<Accordion.Header className="accordion-header">
+						Original Work
+					</Accordion.Header>
+					<Accordion.Body className="accordion-body">
 						<ul>
 							<li>The photos must be original and taken by the participant.</li>
 							<li>Third party material is not permitted.</li>
@@ -439,15 +948,18 @@ const AboutPage = () => {
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="2">
-					<Accordion.Header>Photo Alterations</Accordion.Header>
-					<Accordion.Body>
+					<Accordion.Header className="accordion-header">
+						Photo Alterations
+					</Accordion.Header>
+					<Accordion.Body className="accordion-body">
 						<ul>
 							<li>
-								Photos may be altered by up to 20% (e.g. by adding or removing
-								elements).
+								Photos may be altered by{" "}
+								<span style={{ fontWeight: "bold" }}>up to 20%</span> (e.g. by
+								adding or removing elements).
 							</li>
 							<li>
-								TExcessive alterations will result in disqualification and
+								Excessive alterations will result in disqualification and
 								exclusion from future contests.
 							</li>
 						</ul>
@@ -455,17 +967,22 @@ const AboutPage = () => {
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="3">
-					<Accordion.Header>AI-generated Content</Accordion.Header>
-					<Accordion.Body>
-						AI-generated content is allowed up to 20% of the total image. In
-						order to maintain transparency, it must be clearly disclosed (e.g.
-						“This is an AI-generated image”).
+					<Accordion.Header className="accordion-header">
+						AI-generated Content
+					</Accordion.Header>
+					<Accordion.Body className="accordion-body">
+						AI-generated content is{" "}
+						<span style={{ fontWeight: "bold" }}>allowed up to 20%</span> of the
+						total image. In order to maintain transparency, it must be clearly
+						disclosed (e.g. “This is an AI-generated image”).
 					</Accordion.Body>
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="4">
-					<Accordion.Header>Judging</Accordion.Header>
-					<Accordion.Body>
+					<Accordion.Header className="accordion-header">
+						Judging
+					</Accordion.Header>
+					<Accordion.Body className="accordion-body">
 						<ul>
 							<li>A jury of seven professionals will judge the entries.</li>
 							<li>Their decisions are final.</li>
@@ -478,17 +995,27 @@ const AboutPage = () => {
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="5">
-					<Accordion.Header>Data Protection and Consent:</Accordion.Header>
-					<Accordion.Body>
+					<Accordion.Header className="accordion-header">
+						Data Protection and Consent
+					</Accordion.Header>
+					<Accordion.Body className="accordion-body">
 						<ul>
 							<li>
-								All content deemed inappropriate or invasive of privacy will be
-								removed and not considered for the contest.
+								All content deemed{" "}
+								<span style={{ fontWeight: "bold" }}>inappropriate</span> or
+								invasive of privacy will be removed and not considered for the
+								contest.
 							</li>
 							<li>
-								For photos featuring young people or minors, age verification
-								and explicit consent is required. If a submitted photo shows a
-								recognisable minor, a declaration of consent must be provided to
+								For photos featuring{" "}
+								<span style={{ fontWeight: "bold" }}>
+									young people or minors
+								</span>
+								, age verification and{" "}
+								<span style={{ fontWeight: "bold" }}>explicit consent</span> is
+								required. If a submitted photo shows a recognisable minor, a
+								declaration of consent{" "}
+								<span style={{ fontWeight: "bold" }}>must be provided</span> to
 								ensure that the rights of the minor(s)/young person(s) are
 								protected.
 							</li>
@@ -497,8 +1024,10 @@ const AboutPage = () => {
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="6">
-					<Accordion.Header>Use of Photos</Accordion.Header>
-					<Accordion.Body>
+					<Accordion.Header className="accordion-header">
+						Use of Photos
+					</Accordion.Header>
+					<Accordion.Body className="accordion-body">
 						<ul>
 							<li>
 								The submitted works remain the property of the Move&Act project.
@@ -512,8 +1041,10 @@ const AboutPage = () => {
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="7">
-					<Accordion.Header>Submission Deadline</Accordion.Header>
-					<Accordion.Body>
+					<Accordion.Header className="accordion-header">
+						Submission Deadline
+					</Accordion.Header>
+					<Accordion.Body className="accordion-body">
 						<ul>
 							<li>No entries will be accepted after the closing date.</li>
 							<li>
@@ -529,8 +1060,10 @@ const AboutPage = () => {
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="8">
-					<Accordion.Header>Legal Restrictions</Accordion.Header>
-					<Accordion.Body>
+					<Accordion.Header className="accordion-header">
+						Legal Restrictions
+					</Accordion.Header>
+					<Accordion.Body className="accordion-body">
 						<ul>
 							<li>The contest is void where prohibited by law.</li>
 						</ul>
@@ -538,8 +1071,10 @@ const AboutPage = () => {
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="9">
-					<Accordion.Header>Intellectual Property Rights:</Accordion.Header>
-					<Accordion.Body>
+					<Accordion.Header className="accordion-header">
+						Intellectual Property Rights
+					</Accordion.Header>
+					<Accordion.Body className="accordion-body">
 						The participants retain the copyright to their contributions.
 						Move&Act reserves the right to use, reproduce and exhibit these
 						works in future project outputs and reports, with appropriate
@@ -550,8 +1085,16 @@ const AboutPage = () => {
 				</Accordion.Item>
 			</Accordion>
 
-			{/* Final Header */}
-			<h2 className="mt-5">Click here to see all rules and regulations</h2>
+			<h2
+				style={{
+					fontWeight: "bold",
+					cursor: "pointer",
+				}}
+				className="mt-5 rules-button"
+				onClick={() => window.open(rulesPdf, "_blank")}
+			>
+				Click here to see all rules and regulations
+			</h2>
 		</div>
 	);
 };
