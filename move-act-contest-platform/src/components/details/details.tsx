@@ -6,6 +6,7 @@ type DetailsProps = {
 	title: string;
 	participantName: string;
 	category: string;
+	authorBio: string;
 	description: string;
 	stlFile: string;
 };
@@ -15,6 +16,7 @@ const Details = ({
 	title,
 	participantName,
 	category,
+	authorBio,
 	description,
 	stlFile,
 }: DetailsProps) => {
@@ -25,6 +27,7 @@ const Details = ({
 			<h3 className="details-participant text-muted">
 				{participantName} - {category}
 			</h3>
+			<p className="details-description">{authorBio}</p>
 			<p className="details-description">{description}</p>
 
 			<StlViewer className="stl-viewer" orbitControls shadows url={stlFile} />

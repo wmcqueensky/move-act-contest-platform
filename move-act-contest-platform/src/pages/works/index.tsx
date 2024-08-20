@@ -20,6 +20,7 @@ const WorksPage = () => {
 		participantName: "",
 		category: "",
 		voteCount: 0,
+		authorBio: "",
 		description: "",
 		stlFile: "",
 	});
@@ -316,6 +317,7 @@ const WorksPage = () => {
 								participantName: work.participant_name,
 								voteCount: work.vote_count,
 								category: work.category,
+								authorBio: work.author_bio,
 								description: work.description,
 								stlFile: work.stl_url,
 							})
