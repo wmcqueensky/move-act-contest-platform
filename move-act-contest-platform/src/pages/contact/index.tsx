@@ -1,5 +1,8 @@
-import { Container, Button } from "react-bootstrap";
-import rulesPdf from "/Users/goodylabs/Desktop/move-act-contest-platform/move-act-contest-platform/src/pages/about/docs/rules.pdf";
+import { Container, Button, Image } from "react-bootstrap";
+import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
+import rulesPdf from "../about/docs/rules.pdf";
+import platformLogo from "./images/e-platform-logo.png";
+import projectLogo from "./images/project-logo.png";
 import "./styles.css";
 
 const Contact = () => {
@@ -22,6 +25,8 @@ const Contact = () => {
 					fontWeight: "bold",
 					maxWidth: "1000px",
 					margin: "0 auto 7rem",
+					overflowWrap: "break-word",
+					wordWrap: "break-word",
 				}}
 			>
 				moveandact2022@gmail.com
@@ -38,7 +43,7 @@ const Contact = () => {
 					borderRadius: "10px",
 					fontWeight: "bold",
 					maxWidth: "1000px",
-					margin: "0 auto 7rem",
+					margin: "0 auto 1.5rem",
 				}}
 			>
 				[country code]_[enquiry]_[Participant's Name and surname]
@@ -50,6 +55,50 @@ const Contact = () => {
 			<h3 className="mb-7" style={{ color: "var(--orange-color)" }}>
 				GR_Query_Georgios Papadopoulos (Greece)
 			</h3>
+
+			<h3 className="mb-3" style={{ color: "var(--bordo-color)" }}>
+				Check also our social media and other information channels!
+			</h3>
+			<div className="social-media-container mb-7">
+				<a
+					href="https://www.facebook.com/MoveAndActProject/"
+					target="_blank"
+					rel="noopener noreferrer"
+					className="facebook-icon"
+				>
+					<FaFacebook />
+				</a>
+				<a
+					href="https://www.instagram.com/moveandact_project/"
+					target="_blank"
+					rel="noopener noreferrer"
+					className="instagram-icon"
+				>
+					<FaInstagram />
+				</a>
+				<a
+					href="https://www.youtube.com/@moveactproject"
+					target="_blank"
+					rel="noopener noreferrer"
+					className="youtube-icon"
+				>
+					<FaYoutube />
+				</a>
+				<a
+					href="https://moveandacteplatform.eu/"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<Image src={platformLogo} />
+				</a>
+				<a
+					href="http://moveandact-project.com/"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<Image src={projectLogo} />
+				</a>
+			</div>
 
 			<h3 className="mb-3" style={{ color: "var(--bordo-color)" }}>
 				For more information about contest visit{" "}

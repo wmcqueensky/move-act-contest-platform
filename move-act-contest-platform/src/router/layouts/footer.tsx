@@ -26,7 +26,7 @@ const Footer = () => {
 				<div className="icon-container">
 					<p className="copyright-text">© {currentYear} Move & Act</p>
 					<a
-						href="https://facebook.com"
+						href="https://www.facebook.com/MoveAndActProject/"
 						target="_blank"
 						rel="noopener noreferrer"
 						className="social-icon"
@@ -34,7 +34,7 @@ const Footer = () => {
 						<FaFacebook />
 					</a>
 					<a
-						href="https://instagram.com"
+						href="https://www.instagram.com/moveandact_project/"
 						target="_blank"
 						rel="noopener noreferrer"
 						className="social-icon"
@@ -42,7 +42,7 @@ const Footer = () => {
 						<FaInstagram />
 					</a>
 					<a
-						href="https://youtube.com"
+						href="https://www.youtube.com/@moveactproject"
 						target="_blank"
 						rel="noopener noreferrer"
 						className="social-icon"
