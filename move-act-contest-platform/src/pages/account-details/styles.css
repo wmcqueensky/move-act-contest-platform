@@ -1,0 +1,33 @@
+.account-details-header {
+	color: var(--bordo-color);
+	font-size: 3.2rem;
+}
+
+.account-details-section-header {
+	color: var(--bordo-color);
+}
+
+.account-data-header {
+	color: var(--bordo-color);
+	margin-bottom: 0;
+}
+
+.edit-button {
+	padding: 0.75rem 1.1rem;
+	height: 50px;
+	width: 170px;
+	border-radius: 16px;
+	background-color: var(--bordo-color);
+	border: 0;
+	color: var(--yellow-color);
+	font-weight: bold;
+	box-shadow: none;
+}
+
+.edit-button:hover,
+.edit-button:active {
+	background-color: var(--yellow-color) !important;
+	border-color: var(--yellow-color) !important;
+	color: var(--bordo-color) !important;
+	box-shadow: none;
+}

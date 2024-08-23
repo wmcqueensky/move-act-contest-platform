@@ -11,7 +11,7 @@ export const RESET_PASSWORD_TAB = "reset-password";
 interface AuthModalProps {
 	show: boolean;
 	handleClose: () => void;
-	activeTab: typeof LOGIN_TAB | typeof REGISTER_TAB;
+	activeTab: typeof LOGIN_TAB | typeof REGISTER_TAB | typeof RESET_PASSWORD_TAB;
 }
 
 const AuthModal: React.FC<AuthModalProps> = ({
@@ -30,18 +30,6 @@ const AuthModal: React.FC<AuthModalProps> = ({
 		type: "success" | "error";
 	}>({ show: false, message: "", type: "success" });
 
-	useEffect(() => {
-		if (show) {
-			setActiveTab(parentActiveTab);
-		}
-	}, [show, parentActiveTab]);
-
-	const handleTabSwitch = (
-		tab: typeof LOGIN_TAB | typeof REGISTER_TAB | typeof RESET_PASSWORD_TAB
-	) => {
-		setActiveTab(tab);
-	};
-
 	const [formData, setFormData] = useState({
 		name: "",
 		surname: "",
@@ -57,6 +45,43 @@ const AuthModal: React.FC<AuthModalProps> = ({
 		message: string;
 		type: "success" | "error";
 	}>({ show: false, message: "", type: "success" });
+
+	const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+
+	useEffect(() => {
+		const checkUser = async () => {
+			const { data, error } = await supabase.auth.getUser();
+			if (error || !data.user) {
+				setIsLoggedIn(false);
+			} else {
+				setIsLoggedIn(true);
+			}
+		};
+
+		checkUser();
+
+		const { data: authListener } = supabase.auth.onAuthStateChange(
+			(_event, session) => {
+				setIsLoggedIn(!!session?.user);
+			}
+		);
+
+		return () => {
+			authListener?.subscription.unsubscribe();
+		};
+	}, []);
+
+	useEffect(() => {
+		if (show) {
+			setActiveTab(parentActiveTab);
+		}
+	}, [show, parentActiveTab]);
+
+	const handleTabSwitch = (
+		tab: typeof LOGIN_TAB | typeof REGISTER_TAB | typeof RESET_PASSWORD_TAB
+	) => {
+		setActiveTab(tab);
+	};
 
 	function handleChange(
 		event: React.ChangeEvent<
@@ -360,6 +385,10 @@ const AuthModal: React.FC<AuthModalProps> = ({
 									href="#"
 									className="forgot-password-link"
 									onClick={() => handleTabSwitch(LOGIN_TAB)}
+									style={{
+										pointerEvents: isLoggedIn ? "none" : "auto",
+										opacity: isLoggedIn ? 0.5 : 1,
+									}}
 								>
 									Back to Login
 								</a>

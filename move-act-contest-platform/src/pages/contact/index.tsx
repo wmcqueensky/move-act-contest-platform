@@ -5,7 +5,7 @@ import platformLogo from "./images/e-platform-logo.png";
 import projectLogo from "./images/project-logo.png";
 import "./styles.css";
 
-const Contact = () => {
+const ContactPage = () => {
 	return (
 		<div className="works-background text-center">
 			<Container fluid className="contact-image text-center mb-7">
@@ -116,4 +116,4 @@ const Contact = () => {
 	);
 };
 
-export default Contact;
+export default ContactPage;

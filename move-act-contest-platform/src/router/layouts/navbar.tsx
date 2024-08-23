@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import logo from "../images/logo.svg";
 import "flag-icons/css/flag-icons.min.css";
 import "./styles.css";
+import { ACCOUNT_DETAILS_PATH } from "../../router/paths.ts";
 import AuthModal, {
 	LOGIN_TAB,
 	REGISTER_TAB,
@@ -45,7 +46,7 @@ const MainNavbar: React.FC = () => {
 			const { data, error } = await supabase.auth.getUser();
 
 			if (error || !data.user) {
-				setUser(null); // Set to null if there's no user
+				setUser(null);
 			} else {
 				setUser({ email: data.user.email });
 			}
@@ -163,7 +164,12 @@ const MainNavbar: React.FC = () => {
 						<Dropdown.Menu>
 							{user ? (
 								<>
-									<Dropdown.Item className="dropdown-item">
+									<Dropdown.Item
+										as={Link}
+										to={ACCOUNT_DETAILS_PATH}
+										className="dropdown-item"
+										onClick={handleSelect}
+									>
 										Account details
 									</Dropdown.Item>
 									<Dropdown.Item
