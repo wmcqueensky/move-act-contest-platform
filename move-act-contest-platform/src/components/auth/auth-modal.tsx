@@ -380,19 +380,18 @@ const AuthModal: React.FC<AuthModalProps> = ({
 								Send Reset Link
 							</Button>
 
-							<div className="text-center mt-4">
-								<a
-									href="#"
-									className="forgot-password-link"
-									onClick={() => handleTabSwitch(LOGIN_TAB)}
-									style={{
-										pointerEvents: isLoggedIn ? "none" : "auto",
-										opacity: isLoggedIn ? 0.5 : 1,
-									}}
-								>
-									Back to Login
-								</a>
-							</div>
+							{/* Conditionally render "Back to Login" */}
+							{!isLoggedIn && (
+								<div className="text-center mt-4">
+									<a
+										href="#"
+										className="forgot-password-link"
+										onClick={() => handleTabSwitch(LOGIN_TAB)}
+									>
+										Back to Login
+									</a>
+								</div>
+							)}
 						</Form>
 					)}
 				</Modal.Body>

@@ -31,3 +31,7 @@
 	color: var(--bordo-color) !important;
 	box-shadow: none;
 }
+
+.delete-account-button {
+	margin-top: 20px;
+}

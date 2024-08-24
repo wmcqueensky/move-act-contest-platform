@@ -1,17 +1,31 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
-import supabase from "../../config/supabase-client";
-import { Container, Row, Col, ListGroup, Button, Form } from "react-bootstrap";
+import { Container, Row, Col, Button, Form } from "react-bootstrap";
 import { FaUserEdit } from "react-icons/fa";
-import "./styles.css";
 import AuthModal, {
 	RESET_PASSWORD_TAB,
 } from "../../components/auth/auth-modal.tsx";
 
+import "./styles.css";
+import supabase from "../../config/supabase-client";
+import WorkCard from "../../components/work-card";
+
 const AccountDetailsPage = () => {
 	const [user, setUser] = useState<any | null>(null);
 	const [votedWorks, setVotedWorks] = useState<any[]>([]);
-	const [editMode, setEditMode] = useState({ name: false, email: false });
+	const [votedWorkId, setVotedWorkId] = useState<number | null>(null);
+	const [currentWork, setCurrentWork] = useState({
+		workId: 0,
+		image: "",
+		title: "",
+		participantName: "",
+		category: "",
+		voteCount: 0,
+		authorBio: "",
+		description: "",
+		stlFile: "",
+	});
+	const [editMode, setEditMode] = useState({ name: false });
 	const [formData, setFormData] = useState({
 		name: "",
 		surname: "",
@@ -21,6 +35,30 @@ const AccountDetailsPage = () => {
 	const [activeTab, setActiveTab] =
 		useState<typeof RESET_PASSWORD_TAB>(RESET_PASSWORD_TAB);
 	const navigate = useNavigate();
+
+	useEffect(() => {
+		const checkUserVotes = async () => {
+			if (!user) return;
+
+			const { data: existingVotes, error: votesError } = await supabase
+				.from("votes")
+				.select("*")
+				.eq("user_id", user.id);
+
+			if (votesError) {
+				console.error("Error fetching votes:", votesError);
+				return;
+			}
+
+			setVotedWorkId(existingVotes[0].work_id);
+
+			existingVotes.map((index) => {
+				setVotedWorkId(existingVotes[index].work_id);
+			});
+		};
+
+		checkUserVotes();
+	}, [user]);
 
 	useEffect(() => {
 		const fetchUserData = async () => {
@@ -43,7 +81,7 @@ const AccountDetailsPage = () => {
 
 			const { data: works, error: worksError } = await supabase
 				.from("votes")
-				.select("work_id, works(title)")
+				.select("work_id, works(*)")
 				.eq("user_id", user.id);
 
 			if (worksError) {
@@ -57,7 +95,7 @@ const AccountDetailsPage = () => {
 		fetchUserData();
 	}, []);
 
-	type Field = "name" | "email";
+	type Field = "name";
 
 	const handleEditToggle = (field: Field) => {
 		setEditMode({ ...editMode, [field]: !editMode[field] });
@@ -70,29 +108,7 @@ const AccountDetailsPage = () => {
 
 	const handleSave = async (field: Field) => {
 		try {
-			if (field === "email") {
-				// Sign out the user to allow email update
-				const { error: signOutError } = await supabase.auth.signOut();
-				if (signOutError) {
-					console.error("Error signing out:", signOutError);
-					return;
-				}
-
-				// Update the email address
-				const { error: updateEmailError } = await supabase.auth.updateUser({
-					email: formData.email,
-				});
-				if (updateEmailError) {
-					console.error("Error updating email:", updateEmailError);
-					return;
-				}
-
-				// Notify user that they need to confirm the new email
-				alert("Please check your new email address for a confirmation link.");
-
-				// You might want to redirect the user or handle it as needed
-				navigate("/");
-			} else if (field === "name") {
+			if (field === "name") {
 				const updatedData = { name: formData.name, surname: formData.surname };
 
 				// Update user metadata
@@ -118,6 +134,13 @@ const AccountDetailsPage = () => {
 
 	const openForgotPasswordModal = () => {
 		setActiveTab(RESET_PASSWORD_TAB);
+		setShowModal(true);
+	};
+
+	const handleVote = async (newWorkId: number) => {};
+
+	const handleDetails = (work: any) => {
+		setCurrentWork(work);
 		setShowModal(true);
 	};
 
@@ -182,35 +205,8 @@ const AccountDetailsPage = () => {
 
 				<Row className="align-items-center mb-3">
 					<Col md={8}>
-						{editMode.email ? (
-							<Form.Control
-								type="email"
-								name="email"
-								value={formData.email}
-								onChange={handleInputChange}
-							/>
-						) : (
-							<span>
-								<h6 className="account-data-header">Email:</h6> {formData.email}
-							</span>
-						)}
-					</Col>
-					<Col md={4} className="text-md-right">
-						<Button
-							className="edit-button"
-							onClick={() =>
-								editMode.email ? handleSave("email") : handleEditToggle("email")
-							}
-						>
-							{editMode.email ? "Save" : "Change Email"}
-						</Button>
-					</Col>
-				</Row>
-
-				<Row className="align-items-center mb-3">
-					<Col md={8}>
 						<span>
-							<h6 className="account-data-header">Password:</h6> **********
+							<h6 className="account-data-header">Email:</h6> {formData.email}
 						</span>
 					</Col>
 					<Col md={4} className="text-md-right">
@@ -223,15 +219,34 @@ const AccountDetailsPage = () => {
 
 			<Container>
 				<h4 className="account-details-section-header">Voted Works</h4>
-				<ListGroup variant="flush">
-					{votedWorks.length > 0 ? (
-						votedWorks.map((work, index) => (
-							<ListGroup.Item key={index}>{work.title}</ListGroup.Item>
-						))
-					) : (
-						<ListGroup.Item>No works voted for yet.</ListGroup.Item>
-					)}
-				</ListGroup>
+				{votedWorks.map((work) => (
+					<WorkCard
+						key={work.work_id}
+						image={work.image_url}
+						title={work.title}
+						participantName={work.participant_name}
+						category={work.category}
+						description={work.description}
+						voteButtonText="Vote"
+						detailsButtonText="Details"
+						voteCount={work.vote_count}
+						isVoted={votedWorkId === work.work_id}
+						onVote={() => handleVote(work.work_id)}
+						onDetails={() =>
+							handleDetails({
+								workId: work.work_id,
+								image: work.image_url,
+								title: work.title,
+								participantName: work.participant_name,
+								voteCount: work.vote_count,
+								category: work.category,
+								authorBio: work.author_bio,
+								description: work.description,
+								stlFile: work.stl_url,
+							})
+						}
+					/>
+				))}
 			</Container>
 
 			<AuthModal

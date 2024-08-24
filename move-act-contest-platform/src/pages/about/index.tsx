@@ -1083,6 +1083,15 @@ const AboutPage = () => {
 						understanding.
 					</Accordion.Body>
 				</Accordion.Item>
+
+				<Accordion.Item eventKey="10">
+					<Accordion.Header className="accordion-header">
+						Account Deletion
+					</Accordion.Header>
+					<Accordion.Body className="accordion-body">
+						To delete your account on the platform, contact us at our email.
+					</Accordion.Body>
+				</Accordion.Item>
 			</Accordion>
 
 			<h2

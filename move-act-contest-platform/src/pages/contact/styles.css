@@ -16,9 +16,9 @@
 	width: 280px;
 	font-size: 1.3rem;
 	border-radius: 20px;
-	background-color: var(--yellow-color);
+	background-color: var(--bordo-color);
 	border: none;
-	color: var(--bordo-color);
+	color: var(--yellow-color);
 	font-weight: 500;
 	display: flex;
 	align-items: center;
@@ -29,8 +29,8 @@
 }
 
 .rules-contact-button:hover {
-	background-color: var(--bordo-color) !important;
-	color: var(--yellow-color);
+	background-color: var(--yellow-color) !important;
+	color: var(--bordo-color);
 	box-shadow: none;
 }
 
