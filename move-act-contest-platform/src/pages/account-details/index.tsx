@@ -5,8 +5,9 @@ import { FaUserEdit } from "react-icons/fa";
 import AuthModal, {
 	RESET_PASSWORD_TAB,
 } from "../../components/auth/auth-modal.tsx";
-import DetailsModal from "../../components/details/details-modal.tsx";
 
+import noVotesImage from "./images/no-votes-image.png";
+import DetailsModal from "../../components/details/details-modal.tsx";
 import supabase from "../../config/supabase-client";
 import WorkCard from "../../components/work-card";
 import "./styles.css";
@@ -218,36 +219,46 @@ const AccountDetailsPage = () => {
 			<Container className="mt-5 mb-4">
 				<h4 className="account-details-section-header">Voted Works</h4>
 			</Container>
-			<Container className="card-container">
-				{votedWorks.map((work) => (
-					<WorkCard
-						key={work.work_id}
-						image={work.image_url}
-						title={work.title}
-						participantName={work.participant_name}
-						category={work.category}
-						description={work.description}
-						voteButtonText="Vote"
-						detailsButtonText="Details"
-						voteCount={work.vote_count}
-						isVoted={true}
-						onVote={() => handleVote(work.work_id)}
-						onDetails={() =>
-							handleDetails({
-								workId: work.work_id,
-								image: work.image_url,
-								title: work.title,
-								participantName: work.participant_name,
-								voteCount: work.vote_count,
-								category: work.category,
-								authorBio: work.author_bio,
-								description: work.description,
-								stlFile: work.stl_url,
-							})
-						}
-					/>
-				))}
-			</Container>
+
+			{votedWorks.length > 0 ? (
+				<Container className="card-container">
+					{votedWorks.map((work) => (
+						<WorkCard
+							key={work.work_id}
+							image={work.image_url}
+							title={work.title}
+							participantName={work.participant_name}
+							category={work.category}
+							description={work.description}
+							voteButtonText="Vote"
+							detailsButtonText="Details"
+							voteCount={work.vote_count}
+							isVoted={true}
+							onVote={() => handleVote(work.work_id)}
+							onDetails={() =>
+								handleDetails({
+									workId: work.work_id,
+									image: work.image_url,
+									title: work.title,
+									participantName: work.participant_name,
+									voteCount: work.vote_count,
+									category: work.category,
+									authorBio: work.author_bio,
+									description: work.description,
+									stlFile: work.stl_url,
+								})
+							}
+						/>
+					))}
+				</Container>
+			) : (
+				<Container className="text-center">
+					<img src={noVotesImage} alt="No votes" className="no-votes-image" />
+					<h2 className="no-votes-header mt-3">
+						You haven't voted for any works yet
+					</h2>
+				</Container>
+			)}
 
 			<DetailsModal
 				show={showDetailsModal}

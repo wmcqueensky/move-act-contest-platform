@@ -33,6 +33,15 @@
 	box-shadow: none;
 }
 
-.delete-account-button {
-	margin-top: 20px;
+.no-votes-image {
+	width: 100%;
+	max-width: 500px;
+	height: auto;
+	margin: 0 auto;
+	display: block;
+}
+
+.no-votes-header {
+	color: var(--bordo-color);
+	font-size: 2.2rem;
 }
