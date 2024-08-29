@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
+import { Modal, Button, Form, ButtonGroup } from "react-bootstrap";
+
 import supabase from "../../config/supabase-client.ts";
 import AuthToast from "./auth-toast.tsx";
+import rulesPdf from "../../pages/about/docs/rules.pdf";
 import "./styles.css";
-import { Modal, Button, Form, ButtonGroup } from "react-bootstrap";
 
 export const LOGIN_TAB = "login";
 export const REGISTER_TAB = "register";
@@ -117,10 +119,10 @@ const AuthModal: React.FC<AuthModalProps> = ({
 				email: formData.email,
 				password: formData.password,
 			});
+
 			if (error) {
 				setToast({ show: true, message: error.message, type: "error" });
 			} else {
-				console.log("Login successful, data:", data);
 				setToast({
 					show: true,
 					message: "Login successful!",
@@ -180,7 +182,6 @@ const AuthModal: React.FC<AuthModalProps> = ({
 		}
 	}
 
-	// Forgot Password
 	async function handleForgotPassword(event: React.FormEvent<HTMLFormElement>) {
 		event.preventDefault();
 
@@ -349,13 +350,25 @@ const AuthModal: React.FC<AuthModalProps> = ({
 							<Form.Group className="mb-4">
 								<Form.Check
 									type="checkbox"
-									label="I accept the Terms of Service and Privacy Policy"
 									className="terms-checkbox"
 									name="terms"
-									onChange={handleChange}
 									required
+									label={
+										<>
+											I accept the{" "}
+											<a
+												href={rulesPdf}
+												target="_blank"
+												rel="noopener noreferrer"
+											>
+												Terms of Service and Privacy Policy
+											</a>
+										</>
+									}
+									onChange={handleChange}
 								/>
 							</Form.Group>
+
 							<Button className="vote-button w-100" type="submit">
 								Register
 							</Button>
@@ -380,7 +393,6 @@ const AuthModal: React.FC<AuthModalProps> = ({
 								Send Reset Link
 							</Button>
 
-							{/* Conditionally render "Back to Login" */}
 							{!isLoggedIn && (
 								<div className="text-center mt-4">
 									<a
