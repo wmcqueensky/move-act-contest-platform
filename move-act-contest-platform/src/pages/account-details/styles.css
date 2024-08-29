@@ -1,6 +1,7 @@
 .account-details-header {
 	color: var(--bordo-color);
 	font-size: 3.2rem;
+	padding-top: 30px;
 }
 
 .account-details-section-header {

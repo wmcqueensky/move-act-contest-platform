@@ -5,15 +5,15 @@ import { FaUserEdit } from "react-icons/fa";
 import AuthModal, {
 	RESET_PASSWORD_TAB,
 } from "../../components/auth/auth-modal.tsx";
+import DetailsModal from "../../components/details/details-modal.tsx";
 
-import "./styles.css";
 import supabase from "../../config/supabase-client";
 import WorkCard from "../../components/work-card";
+import "./styles.css";
 
 const AccountDetailsPage = () => {
 	const [user, setUser] = useState<any | null>(null);
 	const [votedWorks, setVotedWorks] = useState<any[]>([]);
-	const [votedWorkId, setVotedWorkId] = useState<number | null>(null);
 	const [currentWork, setCurrentWork] = useState({
 		workId: 0,
 		image: "",
@@ -31,34 +31,11 @@ const AccountDetailsPage = () => {
 		surname: "",
 		email: "",
 	});
-	const [showModal, setShowModal] = useState(false);
+	const [showEditPasswordModal, setEditPasswordModal] = useState(false);
+	const [showDetailsModal, setDetailsModal] = useState(false);
 	const [activeTab, setActiveTab] =
 		useState<typeof RESET_PASSWORD_TAB>(RESET_PASSWORD_TAB);
 	const navigate = useNavigate();
-
-	useEffect(() => {
-		const checkUserVotes = async () => {
-			if (!user) return;
-
-			const { data: existingVotes, error: votesError } = await supabase
-				.from("votes")
-				.select("*")
-				.eq("user_id", user.id);
-
-			if (votesError) {
-				console.error("Error fetching votes:", votesError);
-				return;
-			}
-
-			setVotedWorkId(existingVotes[0].work_id);
-
-			existingVotes.map((index) => {
-				setVotedWorkId(existingVotes[index].work_id);
-			});
-		};
-
-		checkUserVotes();
-	}, [user]);
 
 	useEffect(() => {
 		const fetchUserData = async () => {
@@ -79,7 +56,7 @@ const AccountDetailsPage = () => {
 				email: user.email || "",
 			});
 
-			const { data: works, error: worksError } = await supabase
+			const { data: worksData, error: worksError } = await supabase
 				.from("votes")
 				.select("work_id, works(*)")
 				.eq("user_id", user.id);
@@ -89,7 +66,30 @@ const AccountDetailsPage = () => {
 				return;
 			}
 
-			setVotedWorks(works.map((vote) => vote.works));
+			const workIds = worksData.map((vote) => vote.work_id);
+			const { data: votesData, error: votesError } = await supabase
+				.from("votes")
+				.select("work_id")
+				.in("work_id", workIds);
+
+			if (votesError) {
+				console.error("Error fetching votes:", votesError);
+				return;
+			}
+
+			const voteCounts = workIds.reduce((acc, workId) => {
+				acc[workId] = votesData.filter(
+					(vote) => vote.work_id === workId
+				).length;
+				return acc;
+			}, {});
+
+			const worksWithVotes = worksData.map((vote) => ({
+				...vote.works,
+				vote_count: voteCounts[vote.work_id] || 0,
+			}));
+
+			setVotedWorks(worksWithVotes);
 		};
 
 		fetchUserData();
@@ -111,7 +111,6 @@ const AccountDetailsPage = () => {
 			if (field === "name") {
 				const updatedData = { name: formData.name, surname: formData.surname };
 
-				// Update user metadata
 				const { error } = await supabase.auth.updateUser({
 					data: updatedData,
 				});
@@ -134,14 +133,14 @@ const AccountDetailsPage = () => {
 
 	const openForgotPasswordModal = () => {
 		setActiveTab(RESET_PASSWORD_TAB);
-		setShowModal(true);
+		setEditPasswordModal(true);
 	};
 
 	const handleVote = async (newWorkId: number) => {};
 
 	const handleDetails = (work: any) => {
 		setCurrentWork(work);
-		setShowModal(true);
+		setDetailsModal(true);
 	};
 
 	if (!user) {
@@ -159,7 +158,6 @@ const AccountDetailsPage = () => {
 					Personal Information
 				</h4>
 
-				{/* Name and Surname Row */}
 				<Row className="align-items-center mb-3">
 					<Col md={4}>
 						{editMode.name ? (
@@ -217,8 +215,10 @@ const AccountDetailsPage = () => {
 				</Row>
 			</Container>
 
-			<Container>
+			<Container className="mt-5 mb-4">
 				<h4 className="account-details-section-header">Voted Works</h4>
+			</Container>
+			<Container className="card-container">
 				{votedWorks.map((work) => (
 					<WorkCard
 						key={work.work_id}
@@ -230,7 +230,7 @@ const AccountDetailsPage = () => {
 						voteButtonText="Vote"
 						detailsButtonText="Details"
 						voteCount={work.vote_count}
-						isVoted={votedWorkId === work.work_id}
+						isVoted={true}
 						onVote={() => handleVote(work.work_id)}
 						onDetails={() =>
 							handleDetails({
@@ -249,9 +249,17 @@ const AccountDetailsPage = () => {
 				))}
 			</Container>
 
+			<DetailsModal
+				show={showDetailsModal}
+				onHide={() => setDetailsModal(false)}
+				work={currentWork}
+				isVoted={true}
+				onVote={() => handleVote(currentWork.workId)}
+			/>
+
 			<AuthModal
-				show={showModal}
-				handleClose={() => setShowModal(false)}
+				show={showEditPasswordModal}
+				handleClose={() => setEditPasswordModal(false)}
 				activeTab={activeTab}
 			/>
 		</div>
