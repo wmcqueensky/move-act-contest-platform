@@ -1,4 +1,4 @@
-import { Container, Col } from "react-bootstrap";
+import { Container, Col, Spinner } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import WorkCard from "../../components/work-card";
 import DetailsModal from "../../components/details/details-modal";
@@ -9,6 +9,7 @@ import "./styles.css";
 type FlagType = "Poland" | "Greece" | "Italy" | "Spain" | "Lithuania";
 
 const WorksPage = () => {
+	const [loading, setLoading] = useState<boolean>(true);
 	const [activeFlag, setActiveFlag] = useState<FlagType | null>("Poland");
 	const [works, setWorks] = useState<any[]>([]);
 	const [votedWorkId, setVotedWorkId] = useState<number | null>(null);
@@ -64,6 +65,7 @@ const WorksPage = () => {
 				}));
 
 				setWorks(worksWithVotes);
+				setLoading(false);
 			}
 		};
 
@@ -108,6 +110,7 @@ const WorksPage = () => {
 
 	const handleFlagClick = (flag: FlagType) => {
 		setActiveFlag(flag);
+		setLoading(true);
 	};
 
 	const handleVote = async (newWorkId: number) => {
@@ -296,34 +299,46 @@ const WorksPage = () => {
 			</Container>
 
 			<Container className="card-container">
-				{works.map((work) => (
-					<WorkCard
-						key={work.work_id}
-						image={work.image_url}
-						title={work.title}
-						participantName={work.participant_name}
-						category={work.category}
-						description={work.description}
-						voteButtonText="Vote"
-						detailsButtonText="Details"
-						voteCount={work.vote_count}
-						isVoted={votedWorkId === work.work_id}
-						onVote={() => handleVote(work.work_id)}
-						onDetails={() =>
-							handleDetails({
-								workId: work.work_id,
-								image: work.image_url,
-								title: work.title,
-								participantName: work.participant_name,
-								voteCount: work.vote_count,
-								category: work.category,
-								authorBio: work.author_bio,
-								description: work.description,
-								stlFile: work.stl_url,
-							})
-						}
-					/>
-				))}
+				{loading ? (
+					<div className="d-flex justify-content-center">
+						<Spinner
+							style={{ color: "var(--bordo-color)" }}
+							animation="border"
+							role="status"
+						>
+							<span className="visually-hidden">Loading...</span>
+						</Spinner>
+					</div>
+				) : (
+					works.map((work) => (
+						<WorkCard
+							key={work.work_id}
+							image={work.image_url}
+							title={work.title}
+							participantName={work.participant_name}
+							category={work.category}
+							description={work.description}
+							voteButtonText="Vote"
+							detailsButtonText="Details"
+							voteCount={work.vote_count}
+							isVoted={votedWorkId === work.work_id}
+							onVote={() => handleVote(work.work_id)}
+							onDetails={() =>
+								handleDetails({
+									workId: work.work_id,
+									image: work.image_url,
+									title: work.title,
+									participantName: work.participant_name,
+									voteCount: work.vote_count,
+									category: work.category,
+									authorBio: work.author_bio,
+									description: work.description,
+									stlFile: work.stl_url,
+								})
+							}
+						/>
+					))
+				)}
 			</Container>
 
 			<DetailsModal

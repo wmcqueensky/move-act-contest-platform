@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
-import { Container, Row, Col, Button, Form } from "react-bootstrap";
+import { Container, Row, Col, Button, Form, Spinner } from "react-bootstrap";
 import { FaUserEdit } from "react-icons/fa";
 import AuthModal, {
 	RESET_PASSWORD_TAB,
@@ -13,6 +13,7 @@ import WorkCard from "../../components/work-card";
 import "./styles.css";
 
 const AccountDetailsPage = () => {
+	const [loading, setLoading] = useState<boolean>(true);
 	const [user, setUser] = useState<any | null>(null);
 	const [votedWorks, setVotedWorks] = useState<any[]>([]);
 	const [currentWork, setCurrentWork] = useState({
@@ -91,6 +92,7 @@ const AccountDetailsPage = () => {
 			}));
 
 			setVotedWorks(worksWithVotes);
+			setLoading(false); // End loading after fetching data
 		};
 
 		fetchUserData();
@@ -144,8 +146,18 @@ const AccountDetailsPage = () => {
 		setDetailsModal(true);
 	};
 
-	if (!user) {
-		return <div>Loading...</div>;
+	if (loading) {
+		return (
+			<div className="d-flex justify-content-center align-items-center vh-100">
+				<Spinner
+					style={{ color: "var(--bordo-color)" }}
+					animation="border"
+					role="status"
+				>
+					<span className="visually-hidden">Loading...</span>
+				</Spinner>
+			</div>
+		);
 	}
 
 	return (

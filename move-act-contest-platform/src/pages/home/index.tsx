@@ -22,7 +22,7 @@ const HomePage = () => {
 
 			<Container className="contest-duration text-center mb-5">
 				<h5>Contest duration</h5>
-				<p>01.09.2024 – 31.10.2024</p>
+				<p>01.09.2024 – 31.12.2024</p>
 			</Container>
 
 			<Container className="text-center mb-5">
