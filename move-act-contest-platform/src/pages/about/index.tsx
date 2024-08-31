@@ -1,4 +1,5 @@
 import { Container, Accordion, Table, Button } from "react-bootstrap";
+import guidelinesPdf from "../about/docs/guidelines.pdf";
 import rulesPdf from "./docs/rules.pdf";
 import "./styles.css";
 
