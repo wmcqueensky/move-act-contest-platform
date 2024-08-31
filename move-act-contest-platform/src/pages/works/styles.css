@@ -131,6 +131,19 @@
 	}
 }
 
+.no-works-image {
+	width: 100%;
+	max-width: 500px;
+	height: auto;
+	margin: 0 auto;
+	display: block;
+}
+
+.no-works-header {
+	color: var(--bordo-color);
+	font-size: 2rem;
+}
+
 .card-container {
 	display: flex;
 	flex-wrap: wrap;
@@ -185,7 +198,7 @@
 	align-items: center;
 	text-align: center;
 	gap: 2rem;
-	margin-top: auto; /* Ensure buttons are pushed to the bottom */
+	margin-top: auto;
 }
 
 .vote-button {

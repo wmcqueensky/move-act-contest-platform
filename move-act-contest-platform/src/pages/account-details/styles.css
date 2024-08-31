@@ -32,16 +32,3 @@
 	color: var(--bordo-color) !important;
 	box-shadow: none;
 }
-
-.no-votes-image {
-	width: 100%;
-	max-width: 500px;
-	height: auto;
-	margin: 0 auto;
-	display: block;
-}
-
-.no-votes-header {
-	color: var(--bordo-color);
-	font-size: 2.2rem;
-}

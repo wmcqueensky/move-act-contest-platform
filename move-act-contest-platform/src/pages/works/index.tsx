@@ -1,6 +1,7 @@
 import { Container, Col, Spinner } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import WorkCard from "../../components/work-card";
+import sendWorksImage from "./images/send-works-image.png";
 import DetailsModal from "../../components/details/details-modal";
 import supabase from "../../config/supabase-client";
 import AuthModal, { LOGIN_TAB } from "../../components/auth/auth-modal.tsx";
@@ -259,88 +260,107 @@ const WorksPage = () => {
 				</ul>
 			</Container>
 
-			<Container className="flag-container text-center">
-				<button
-					className={`flag-button ${activeFlag === "Poland" ? "active" : ""}`}
-					onClick={() => handleFlagClick("Poland")}
-				>
-					<span className="fi fi-pl flag"></span>
-				</button>
-
-				<button
-					className={`flag-button ${activeFlag === "Greece" ? "active" : ""}`}
-					onClick={() => handleFlagClick("Greece")}
-				>
-					<span className="fi fi-gr flag"></span>
-				</button>
-
-				<button
-					className={`flag-button ${activeFlag === "Italy" ? "active" : ""}`}
-					onClick={() => handleFlagClick("Italy")}
-				>
-					<span className="fi fi-it flag"></span>
-				</button>
-
-				<button
-					className={`flag-button ${activeFlag === "Spain" ? "active" : ""}`}
-					onClick={() => handleFlagClick("Spain")}
-				>
-					<span className="fi fi-es flag"></span>
-				</button>
-
-				<button
-					className={`flag-button ${
-						activeFlag === "Lithuania" ? "active" : ""
-					}`}
-					onClick={() => handleFlagClick("Lithuania")}
-				>
-					<span className="fi fi-lt flag"></span>
-				</button>
-			</Container>
-
-			<Container className="card-container">
-				{loading ? (
-					<div className="d-flex justify-content-center">
-						<Spinner
-							style={{ color: "var(--bordo-color)" }}
-							animation="border"
-							role="status"
+			{0 > 0 ? (
+				<div>
+					<Container className="flag-container text-center">
+						<button
+							className={`flag-button ${
+								activeFlag === "Poland" ? "active" : ""
+							}`}
+							onClick={() => handleFlagClick("Poland")}
 						>
-							<span className="visually-hidden">Loading...</span>
-						</Spinner>
-					</div>
-				) : (
-					works.map((work) => (
-						<WorkCard
-							key={work.work_id}
-							image={work.image_url}
-							title={work.title}
-							participantName={work.participant_name}
-							category={work.category}
-							description={work.description}
-							voteButtonText="Vote"
-							detailsButtonText="Details"
-							voteCount={work.vote_count}
-							isVoted={votedWorkId === work.work_id}
-							onVote={() => handleVote(work.work_id)}
-							onDetails={() =>
-								handleDetails({
-									workId: work.work_id,
-									image: work.image_url,
-									title: work.title,
-									participantName: work.participant_name,
-									voteCount: work.vote_count,
-									category: work.category,
-									authorBio: work.author_bio,
-									description: work.description,
-									stlFile: work.stl_url,
-								})
-							}
-						/>
-					))
-				)}
-			</Container>
+							<span className="fi fi-pl flag"></span>
+						</button>
 
+						<button
+							className={`flag-button ${
+								activeFlag === "Greece" ? "active" : ""
+							}`}
+							onClick={() => handleFlagClick("Greece")}
+						>
+							<span className="fi fi-gr flag"></span>
+						</button>
+
+						<button
+							className={`flag-button ${
+								activeFlag === "Italy" ? "active" : ""
+							}`}
+							onClick={() => handleFlagClick("Italy")}
+						>
+							<span className="fi fi-it flag"></span>
+						</button>
+
+						<button
+							className={`flag-button ${
+								activeFlag === "Spain" ? "active" : ""
+							}`}
+							onClick={() => handleFlagClick("Spain")}
+						>
+							<span className="fi fi-es flag"></span>
+						</button>
+
+						<button
+							className={`flag-button ${
+								activeFlag === "Lithuania" ? "active" : ""
+							}`}
+							onClick={() => handleFlagClick("Lithuania")}
+						>
+							<span className="fi fi-lt flag"></span>
+						</button>
+					</Container>
+
+					<Container className="card-container">
+						{loading ? (
+							<div className="d-flex justify-content-center">
+								<Spinner
+									style={{ color: "var(--bordo-color)" }}
+									animation="border"
+									role="status"
+								>
+									<span className="visually-hidden">Loading...</span>
+								</Spinner>
+							</div>
+						) : (
+							works.map((work) => (
+								<WorkCard
+									key={work.work_id}
+									image={work.image_url}
+									title={work.title}
+									participantName={work.participant_name}
+									category={work.category}
+									description={work.description}
+									voteButtonText="Vote"
+									detailsButtonText="Details"
+									voteCount={work.vote_count}
+									isVoted={votedWorkId === work.work_id}
+									onVote={() => handleVote(work.work_id)}
+									onDetails={() =>
+										handleDetails({
+											workId: work.work_id,
+											image: work.image_url,
+											title: work.title,
+											participantName: work.participant_name,
+											voteCount: work.vote_count,
+											category: work.category,
+											authorBio: work.author_bio,
+											description: work.description,
+											stlFile: work.stl_url,
+										})
+									}
+								/>
+							))
+						)}
+					</Container>
+				</div>
+			) : (
+				<Container className="text-center mt-5">
+					<img src={sendWorksImage} alt="No votes" className="no-works-image" />
+					<h2 className="no-works-header mt-3">
+						Voting hasn't started yet. You can view all the contest phases in
+						the About section.
+					</h2>
+				</Container>
+			)}
 			<DetailsModal
 				show={showModal}
 				onHide={handleClose}

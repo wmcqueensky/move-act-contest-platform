@@ -92,7 +92,7 @@ const AccountDetailsPage = () => {
 			}));
 
 			setVotedWorks(worksWithVotes);
-			setLoading(false); // End loading after fetching data
+			setLoading(false);
 		};
 
 		fetchUserData();
