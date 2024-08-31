@@ -139,7 +139,10 @@ const AccountDetailsPage = () => {
 		setEditPasswordModal(true);
 	};
 
-	const handleVote = async (newWorkId: number) => {};
+	const handleVote = async (newWorkId: number) => {
+		if (0 !== newWorkId) {
+		}
+	};
 
 	const handleDetails = (work: any) => {
 		setCurrentWork(work);
