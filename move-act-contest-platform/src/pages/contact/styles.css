@@ -10,7 +10,7 @@
 	background-size: cover;
 }
 
-.rules-contact-button {
+.rules-button {
 	padding: 0.75rem 1.5rem;
 	height: 90px;
 	width: 280px;
@@ -28,7 +28,31 @@
 	box-shadow: none;
 }
 
-.rules-contact-button:hover {
+.rules-button:hover {
+	background-color: var(--yellow-color) !important;
+	color: var(--bordo-color);
+	box-shadow: none;
+}
+
+.guidelines-button {
+	padding: 0.75rem 1.5rem;
+	height: 90px;
+	width: 280px;
+	font-size: 1.3rem;
+	border-radius: 20px;
+	background-color: var(--bordo-color);
+	border: none;
+	color: var(--yellow-color);
+	font-weight: 500;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	line-height: normal;
+	box-shadow: none;
+}
+
+.guidelines-button:hover {
 	background-color: var(--yellow-color) !important;
 	color: var(--bordo-color);
 	box-shadow: none;
@@ -85,4 +109,12 @@
 .social-media-container img:hover {
 	filter: brightness(0.7);
 	opacity: 0.8;
+}
+
+.rules-and-guidelines-buttons {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
 }

@@ -16,7 +16,7 @@ const AuthToast: React.FC<AuthToastProps> = ({
 	onClose,
 }) => {
 	return (
-		<ToastContainer position="middle-center" className="sing-up-toast">
+		<ToastContainer position="middle-center">
 			<Toast
 				onClose={onClose}
 				show={show}

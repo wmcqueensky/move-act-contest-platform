@@ -1,6 +1,7 @@
 import { Container, Button, Image } from "react-bootstrap";
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 import rulesPdf from "../about/docs/rules.pdf";
+import guidelinesPdf from "../about/docs/guidelines.pdf";
 import platformLogo from "./images/e-platform-logo.png";
 import projectLogo from "./images/project-logo.png";
 import "./styles.css";
@@ -105,13 +106,21 @@ const ContactPage = () => {
 				<span style={{ color: "var(--orange-color)" }}>About </span>section on
 				the present platform.
 			</h3>
-			<Button
-				className="rules-contact-button"
-				style={{ margin: "0 auto" }}
-				onClick={() => window.open(rulesPdf, "_blank")}
-			>
-				See all rules and regulations
-			</Button>
+
+			<Container className="rules-and-guidelines-buttons">
+				<Button
+					className="rules-button"
+					onClick={() => window.open(rulesPdf, "_blank")}
+				>
+					See all rules and regulations
+				</Button>
+				<Button
+					className="guidelines-button"
+					onClick={() => window.open(guidelinesPdf, "_blank")}
+				>
+					See guidelines for participating
+				</Button>
+			</Container>
 		</div>
 	);
 };

@@ -1,4 +1,4 @@
-import { Container, Accordion, Table } from "react-bootstrap";
+import { Container, Accordion, Table, Button } from "react-bootstrap";
 import rulesPdf from "./docs/rules.pdf";
 import "./styles.css";
 
@@ -1094,16 +1094,20 @@ const AboutPage = () => {
 				</Accordion.Item>
 			</Accordion>
 
-			<h2
-				style={{
-					fontWeight: "bold",
-					cursor: "pointer",
-				}}
-				className="mt-5 rules-button"
-				onClick={() => window.open(rulesPdf, "_blank")}
-			>
-				Click here to see all rules and regulations
-			</h2>
+			<Container className="rules-and-guidelines-buttons">
+				<Button
+					className="rules-button"
+					onClick={() => window.open(rulesPdf, "_blank")}
+				>
+					See all rules and regulations
+				</Button>
+				<Button
+					className="guidelines-button"
+					onClick={() => window.open(guidelinesPdf, "_blank")}
+				>
+					See guidelines for participating
+				</Button>
+			</Container>
 		</div>
 	);
 };
