@@ -189,7 +189,7 @@ const AuthModal: React.FC<AuthModalProps> = ({
 			const { error } = await supabase.auth.resetPasswordForEmail(
 				forgotPasswordEmail,
 				{
-					redirectTo: window.location.origin + "/reset-password", // Replace with your redirect URL
+					redirectTo: window.location.origin + "/reset-password", //to popraw
 				}
 			);
 

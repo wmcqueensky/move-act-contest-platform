@@ -1,9 +1,20 @@
 import { Container, Button, Col } from "react-bootstrap";
 import { IoIosArrowForward } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 import { WORKS_PATH, ABOUT_PATH } from "../../router/paths.ts";
 import "./styles.css";
 
 const HomePage = () => {
+	const navigate = useNavigate();
+
+	const goToProjectWebsite = () => {
+		window.open(
+			"http://moveandact-project.com/",
+			"_blank",
+			"noopener noreferrer"
+		);
+	};
+
 	return (
 		<>
 			<Container fluid className="home-image text-center mb-5">
@@ -42,10 +53,7 @@ const HomePage = () => {
 			<Container className="button-group mb-5 d-flex flex-column flex-md-row">
 				<Button
 					className="custom-button mx-3 my-2 my-md-0"
-					as="a"
-					href="http://moveandact-project.com/"
-					target="_blank"
-					rel="noopener noreferrer"
+					onClick={goToProjectWebsite}
 				>
 					Go to project website
 					<IoIosArrowForward />
@@ -53,9 +61,7 @@ const HomePage = () => {
 
 				<Button
 					className="custom-button mx-3 my-2 my-md-0"
-					as="a"
-					href={WORKS_PATH}
-					rel="noopener noreferrer"
+					onClick={() => navigate(WORKS_PATH)}
 				>
 					Go to voting page
 					<IoIosArrowForward />
@@ -63,9 +69,7 @@ const HomePage = () => {
 
 				<Button
 					className="custom-button mx-3 my-2 my-md-0"
-					as="a"
-					href={ABOUT_PATH}
-					rel="noopener noreferrer"
+					onClick={() => navigate(ABOUT_PATH)}
 				>
 					Get more info
 					<IoIosArrowForward />
