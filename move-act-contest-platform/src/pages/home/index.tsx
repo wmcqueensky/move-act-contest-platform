@@ -1,5 +1,6 @@
 import { Container, Button, Col } from "react-bootstrap";
 import { IoIosArrowForward } from "react-icons/io";
+import { WORKS_PATH, ABOUT_PATH } from "../../router/paths.ts";
 import "./styles.css";
 
 const HomePage = () => {
@@ -29,7 +30,7 @@ const HomePage = () => {
 				<h3 className="platform-info-header">About The Platform</h3>
 
 				<p className="platform-info-text">
-					For three months, the MOVE & ACT consortium will be developing the
+					For three months, the MOVE & ACT consortium will be conducting the
 					Photovoice Contest Platform. This innovative project encourages young
 					people to express their creativity and voice through digital
 					photography. The main purpose of this platform is to empower youth,
@@ -53,7 +54,7 @@ const HomePage = () => {
 				<Button
 					className="custom-button mx-3 my-2 my-md-0"
 					as="a"
-					href="/works"
+					href={WORKS_PATH}
 					rel="noopener noreferrer"
 				>
 					Go to voting page
@@ -63,7 +64,7 @@ const HomePage = () => {
 				<Button
 					className="custom-button mx-3 my-2 my-md-0"
 					as="a"
-					href="/about"
+					href={ABOUT_PATH}
 					rel="noopener noreferrer"
 				>
 					Get more info
