@@ -1,9 +1,52 @@
-import { Container, Accordion, Table, Button } from "react-bootstrap";
+import { useState, useEffect } from "react";
+import { Container, Accordion, Button, Spinner, Table } from "react-bootstrap";
 import guidelinesPdf from "../about/docs/guidelines.pdf";
 import rulesPdf from "./docs/rules.pdf";
 import "./styles.css";
 
 const AboutPage = () => {
+	const [loading, setLoading] = useState(true);
+
+	useEffect(() => {
+		const images = document.querySelectorAll("img");
+		let loadedCount = 0;
+
+		const onLoad = () => {
+			loadedCount += 1;
+			if (loadedCount === images.length) {
+				setLoading(false);
+			}
+		};
+
+		images.forEach((image) => {
+			if (image.complete) {
+				onLoad();
+			} else {
+				image.addEventListener("load", onLoad);
+			}
+		});
+
+		return () => {
+			images.forEach((image) => {
+				image.removeEventListener("load", onLoad);
+			});
+		};
+	}, []);
+
+	if (loading) {
+		return (
+			<div className="d-flex justify-content-center align-items-center vh-100">
+				<Spinner
+					style={{ color: "var(--bordo-color)" }}
+					animation="border"
+					role="status"
+				>
+					<span className="visually-hidden">Loading...</span>
+				</Spinner>
+			</div>
+		);
+	}
+
 	return (
 		<div className="works-background text-center ">
 			<Container fluid className="about-image text-center mb-5">

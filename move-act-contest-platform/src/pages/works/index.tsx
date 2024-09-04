@@ -32,6 +32,7 @@ const WorksPage = () => {
 	useEffect(() => {
 		const fetchWorksAndVotes = async () => {
 			if (activeFlag) {
+				setLoading(true);
 				const { data: worksData, error: worksError } = await supabase
 					.from("works")
 					.select("*")
@@ -39,6 +40,7 @@ const WorksPage = () => {
 
 				if (worksError) {
 					console.error("Error fetching works:", worksError);
+					setLoading(false);
 					return;
 				}
 
@@ -50,6 +52,7 @@ const WorksPage = () => {
 
 				if (votesError) {
 					console.error("Error fetching votes:", votesError);
+					setLoading(false);
 					return;
 				}
 
@@ -66,7 +69,6 @@ const WorksPage = () => {
 				}));
 
 				setWorks(worksWithVotes);
-				setLoading(false);
 			}
 		};
 
@@ -198,6 +200,7 @@ const WorksPage = () => {
 			});
 			setVotedWorkId(newWorkId);
 		}
+		setLoading(false);
 	};
 
 	const handleDetails = (work: any) => {

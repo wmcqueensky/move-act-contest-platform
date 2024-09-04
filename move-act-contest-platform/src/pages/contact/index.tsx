@@ -1,5 +1,6 @@
-import { Container, Button, Image } from "react-bootstrap";
+import { Container, Button, Image, Spinner } from "react-bootstrap";
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
+import { useState, useEffect } from "react";
 import rulesPdf from "../about/docs/rules.pdf";
 import guidelinesPdf from "../about/docs/guidelines.pdf";
 import platformLogo from "./images/e-platform-logo.png";
@@ -7,6 +8,48 @@ import projectLogo from "./images/project-logo.png";
 import "./styles.css";
 
 const ContactPage = () => {
+	const [loading, setLoading] = useState(true);
+
+	useEffect(() => {
+		const images = document.querySelectorAll("img");
+		let loadedCount = 0;
+
+		const onLoad = () => {
+			loadedCount += 1;
+			if (loadedCount === images.length) {
+				setLoading(false);
+			}
+		};
+
+		images.forEach((image) => {
+			if (image.complete) {
+				onLoad();
+			} else {
+				image.addEventListener("load", onLoad);
+			}
+		});
+
+		return () => {
+			images.forEach((image) => {
+				image.removeEventListener("load", onLoad);
+			});
+		};
+	}, []);
+
+	if (loading) {
+		return (
+			<div className="d-flex justify-content-center align-items-center vh-100">
+				<Spinner
+					style={{ color: "var(--bordo-color)" }}
+					animation="border"
+					role="status"
+				>
+					<span className="visually-hidden">Loading...</span>
+				</Spinner>
+			</div>
+		);
+	}
+
 	return (
 		<div className="works-background text-center">
 			<Container fluid className="contact-image text-center mb-7">

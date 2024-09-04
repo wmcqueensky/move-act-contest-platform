@@ -205,7 +205,6 @@ const AuthModal: React.FC<AuthModalProps> = ({
 					message: "Password reset link sent!",
 					type: "success",
 				});
-				handleTabSwitch(LOGIN_TAB);
 			}
 		} catch (error) {
 			const errorMessage = (error as Error).message;

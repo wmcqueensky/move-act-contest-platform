@@ -1,4 +1,5 @@
-import { Container, Button, Col } from "react-bootstrap";
+import { useState, useEffect } from "react";
+import { Container, Button, Col, Spinner } from "react-bootstrap";
 import { IoIosArrowForward } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import { WORKS_PATH, ABOUT_PATH } from "../../router/paths.ts";
@@ -6,7 +7,7 @@ import "./styles.css";
 
 const HomePage = () => {
 	const navigate = useNavigate();
-
+	const [loading, setLoading] = useState(true);
 	const goToProjectWebsite = () => {
 		window.open(
 			"http://moveandact-project.com/",
@@ -14,6 +15,46 @@ const HomePage = () => {
 			"noopener noreferrer"
 		);
 	};
+
+	useEffect(() => {
+		const images = document.querySelectorAll("img");
+		let loadedCount = 0;
+
+		const onLoad = () => {
+			loadedCount += 1;
+			if (loadedCount === images.length) {
+				setLoading(false);
+			}
+		};
+
+		images.forEach((image) => {
+			if (image.complete) {
+				onLoad();
+			} else {
+				image.addEventListener("load", onLoad);
+			}
+		});
+
+		return () => {
+			images.forEach((image) => {
+				image.removeEventListener("load", onLoad);
+			});
+		};
+	}, []);
+
+	if (loading) {
+		return (
+			<div className="d-flex justify-content-center align-items-center vh-100">
+				<Spinner
+					style={{ color: "var(--bordo-color)" }}
+					animation="border"
+					role="status"
+				>
+					<span className="visually-hidden">Loading...</span>
+				</Spinner>
+			</div>
+		);
+	}
 
 	return (
 		<>

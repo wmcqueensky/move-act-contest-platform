@@ -21,7 +21,6 @@ const MainNavbar: React.FC = () => {
 		typeof LOGIN_TAB | typeof REGISTER_TAB
 	>(LOGIN_TAB);
 
-	// Update the type to handle email being possibly undefined
 	const [user, setUser] = useState<{ email: string | undefined | null } | null>(
 		null
 	);
