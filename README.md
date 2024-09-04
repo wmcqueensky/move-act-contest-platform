@@ -1,5 +1,8 @@
 # move-act-contest-platform
-Web platform for Move&amp;Act Project contest financially supported by European Union.
+Web platform for Move&Act Project contest financially supported by the European Union.
+
+## Website
+[Visit the Move&Act Contest Platform](https://moveandact-contest.com)
 
 ## Photos
 <img width="1680" alt="Screenshot 2024-08-10 at 12 32 38" src="https://github.com/user-attachments/assets/4a0f0693-9640-4788-9c2b-ff093ee290d3">
