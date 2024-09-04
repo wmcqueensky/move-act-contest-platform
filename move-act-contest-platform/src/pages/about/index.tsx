@@ -835,9 +835,20 @@ const AboutPage = () => {
 							along with storytelling techniques and other useful information.
 						</p>
 
-						<p style={{ fontWeight: "bold", color: "var(--bordo-color)" }}>
-							Website: (URL)
-						</p>
+						<div>
+							<a
+								href={guidelinesPdf}
+								target="_blank"
+								rel="noopener noreferrer"
+								style={{
+									fontWeight: "bold",
+									color: "var(--bordo-color)",
+									textDecoration: "none",
+								}}
+							>
+								Click to see guidelines
+							</a>
+						</div>
 					</Accordion.Body>
 				</Accordion.Item>
 
