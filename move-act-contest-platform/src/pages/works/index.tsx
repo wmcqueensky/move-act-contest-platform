@@ -70,8 +70,8 @@ const WorksPage = () => {
 
 				setWorks(worksWithVotes);
 			}
+			setLoading(false);
 		};
-
 		fetchWorksAndVotes();
 	}, [activeFlag]);
 
@@ -200,7 +200,6 @@ const WorksPage = () => {
 			});
 			setVotedWorkId(newWorkId);
 		}
-		setLoading(false);
 	};
 
 	const handleDetails = (work: any) => {
