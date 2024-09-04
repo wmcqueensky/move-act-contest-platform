@@ -4,7 +4,7 @@ import { FiMenu } from "react-icons/fi";
 import { FaUser } from "react-icons/fa";
 import { HOME_PATH, WORKS_PATH, ABOUT_PATH, CONTACT_PATH } from "../paths";
 import { useState, useEffect } from "react";
-import logo from "../images/logo.svg";
+import logo from "../../../public/logo.svg";
 import "flag-icons/css/flag-icons.min.css";
 import "./styles.css";
 import { ACCOUNT_DETAILS_PATH } from "../../router/paths.ts";
