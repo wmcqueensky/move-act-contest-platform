@@ -1,14 +1,36 @@
 {
 	"home": {
-		"first-header": "PHOTOVOICE CONTEST AND EXHIBITION PLATFORM",
+		"first-header": "PHOTOVOICE CONTEST",
+		"second-header": "AND EXHIBITION PLATFORM",
+		"third-header": "Contest duration",
+		"fourth-header": "About The Platform",
+
 		"first-subheader": "Project number:",
 		"second-subheader": "2022-1-PL01-KA220-YOU-000086569",
-		"second-header": "Contest duration",
 		"third-subheader": "01.09.2024 – 31.12.2024",
-		"third-header": "About The Platform",
+
 		"first-text": "For three months, the MOVE & ACT consortium will be conducting the Photovoice Contest Platform. This innovative project encourages young people to express their creativity and voice through digital photography. The main purpose of this platform is to empower youth, increase their employability, help them form a European identity, and engage with local, national, and European communities.",
+
 		"first-button-text": "Go to project website",
 		"second-button-text": "Go to voting page",
 		"third-button-text": "Get more info"
+	},
+
+	"works": {
+		"first-header": "THE 25 NOMINATED PROJECTS",
+		"second-header": "FOR WHICH YOU CAN VOTE",
+		"third-header": "How to vote?",
+		"fourth-header": "Voting hasn't started yet. You can view all the contest phases in the \"About\" section.",
+
+		"first-text": "There are 25 works from 5 countries: Poland, Greece, Italy, Spain, Lithuania.",
+		"second-text": "You can vote for 5 works, each from a different country.",
+		"third-text": "To choose works from specific select one of the 5 flags. The highlighted flag will indicate the origin of the displayed works.",
+		"fourth-text": "After selecting the flag you will see 5 works from the selected country.",
+		"fifth-text": "To vote for a specific work click \"Vote\" button.",
+		"sixth-text": "To see more details about the work click the \"Details\" button."
+	},
+
+	"misc": {
+		"loading-text": "Loading"
 	}
 }

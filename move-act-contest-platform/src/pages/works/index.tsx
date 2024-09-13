@@ -1,10 +1,13 @@
-import { Container, Col, Spinner } from "react-bootstrap";
-import { useState, useEffect } from "react";
 import WorkCard from "../../components/work-card";
 import sendWorksImage from "./images/send-works-image.png";
 import DetailsModal from "../../components/details/details-modal";
 import supabase from "../../config/supabase-client";
+
 import AuthModal, { LOGIN_TAB } from "../../components/auth/auth-modal.tsx";
+import { Container, Col, Spinner } from "react-bootstrap";
+import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+
 import "./styles.css";
 
 type FlagType = "Poland" | "Greece" | "Italy" | "Spain" | "Lithuania";
@@ -28,6 +31,7 @@ const WorksPage = () => {
 	});
 	const [showAuthModal, setShowAuthModal] = useState(false);
 	const [user, setUser] = useState<any>(null);
+	const [t] = useTranslation("global");
 
 	useEffect(() => {
 		const fetchWorksAndVotes = async () => {
@@ -216,48 +220,41 @@ const WorksPage = () => {
 			<Container fluid className="projects-image mb-5">
 				<Col className="text-center">
 					<h1 className="welcome-header display-1">
-						THE 25 NOMINATED PROJECTS <br /> FOR WHICH YOU CAN VOTE
+						{t("works.first-header")}
+						<br />
+						{t("works.second-header")}
 					</h1>
 				</Col>
 			</Container>
 
 			<Container className="voting-info-container">
-				<h1 className="voting-info-header text-center mb-5">How to vote?</h1>
+				<h1 className="voting-info-header text-center mb-5">
+					{t("works.third-header")}
+				</h1>
 
 				<ul>
 					<li>
-						<h3>
-							There are 25 works from 5 countries: Poland, Greece, Italy, Spain,
-							Lithuania.
-						</h3>
+						<h3>{t("works.first-text")}</h3>
 					</li>
 
 					<li>
-						<h3>You can vote for 5 works, each from a different country.</h3>
+						<h3> {t("works.second-text")}</h3>
 					</li>
 
 					<li>
-						<h3>
-							To choose works from specific select one of the 5 flags. The
-							highlighted flag will indicate the origin of the displayed works.
-						</h3>
+						<h3> {t("works.third-text")}</h3>
 					</li>
 
 					<li>
-						<h3>
-							After selecting the flag you will see 5 works from the selected
-							country.
-						</h3>
+						<h3> {t("works.fourth-text")}</h3>
 					</li>
 
 					<li>
-						<h3>To vote for a specific work click Vote button.</h3>
+						<h3> {t("works.fifth-text")}</h3>
 					</li>
 
 					<li>
-						<h3>
-							To see more details about the work click the Details button.
-						</h3>
+						<h3> {t("works.sixth-text")}</h3>
 					</li>
 				</ul>
 			</Container>
@@ -319,7 +316,9 @@ const WorksPage = () => {
 									animation="border"
 									role="status"
 								>
-									<span className="visually-hidden">Loading...</span>
+									<span className="visually-hidden">
+										{t("misc.loading-text")}
+									</span>
 								</Spinner>
 							</div>
 						) : (
@@ -357,10 +356,7 @@ const WorksPage = () => {
 			) : (
 				<Container className="text-center mt-5">
 					<img src={sendWorksImage} alt="No votes" className="no-works-image" />
-					<h2 className="no-works-header mt-3">
-						Voting hasn't started yet. You can view all the contest phases in
-						the About section.
-					</h2>
+					<h2 className="no-works-header mt-3">{t("works.fourth-header")}</h2>
 				</Container>
 			)}
 			<DetailsModal

@@ -53,7 +53,7 @@ const HomePage = () => {
 					animation="border"
 					role="status"
 				>
-					<span className="visually-hidden">Loading...</span>
+					<span className="visually-hidden">{t("misc.loading-text")}</span>
 				</Spinner>
 			</div>
 		);
@@ -63,7 +63,11 @@ const HomePage = () => {
 		<>
 			<Container fluid className="home-image text-center mb-5">
 				<Col className="text-center">
-					<h1 className="welcome-header display-1">{t("home.first-header")}</h1>
+					<h1 className="welcome-header display-1">
+						{t("home.first-header")}
+						<br />
+						{t("home.second-header")}
+					</h1>
 
 					<h6 className="project-number">
 						{t("home.first-subheader")}&nbsp;
@@ -75,12 +79,12 @@ const HomePage = () => {
 			</Container>
 
 			<Container className="contest-duration text-center mb-5">
-				<h5>{t("home.second-header")}</h5>
+				<h5>{t("home.third-header")}</h5>
 				<p>{t("home.third-subheader")}</p>
 			</Container>
 
 			<Container className="text-center mb-5">
-				<h3 className="platform-info-header">{t("home.third-header")}</h3>
+				<h3 className="platform-info-header">{t("home.fourth-header")}</h3>
 
 				<p className="platform-info-text">{t("home.first-text")}</p>
 			</Container>
