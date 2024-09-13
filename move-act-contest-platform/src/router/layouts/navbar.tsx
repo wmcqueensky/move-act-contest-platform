@@ -13,13 +13,30 @@ import AuthModal, {
 	REGISTER_TAB,
 } from "../../components/auth/auth-modal.tsx";
 import supabase from "../../config/supabase-client.ts";
+import { useTranslation } from "react-i18next";
 
-const MainNavbar: React.FC = () => {
+type LanguageCode = "en" | "pl" | "gr" | "it" | "es" | "lt";
+
+const languageOptions: Record<LanguageCode, { flag: string; name: string }> = {
+	en: { flag: "gb", name: "English" },
+	pl: { flag: "pl", name: "Polski" },
+	gr: { flag: "gr", name: "Ελληνικά" },
+	it: { flag: "it", name: "Italiano" },
+	es: { flag: "es", name: "Español" },
+	lt: { flag: "lt", name: "Lietuvių" },
+};
+
+const MainNavbar = () => {
+	const [t, i18n] = useTranslation("global");
 	const [expanded, setExpanded] = useState(false);
 	const [showAuthModal, setShowAuthModal] = useState(false);
 	const [activeTab, setActiveTab] = useState<
 		typeof LOGIN_TAB | typeof REGISTER_TAB
 	>(LOGIN_TAB);
+
+	const changeLanguage = (lang: LanguageCode) => {
+		i18n.changeLanguage(lang);
+	};
 
 	const [user, setUser] = useState<{ email: string | undefined | null } | null>(
 		null
@@ -68,6 +85,10 @@ const MainNavbar: React.FC = () => {
 		};
 	}, []);
 
+	const currentLanguage = i18n.language as LanguageCode;
+	const { flag, name } =
+		languageOptions[currentLanguage] || languageOptions["en"];
+
 	return (
 		<>
 			<Navbar fixed="top" expand="md" className="navbar" expanded={expanded}>
@@ -109,7 +130,7 @@ const MainNavbar: React.FC = () => {
 							className="nav-link mx-2"
 							onClick={handleSelect}
 						>
-							About
+							Rules & Guidelines
 						</Nav.Link>
 
 						<Nav.Link
@@ -126,28 +147,24 @@ const MainNavbar: React.FC = () => {
 								variant="none"
 								className="nav-link mx-2 dropdown-toggle"
 							>
-								<span className="fi fi-gb"></span> English
+								<span className={`fi fi-${flag}`}></span> {name}
 							</Dropdown.Toggle>
 
 							<Dropdown.Menu className="dropdown-menu">
-								<Dropdown.Item href="#/action-1" className="dropdown-item">
-									<span className="fi fi-gb"></span> English
-								</Dropdown.Item>
-								<Dropdown.Item href="#/action-2" className="dropdown-item">
-									<span className="fi fi-pl"></span> Polski
-								</Dropdown.Item>
-								<Dropdown.Item href="#/action-3" className="dropdown-item">
-									<span className="fi fi-gr"></span> Ελληνικά
-								</Dropdown.Item>
-								<Dropdown.Item href="#/action-4" className="dropdown-item">
-									<span className="fi fi-it"></span> Italiano
-								</Dropdown.Item>
-								<Dropdown.Item href="#/action-5" className="dropdown-item">
-									<span className="fi fi-es"></span> Español
-								</Dropdown.Item>
-								<Dropdown.Item href="#/action-6" className="dropdown-item">
-									<span className="fi fi-lt"></span> Lietuvių
-								</Dropdown.Item>
+								{Object.keys(languageOptions).map((lang) => (
+									<Dropdown.Item
+										key={lang}
+										onClick={() => changeLanguage(lang as LanguageCode)}
+										className="dropdown-item"
+									>
+										<span
+											className={`fi fi-${
+												languageOptions[lang as LanguageCode].flag
+											}`}
+										></span>{" "}
+										{languageOptions[lang as LanguageCode].name}
+									</Dropdown.Item>
+								))}
 							</Dropdown.Menu>
 						</Dropdown>
 					</Nav>
