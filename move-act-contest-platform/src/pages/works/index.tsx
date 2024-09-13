@@ -330,8 +330,8 @@ const WorksPage = () => {
 									participantName={work.participant_name}
 									category={work.category}
 									description={work.description}
-									voteButtonText="Vote"
-									detailsButtonText="Details"
+									voteButtonText={t("works.first-button-text")}
+									detailsButtonText={t("works.second-button-text")}
 									voteCount={work.vote_count}
 									isVoted={votedWorkId === work.work_id}
 									onVote={() => handleVote(work.work_id)}

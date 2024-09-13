@@ -1,14 +1,18 @@
-import { Container, Button, Image, Spinner } from "react-bootstrap";
-import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
-import { useState, useEffect } from "react";
 import rulesPdf from "../about/docs/rules.pdf";
 import guidelinesPdf from "../about/docs/guidelines.pdf";
 import platformLogo from "./images/e-platform-logo.png";
 import projectLogo from "./images/project-logo.png";
+
+import { Container, Button, Image, Spinner } from "react-bootstrap";
+import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
+import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+
 import "./styles.css";
 
 const ContactPage = () => {
 	const [loading, setLoading] = useState(true);
+	const [t] = useTranslation("global");
 
 	useEffect(() => {
 		const images = document.querySelectorAll("img");
@@ -44,7 +48,7 @@ const ContactPage = () => {
 					animation="border"
 					role="status"
 				>
-					<span className="visually-hidden">Loading...</span>
+					<span className="visually-hidden">{t("misc.loading-text")}</span>
 				</Spinner>
 			</div>
 		);
@@ -53,11 +57,13 @@ const ContactPage = () => {
 	return (
 		<div className="works-background text-center">
 			<Container fluid className="contact-image text-center mb-7">
-				<h1 className="welcome-header display-1">FEEL FREE TO CONTACT US</h1>
+				<h1 className="welcome-header display-1">
+					{t("contact.first-header")}
+				</h1>
 			</Container>
 
 			<h2 className="mb-3" style={{ color: "var(--bordo-color)" }}>
-				If you have any questions contact us at this email address:
+				{t("contact.first-text")}
 			</h2>
 
 			<h1
@@ -77,7 +83,7 @@ const ContactPage = () => {
 			</h1>
 
 			<h3 className="mb-3" style={{ color: "var(--bordo-color)" }}>
-				Please place the titles of the queries in the following format:
+				{t("contact.second-text")}
 			</h3>
 
 			<h4
@@ -90,18 +96,18 @@ const ContactPage = () => {
 					margin: "0 auto 1.5rem",
 				}}
 			>
-				[country code]_[enquiry]_[Participant's Name and surname]
+				{t("contact.third-text")}
 			</h4>
 
 			<h3 className="mb-3" style={{ color: "var(--bordo-color)" }}>
-				Example:
+				{t("contact.fourth-text")}
 			</h3>
 			<h3 className="mb-7" style={{ color: "var(--orange-color)" }}>
 				GR_Query_Georgios Papadopoulos (Greece)
 			</h3>
 
 			<h3 className="mb-3" style={{ color: "var(--bordo-color)" }}>
-				Check also our social media and other information channels!
+				{t("contact.fifth-text")}
 			</h3>
 			<div className="social-media-container mb-7">
 				<a
@@ -145,9 +151,12 @@ const ContactPage = () => {
 			</div>
 
 			<h3 className="mb-3" style={{ color: "var(--bordo-color)" }}>
-				For more information about contest visit{" "}
-				<span style={{ color: "var(--orange-color)" }}>About </span>section on
-				the present platform.
+				{t("contact.sixth-text")}{" "}
+				<span style={{ color: "var(--orange-color)" }}>
+					{" "}
+					{t("contact.seventh-text")}{" "}
+				</span>
+				{t("contact.eighth-text")}
 			</h3>
 
 			<Container className="rules-and-guidelines-buttons">
@@ -155,13 +164,13 @@ const ContactPage = () => {
 					className="rules-button"
 					onClick={() => window.open(rulesPdf, "_blank")}
 				>
-					See all rules and regulations
+					{t("contact.first-button-text")}
 				</Button>
 				<Button
 					className="guidelines-button"
 					onClick={() => window.open(guidelinesPdf, "_blank")}
 				>
-					See guidelines for participating
+					{t("contact.second-button-text")}
 				</Button>
 			</Container>
 		</div>
