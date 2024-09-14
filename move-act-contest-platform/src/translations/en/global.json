@@ -71,8 +71,6 @@
 		"second-header": "Register",
 		"third-header": "Reset Password",
 
-		"first-subheader": "Name:",
-
 		"first-placeholder": "Email",
 		"second-placeholder": "Password",
 		"third-placeholder": "Name",
@@ -96,6 +94,12 @@
 
 		"first-error": "Emails do not match",
 		"second-error": "Passwords do not match"
+	},
+
+	"work-card": {
+		"first-text": "Votes:",
+
+		"first-button-text": "Voted"
 	},
 
 	"misc": {

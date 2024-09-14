@@ -1,4 +1,5 @@
 import { Card, Button } from "react-bootstrap";
+import { useTranslation } from "react-i18next";
 
 type WorkCardProps = {
 	image: string;
@@ -27,6 +28,8 @@ const WorkCard = ({
 	onVote,
 	onDetails,
 }: WorkCardProps) => {
+	const [t] = useTranslation("global");
+
 	return (
 		<Card className="card">
 			<Card.Img variant="top" src={image} />
@@ -35,7 +38,9 @@ const WorkCard = ({
 				<Card.Subtitle className="mb-2 text-muted">
 					{participantName} - {category}
 				</Card.Subtitle>
-				<Card.Subtitle className="votes">Votes: {voteCount}</Card.Subtitle>
+				<Card.Subtitle className="votes">
+					{t("work-card.first-text")} {voteCount}
+				</Card.Subtitle>
 				<div className="card-content">
 					<Card.Text className="card-description">{description}</Card.Text>
 					<div className="card-buttons-container">
@@ -44,7 +49,7 @@ const WorkCard = ({
 							onClick={onVote}
 							disabled={isVoted}
 						>
-							{isVoted ? "Voted" : voteButtonText}
+							{isVoted ? t("work-card.first-button-text") : voteButtonText}
 						</Button>
 						<Button className="details-button" onClick={onDetails}>
 							{detailsButtonText}
