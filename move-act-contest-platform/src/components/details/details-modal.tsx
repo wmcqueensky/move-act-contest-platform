@@ -1,4 +1,6 @@
 import { Modal, Button } from "react-bootstrap";
+import { useTranslation } from "react-i18next";
+
 import Details from "./details";
 
 type DetailsModalProps = {
@@ -25,6 +27,8 @@ const DetailsModal = ({
 	isVoted,
 	onVote,
 }: DetailsModalProps) => {
+	const [t] = useTranslation("global");
+
 	return (
 		<Modal show={show} onHide={onHide} size="xl" centered>
 			<Modal.Body>
@@ -39,17 +43,21 @@ const DetailsModal = ({
 				/>
 			</Modal.Body>
 			<Modal.Footer className="d-flex justify-content-between">
-				<p className="votes">Votes: {work.voteCount}</p>
+				<p className="votes">
+					{t("details.first-text")} {work.voteCount}
+				</p>
 				<div className="details-buttons">
 					<Button
 						className={`vote-button ${isVoted ? "voted" : ""}`}
 						onClick={onVote}
 						disabled={isVoted}
 					>
-						{isVoted ? "Voted" : "Vote"}
+						{isVoted
+							? t("details.first-button-text")
+							: t("details.second-button-text")}
 					</Button>
 					<Button className="details-button" onClick={onHide}>
-						Close
+						{t("details.third-button-text")}
 					</Button>
 				</div>
 			</Modal.Footer>

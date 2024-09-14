@@ -102,6 +102,14 @@
 		"first-button-text": "Voted"
 	},
 
+	"details": {
+		"first-text": "Votes:",
+
+		"first-button-text": "Voted",
+		"second-button-text": "Vote",
+		"third-button-text": "Close"
+	},
+
 	"misc": {
 		"loading-text": "Loading"
 	}
