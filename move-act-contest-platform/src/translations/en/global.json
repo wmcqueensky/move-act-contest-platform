@@ -49,6 +49,23 @@
 		"second-button-text": "Guidelines"
 	},
 
+	"account-details": {
+		"first-header": "Account Details",
+		"second-header": "Personal Information",
+		"third-header": "Voted Works",
+		"fourth-header": "You haven't voted for any works yet",
+
+		"first-subheader": "Name:",
+		"second-subheader": "Surname:",
+		"third-subheader": "Email:",
+
+		"first-text": "Save",
+
+		"first-button-text": "Change Password",
+		"second-button-text": "Vote",
+		"third-button-text": "Details"
+	},
+
 	"misc": {
 		"loading-text": "Loading"
 	}

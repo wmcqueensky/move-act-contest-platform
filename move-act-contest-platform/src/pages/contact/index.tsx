@@ -1,12 +1,12 @@
-import rulesPdf from "../about/docs/rules.pdf";
-import guidelinesPdf from "../about/docs/guidelines.pdf";
-import platformLogo from "./images/e-platform-logo.png";
-import projectLogo from "./images/project-logo.png";
-
 import { Container, Button, Image, Spinner } from "react-bootstrap";
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+
+import rulesPdf from "../about/docs/rules.pdf";
+import guidelinesPdf from "../about/docs/guidelines.pdf";
+import platformLogo from "./images/e-platform-logo.png";
+import projectLogo from "./images/project-logo.png";
 
 import "./styles.css";
 

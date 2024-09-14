@@ -5,6 +5,7 @@ import { FaUserEdit } from "react-icons/fa";
 import AuthModal, {
 	RESET_PASSWORD_TAB,
 } from "../../components/auth/auth-modal.tsx";
+import { useTranslation } from "react-i18next";
 
 import noVotesImage from "./images/no-votes-image.png";
 import DetailsModal from "../../components/details/details-modal.tsx";
@@ -38,6 +39,7 @@ const AccountDetailsPage = () => {
 	const [activeTab, setActiveTab] =
 		useState<typeof RESET_PASSWORD_TAB>(RESET_PASSWORD_TAB);
 	const navigate = useNavigate();
+	const [t] = useTranslation("global");
 
 	useEffect(() => {
 		const fetchUserData = async () => {
@@ -157,7 +159,7 @@ const AccountDetailsPage = () => {
 					animation="border"
 					role="status"
 				>
-					<span className="visually-hidden">Loading...</span>
+					<span className="visually-hidden">{t("misc.loading-text")}</span>
 				</Spinner>
 			</div>
 		);
@@ -165,13 +167,15 @@ const AccountDetailsPage = () => {
 
 	return (
 		<div className="works-background">
-			<h1 className="account-details-header text-center">Account Details</h1>
+			<h1 className="account-details-header text-center">
+				{t("account-details.first-header")}
+			</h1>
 
 			<Container
 				style={{ backgroundColor: "var(--white-color)", padding: "50px" }}
 			>
 				<h4 className="account-details-section-header mb-4">
-					Personal Information
+					{t("account-details.second-header")}
 				</h4>
 
 				<Row className="align-items-center mb-3">
@@ -186,7 +190,10 @@ const AccountDetailsPage = () => {
 							/>
 						) : (
 							<span>
-								<h6 className="account-data-header">Name:</h6> {formData.name}
+								<h6 className="account-data-header">
+									{t("account-details.first-subheader")}
+								</h6>{" "}
+								{formData.name}
 							</span>
 						)}
 					</Col>
@@ -200,7 +207,10 @@ const AccountDetailsPage = () => {
 							/>
 						) : (
 							<span>
-								<h6 className="account-data-header">Surname:</h6>{" "}
+								<h6 className="account-data-header">
+									{" "}
+									{t("account-details.second-subheader")}
+								</h6>{" "}
 								{formData.surname}
 							</span>
 						)}
@@ -212,7 +222,7 @@ const AccountDetailsPage = () => {
 								editMode.name ? handleSave("name") : handleEditToggle("name")
 							}
 						>
-							{editMode.name ? "Save" : <FaUserEdit />}
+							{editMode.name ? t("account-details.first-text") : <FaUserEdit />}
 						</Button>
 					</Col>
 				</Row>
@@ -220,19 +230,24 @@ const AccountDetailsPage = () => {
 				<Row className="align-items-center mb-3">
 					<Col md={8}>
 						<span>
-							<h6 className="account-data-header">Email:</h6> {formData.email}
+							<h6 className="account-data-header">
+								{t("account-details.third-subheader")}
+							</h6>{" "}
+							{formData.email}
 						</span>
 					</Col>
 					<Col md={4} className="text-md-right">
 						<Button className="edit-button" onClick={openForgotPasswordModal}>
-							Change Password
+							{t("account-details.first-button-text")}
 						</Button>
 					</Col>
 				</Row>
 			</Container>
 
 			<Container className="mt-5 mb-4">
-				<h4 className="account-details-section-header">Voted Works</h4>
+				<h4 className="account-details-section-header">
+					{t("account-details.third-header")}
+				</h4>
 			</Container>
 
 			{votedWorks.length > 0 ? (
@@ -245,8 +260,8 @@ const AccountDetailsPage = () => {
 							participantName={work.participant_name}
 							category={work.category}
 							description={work.description}
-							voteButtonText="Vote"
-							detailsButtonText="Details"
+							voteButtonText={t("account-details.second-button-text")}
+							detailsButtonText={t("account-details.third-button-text")}
 							voteCount={work.vote_count}
 							isVoted={true}
 							onVote={() => handleVote(work.work_id)}
@@ -270,7 +285,7 @@ const AccountDetailsPage = () => {
 				<Container className="text-center">
 					<img src={noVotesImage} alt="No votes" className="no-votes-image" />
 					<h2 className="no-votes-header mt-3">
-						You haven't voted for any works yet
+						{t("account-details.fourth-header")}
 					</h2>
 				</Container>
 			)}

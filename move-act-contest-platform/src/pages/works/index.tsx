@@ -1,12 +1,12 @@
-import WorkCard from "../../components/work-card";
-import sendWorksImage from "./images/send-works-image.png";
-import DetailsModal from "../../components/details/details-modal";
-import supabase from "../../config/supabase-client";
-
 import AuthModal, { LOGIN_TAB } from "../../components/auth/auth-modal.tsx";
 import { Container, Col, Spinner } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+
+import WorkCard from "../../components/work-card";
+import sendWorksImage from "./images/send-works-image.png";
+import DetailsModal from "../../components/details/details-modal";
+import supabase from "../../config/supabase-client";
 
 import "./styles.css";
 
