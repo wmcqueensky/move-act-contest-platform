@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { Modal, Button, Form, ButtonGroup } from "react-bootstrap";
+import { useTranslation } from "react-i18next";
 
 import supabase from "../../config/supabase-client.ts";
 import AuthToast from "./auth-toast.tsx";
 import rulesPdf from "../../pages/about/docs/rules.pdf";
+
 import "./styles.css";
 
 export const LOGIN_TAB = "login";
@@ -26,6 +28,7 @@ const AuthModal: React.FC<AuthModalProps> = ({
 	>(parentActiveTab);
 
 	const [forgotPasswordEmail, setForgotPasswordEmail] = useState("");
+	const [t] = useTranslation("global");
 	const [forgotPasswordToast, setForgotPasswordToast] = useState<{
 		show: boolean;
 		message: string;
@@ -100,14 +103,14 @@ const AuthModal: React.FC<AuthModalProps> = ({
 
 		if (activeTab === REGISTER_TAB) {
 			if (formData.email !== formData.confirmEmail) {
-				setToast({ show: true, message: "Emails do not match", type: "error" });
+				setToast({ show: true, message: t("auth.first-error"), type: "error" });
 				return;
 			}
 
 			if (formData.password !== formData.confirmPassword) {
 				setToast({
 					show: true,
-					message: "Passwords do not match",
+					message: t("auth.second-error"),
 					type: "error",
 				});
 				return;
@@ -125,7 +128,7 @@ const AuthModal: React.FC<AuthModalProps> = ({
 			} else {
 				setToast({
 					show: true,
-					message: "Login successful!",
+					message: t("auth.first-success"),
 					type: "success",
 				});
 				handleClose();
@@ -142,14 +145,14 @@ const AuthModal: React.FC<AuthModalProps> = ({
 		setError(null);
 
 		if (formData.email !== formData.confirmEmail) {
-			setToast({ show: true, message: "Emails do not match", type: "error" });
+			setToast({ show: true, message: t("auth.first-error"), type: "error" });
 			return;
 		}
 
 		if (formData.password !== formData.confirmPassword) {
 			setToast({
 				show: true,
-				message: "Passwords do not match",
+				message: t("auth.second-error"),
 				type: "error",
 			});
 			return;
@@ -171,7 +174,7 @@ const AuthModal: React.FC<AuthModalProps> = ({
 			} else {
 				setToast({
 					show: true,
-					message: "Sign up successful!",
+					message: t("auth.second-success"),
 					type: "success",
 				});
 				handleClose();
@@ -202,7 +205,7 @@ const AuthModal: React.FC<AuthModalProps> = ({
 			} else {
 				setForgotPasswordToast({
 					show: true,
-					message: "Password reset link sent!",
+					message: t("auth.third-success"),
 					type: "success",
 				});
 			}
@@ -249,7 +252,7 @@ const AuthModal: React.FC<AuthModalProps> = ({
 								}`}
 								onClick={() => handleTabSwitch(LOGIN_TAB)}
 							>
-								Login
+								{t("auth.first-header")}
 							</Button>
 							<Button
 								className={`w-50 ${
@@ -257,7 +260,7 @@ const AuthModal: React.FC<AuthModalProps> = ({
 								}`}
 								onClick={() => handleTabSwitch(REGISTER_TAB)}
 							>
-								Register
+								{t("auth.second-header")}
 							</Button>
 						</ButtonGroup>
 					)}
@@ -266,7 +269,7 @@ const AuthModal: React.FC<AuthModalProps> = ({
 						<Form onSubmit={handleSignIn}>
 							<Form.Control
 								type="email"
-								placeholder="Email"
+								placeholder={t("auth.first-placeholder")}
 								className="mb-4 form-control"
 								name="email"
 								onChange={handleChange}
@@ -274,7 +277,7 @@ const AuthModal: React.FC<AuthModalProps> = ({
 							/>
 							<Form.Control
 								type="password"
-								placeholder="Password"
+								placeholder={t("auth.second-placeholder")}
 								className="mb-4 form-control"
 								name="password"
 								onChange={handleChange}
@@ -286,11 +289,11 @@ const AuthModal: React.FC<AuthModalProps> = ({
 									className="forgot-password-link text-center"
 									onClick={() => handleTabSwitch(RESET_PASSWORD_TAB)}
 								>
-									Forgot Password?
+									{t("auth.fourth-button-text")}
 								</a>
 							</div>
 							<Button className="vote-button w-100" type="submit">
-								Login
+								{t("auth.first-button-text")}
 							</Button>
 						</Form>
 					)}
@@ -299,7 +302,7 @@ const AuthModal: React.FC<AuthModalProps> = ({
 							<Form.Group className="d-flex mb-4">
 								<Form.Control
 									type="text"
-									placeholder="Name"
+									placeholder={t("auth.third-placeholder")}
 									className="me-2 form-control"
 									name="name"
 									onChange={handleChange}
@@ -307,7 +310,7 @@ const AuthModal: React.FC<AuthModalProps> = ({
 								/>
 								<Form.Control
 									type="text"
-									placeholder="Surname"
+									placeholder={t("auth.fourth-placeholder")}
 									className="form-control"
 									name="surname"
 									onChange={handleChange}
@@ -316,7 +319,7 @@ const AuthModal: React.FC<AuthModalProps> = ({
 							</Form.Group>
 							<Form.Control
 								type="email"
-								placeholder="Email"
+								placeholder={t("auth.first-placeholder")}
 								className="mb-4 form-control"
 								name="email"
 								onChange={handleChange}
@@ -324,7 +327,7 @@ const AuthModal: React.FC<AuthModalProps> = ({
 							/>
 							<Form.Control
 								type="email"
-								placeholder="Confirm Email"
+								placeholder={t("auth.fifth-placeholder")}
 								className="mb-4 form-control"
 								name="confirmEmail"
 								onChange={handleChange}
@@ -332,7 +335,7 @@ const AuthModal: React.FC<AuthModalProps> = ({
 							/>
 							<Form.Control
 								type="password"
-								placeholder="Password"
+								placeholder={t("auth.second-placeholder")}
 								className="mb-4 form-control"
 								name="password"
 								onChange={handleChange}
@@ -340,7 +343,7 @@ const AuthModal: React.FC<AuthModalProps> = ({
 							/>
 							<Form.Control
 								type="password"
-								placeholder="Confirm Password"
+								placeholder={t("auth.sixth-placeholder")}
 								className="mb-4 form-control"
 								name="confirmPassword"
 								onChange={handleChange}
@@ -354,13 +357,13 @@ const AuthModal: React.FC<AuthModalProps> = ({
 									required
 									label={
 										<>
-											I accept the{" "}
+											{t("auth.first-text")}{" "}
 											<a
 												href={rulesPdf}
 												target="_blank"
 												rel="noopener noreferrer"
 											>
-												Terms of Service and Privacy Policy
+												{t("auth.second-text")}
 											</a>
 										</>
 									}
@@ -369,19 +372,19 @@ const AuthModal: React.FC<AuthModalProps> = ({
 							</Form.Group>
 
 							<Button className="vote-button w-100" type="submit">
-								Register
+								{t("auth.second-button-text")}
 							</Button>
 						</Form>
 					)}
 					{activeTab === RESET_PASSWORD_TAB && (
 						<Form onSubmit={handleForgotPassword}>
 							<h3 className="reset-password-modal-header text-center">
-								Reset Password
+								{t("auth.third-header")}
 							</h3>
 
 							<Form.Control
 								type="email"
-								placeholder="Email"
+								placeholder={t("auth.first-placeholder")}
 								className="mb-4 form-control"
 								value={forgotPasswordEmail}
 								onChange={(e) => setForgotPasswordEmail(e.target.value)}
@@ -389,7 +392,7 @@ const AuthModal: React.FC<AuthModalProps> = ({
 							/>
 
 							<Button className="vote-button w-100" type="submit">
-								Send Reset Link
+								{t("auth.fifth-button-text")}
 							</Button>
 
 							{!isLoggedIn && (
@@ -399,7 +402,7 @@ const AuthModal: React.FC<AuthModalProps> = ({
 										className="forgot-password-link"
 										onClick={() => handleTabSwitch(LOGIN_TAB)}
 									>
-										Back to Login
+										{t("auth.sixth-button-text")}
 									</a>
 								</div>
 							)}

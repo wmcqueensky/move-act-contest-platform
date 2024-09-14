@@ -66,6 +66,38 @@
 		"third-button-text": "Details"
 	},
 
+	"auth": {
+		"first-header": "Login",
+		"second-header": "Register",
+		"third-header": "Reset Password",
+
+		"first-subheader": "Name:",
+
+		"first-placeholder": "Email",
+		"second-placeholder": "Password",
+		"third-placeholder": "Name",
+		"fourth-placeholder": "Surname",
+		"fifth-placeholder": "Confirm Email",
+		"sixth-placeholder": "Confirm Password",
+
+		"first-text": "I accept the",
+		"second-text": "Terms of Service and Privacy Policy",
+
+		"first-button-text": "Login",
+		"second-button-text": "Register",
+		"third-button-text": "Login",
+		"fourth-button-text": "Forgot Password?",
+		"fifth-button-text": "Send Reset Link",
+		"sixth-button-text": "Back to Login",
+
+		"first-success": "Login successful!",
+		"second-success": "Sign up successful!",
+		"third-success": "Password reset link sent!",
+
+		"first-error": "Emails do not match",
+		"second-error": "Passwords do not match"
+	},
+
 	"misc": {
 		"loading-text": "Loading"
 	}
