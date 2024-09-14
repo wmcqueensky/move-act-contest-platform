@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import supabase from "../../config/supabase-client.ts";
 import AuthToast from "./auth-toast.tsx";
-import rulesPdf from "../../pages/about/docs/rules.pdf";
+import rulesPdf from "../../pages/guidelines/docs/rules.pdf";
 
 import "./styles.css";
 

@@ -2,14 +2,14 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import Layout from "./layouts";
 import HomePage from "../pages/home";
 import WorksPage from "../pages/works";
-import AboutPage from "../pages/about";
+import AboutPage from "../pages/guidelines";
 import ContactPage from "../pages/contact";
 import ResetPasswordPage from "../pages/reset-password";
 import AccountDetailsPage from "../pages/account-details";
 
 import {
 	WORKS_PATH,
-	ABOUT_PATH,
+	GUIDELINES_PATH,
 	CONTACT_PATH,
 	HOME_PATH,
 	RESET_PASSWORD_PATH,
@@ -21,7 +21,7 @@ const Router = () => (
 		<Route element={<Layout />}>
 			<Route index element={<HomePage />} />
 			<Route path={WORKS_PATH} element={<WorksPage />} />
-			<Route path={ABOUT_PATH} element={<AboutPage />} />
+			<Route path={GUIDELINES_PATH} element={<AboutPage />} />
 			<Route path={CONTACT_PATH} element={<ContactPage />} />
 			<Route path={ACCOUNT_DETAILS_PATH} element={<AccountDetailsPage />} />
 		</Route>

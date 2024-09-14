@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Container, Button, Col, Spinner } from "react-bootstrap";
 import { IoIosArrowForward } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
-import { WORKS_PATH, ABOUT_PATH } from "../../router/paths.ts";
+import { WORKS_PATH, GUIDELINES_PATH } from "../../router/paths.ts";
 import { useTranslation } from "react-i18next";
 
 import "./styles.css";
@@ -108,7 +108,7 @@ const HomePage = () => {
 
 				<Button
 					className="custom-button mx-3 my-2 my-md-0"
-					onClick={() => navigate(ABOUT_PATH)}
+					onClick={() => navigate(GUIDELINES_PATH)}
 				>
 					{t("home.third-button-text")}
 					<IoIosArrowForward />

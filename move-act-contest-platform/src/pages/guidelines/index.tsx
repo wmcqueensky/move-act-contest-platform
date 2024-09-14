@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Container, Accordion, Button, Spinner, Table } from "react-bootstrap";
-import guidelinesPdf from "../about/docs/guidelines.pdf";
+import guidelinesPdf from "./docs/guidelines.pdf";
 import rulesPdf from "./docs/rules.pdf";
 import "./styles.css";
 

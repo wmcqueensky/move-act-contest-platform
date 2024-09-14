@@ -123,6 +123,10 @@
 		"first-error": "Passwords do not match"
 	},
 
+	"navbar": {},
+
+	"footer": {},
+
 	"misc": {
 		"loading-text": "Loading"
 	}
