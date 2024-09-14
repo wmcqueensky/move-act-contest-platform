@@ -123,7 +123,16 @@
 		"first-error": "Passwords do not match"
 	},
 
-	"navbar": {},
+	"navbar": {
+		"first-header": "Home",
+		"second-header": "Works",
+		"third-header": "Guidelines",
+		"fourth-header": "Contact",
+		"fifth-header": "Account details",
+		"sixth-header": "Log out",
+		"seventh-header": "Login",
+		"eighth-header": "Register"
+	},
 
 	"footer": {},
 

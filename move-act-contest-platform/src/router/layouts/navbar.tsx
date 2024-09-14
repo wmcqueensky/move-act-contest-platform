@@ -112,7 +112,7 @@ const MainNavbar = () => {
 							className="nav-link mx-2"
 							onClick={handleSelect}
 						>
-							Home
+							{t("navbar.first-header")}
 						</Nav.Link>
 
 						<Nav.Link
@@ -121,7 +121,7 @@ const MainNavbar = () => {
 							className="nav-link mx-2"
 							onClick={handleSelect}
 						>
-							Works
+							{t("navbar.second-header")}
 						</Nav.Link>
 
 						<Nav.Link
@@ -130,7 +130,7 @@ const MainNavbar = () => {
 							className="nav-link mx-2"
 							onClick={handleSelect}
 						>
-							Guidelines
+							{t("navbar.third-header")}
 						</Nav.Link>
 
 						<Nav.Link
@@ -139,7 +139,7 @@ const MainNavbar = () => {
 							className="nav-link mx-2"
 							onClick={handleSelect}
 						>
-							Contact
+							{t("navbar.fourth-header")}
 						</Nav.Link>
 
 						<Dropdown onSelect={handleSelect}>
@@ -186,13 +186,13 @@ const MainNavbar = () => {
 										className="dropdown-item"
 										onClick={handleSelect}
 									>
-										Account details
+										{t("navbar.fifth-header")}
 									</Dropdown.Item>
 									<Dropdown.Item
 										onClick={handleLogout}
 										className="dropdown-item"
 									>
-										Log out
+										{t("navbar.sixth-header")}
 									</Dropdown.Item>
 								</>
 							) : (
@@ -201,13 +201,13 @@ const MainNavbar = () => {
 										onClick={() => handleAuthShow(LOGIN_TAB)}
 										className="dropdown-item"
 									>
-										Login
+										{t("navbar.seventh-header")}
 									</Dropdown.Item>
 									<Dropdown.Item
 										onClick={() => handleAuthShow(REGISTER_TAB)}
 										className="dropdown-item"
 									>
-										Register
+										{t("navbar.eighth-header")}
 									</Dropdown.Item>
 								</>
 							)}
