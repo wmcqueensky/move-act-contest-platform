@@ -1,24 +1,25 @@
 import { Container, Image } from "react-bootstrap";
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
-import "./styles.css";
+import { useTranslation } from "react-i18next";
+
 import EUImage from "./images/eu-image.png";
 import CCImage from "./images/Cc-by-nc-sa-image.png";
 import FAQImage from "./images/faq-image.png";
 
+import "./styles.css";
+
 const Footer = () => {
 	const currentYear = new Date().getFullYear();
+	const [t] = useTranslation("global");
 
 	return (
 		<>
 			<Container fluid className="eu-container text-center">
 				<Image src={EUImage} className="eu-image" />
 				<p className="eu-info">
-					Funded by the European Union. Views and opinions expressed are however
-					those of the author(s) only and do not necessarily reflect those of
-					the European Union or the European Education and Culture Executive
-					Agency <br />
-					(EACEA). Neither the European Union nor EACEA can be held responsible
-					for them.
+					{t("footer.first-text")}
+					<br />
+					{t("footer.second-text")}
 				</p>
 			</Container>
 
