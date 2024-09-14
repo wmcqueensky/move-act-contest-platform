@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
+import { useTranslation } from "react-i18next";
+
 import AuthToast from "../../components/auth/auth-toast.tsx";
 import supabase from "../../config/supabase-client.ts";
 
 const ResetPasswordPage = () => {
 	const [newPassword, setNewPassword] = useState("");
 	const [confirmNewPassword, setConfirmNewPassword] = useState("");
+	const [t] = useTranslation("global");
 	const navigate = useNavigate();
 
 	const [toast, setToast] = useState<{
@@ -24,7 +27,7 @@ const ResetPasswordPage = () => {
 		if (newPassword !== confirmNewPassword) {
 			setToast({
 				show: true,
-				message: "Passwords do not match",
+				message: t("reset-password.first-error"),
 				type: "error",
 			});
 			return;
@@ -40,7 +43,7 @@ const ResetPasswordPage = () => {
 			} else {
 				setToast({
 					show: true,
-					message: "Password has been reset successfully!",
+					message: t("reset-password.first-success"),
 					type: "success",
 				});
 				setTimeout(() => navigate("/"), 2500);
@@ -70,7 +73,7 @@ const ResetPasswordPage = () => {
 				}}
 			>
 				<h3 className="reset-password-modal-header text-center">
-					Enter new password
+					{t("reset-password.first-header")}
 				</h3>
 				<AuthToast
 					show={toast.show}
@@ -81,7 +84,7 @@ const ResetPasswordPage = () => {
 				<Form onSubmit={handleResetPassword}>
 					<Form.Control
 						type="password"
-						placeholder="New Password"
+						placeholder={t("reset-password.first-placeholder")}
 						className="form-control mb-3"
 						value={newPassword}
 						onChange={(e) => setNewPassword(e.target.value)}
@@ -89,14 +92,14 @@ const ResetPasswordPage = () => {
 					/>
 					<Form.Control
 						type="password"
-						placeholder="Confirm New Password"
+						placeholder={t("reset-password.second-placeholder")}
 						className="form-control mb-3"
 						value={confirmNewPassword}
 						onChange={(e) => setConfirmNewPassword(e.target.value)}
 						required
 					/>
 					<Button className="auth-button w-100" type="submit">
-						Reset Password
+						{t("reset-password.first-button-text")}
 					</Button>
 				</Form>
 			</div>

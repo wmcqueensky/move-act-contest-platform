@@ -110,6 +110,19 @@
 		"third-button-text": "Close"
 	},
 
+	"reset-password": {
+		"first-header": "Enter new password",
+
+		"first-placeholder": "New Password",
+		"second-placeholder": "Confirm New Password",
+
+		"first-button-text": "Reset Password",
+
+		"first-success": "Password has been reset successfully!",
+
+		"first-error": "Passwords do not match"
+	},
+
 	"misc": {
 		"loading-text": "Loading"
 	}
