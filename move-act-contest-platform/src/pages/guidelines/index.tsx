@@ -828,14 +828,18 @@ const AboutPage = () => {
 										guidelines and resources, and receive personalised support
 										if needed.
 									</td>
-									<td></td>
+									<td style={{ fontWeight: "bold" }} className="text-center">
+										4 October - 14 November{" "}
+									</td>
 								</tr>
 								<tr>
 									<td>Judging Period</td>
 									<td>
 										The jury reviews all entries and selects the finalists.
 									</td>
-									<td></td>
+									<td style={{ fontWeight: "bold" }} className="text-center">
+										Until 20 November
+									</td>
 								</tr>
 								<tr>
 									<td>Announcement of the Finalists</td>
@@ -843,7 +847,9 @@ const AboutPage = () => {
 										The 25 finalists are announced on the project's Social Media
 										channels.
 									</td>
-									<td></td>
+									<td style={{ fontWeight: "bold" }} className="text-center">
+										22 November
+									</td>
 								</tr>
 								<tr>
 									<td>Online Exhibition</td>
@@ -852,7 +858,9 @@ const AboutPage = () => {
 										contest platform so that the public can view and vote for
 										their favourite works.
 									</td>
-									<td></td>
+									<td style={{ fontWeight: "bold" }} className="text-center">
+										Starting 22 November
+									</td>
 								</tr>
 								<tr>
 									<td>Voting Period</td>
@@ -860,7 +868,9 @@ const AboutPage = () => {
 										Participants are encouraged to engage, share the news and
 										motivate people to vote.
 									</td>
-									<td></td>
+									<td style={{ fontWeight: "bold" }} className="text-center">
+										22 November 2024 - 3 January 2025
+									</td>
 								</tr>
 								<tr>
 									<td>National Winners: Announcement</td>
@@ -869,7 +879,9 @@ const AboutPage = () => {
 										and Social Media channels. Each winner is also notified by
 										email.
 									</td>
-									<td></td>
+									<td style={{ fontWeight: "bold" }} className="text-center">
+										13 January
+									</td>
 								</tr>
 								<tr>
 									<td>Award Ceremony</td>
@@ -879,7 +891,9 @@ const AboutPage = () => {
 										winners (are welcome to) attend the event(s) and share their
 										experiences.
 									</td>
-									<td></td>
+									<td style={{ fontWeight: "bold" }} className="text-center">
+										January - February
+									</td>
 								</tr>
 							</tbody>
 						</Table>

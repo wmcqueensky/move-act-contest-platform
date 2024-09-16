@@ -33,6 +33,22 @@
 		"second-button-text": "Details"
 	},
 
+	"guidelines": {
+		"first-header": "FEEL FREE TO CONTACT US",
+
+		"first-text": "If you have any questions contact us at this email address:",
+		"second-text": "Please place the titles of the queries in the following format:",
+		"third-text": "[country code]_[enquiry]_[Participant's Name and surname]",
+		"fourth-text": "Example:",
+		"fifth-text": "Check also our social media and other information channels!",
+		"sixth-text": "For more information about contest visit",
+		"seventh-text": "About",
+		"eighth-text": "section on the present platform.",
+
+		"first-button-text": "Rules",
+		"second-button-text": "Guidelines"
+	},
+
 	"contact": {
 		"first-header": "FEEL FREE TO CONTACT US",
 
