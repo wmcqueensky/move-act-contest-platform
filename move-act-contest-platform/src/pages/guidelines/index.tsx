@@ -1305,13 +1305,13 @@ const AboutPage = () => {
 					className="rules-button"
 					onClick={() => window.open(rulesPdf, "_blank")}
 				>
-					See all rules and regulations
+					Rules
 				</Button>
 				<Button
 					className="guidelines-button"
 					onClick={() => window.open(guidelinesPdf, "_blank")}
 				>
-					See guidelines for participating
+					Guidelines
 				</Button>
 			</Container>
 		</div>
