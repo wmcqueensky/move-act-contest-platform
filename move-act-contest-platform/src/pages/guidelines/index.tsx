@@ -1,7 +1,18 @@
 import { useState, useEffect } from "react";
-import { Container, Accordion, Button, Spinner, Table } from "react-bootstrap";
+import {
+	Container,
+	Accordion,
+	Button,
+	Spinner,
+	Table,
+	Image,
+} from "react-bootstrap";
+
+import firstStlImage from "./images/how-to-stl-1.png";
+import secondStlImage from "./images/how-to-stl-2.png";
 import guidelinesPdf from "./docs/guidelines.pdf";
 import rulesPdf from "./docs/rules.pdf";
+
 import "./styles.css";
 
 const AboutPage = () => {
@@ -816,6 +827,90 @@ const AboutPage = () => {
 								</tr>
 							</tbody>
 						</Table>
+					</Accordion.Body>
+				</Accordion.Item>
+			</Accordion>
+
+			<h6 className="accordion-main-header">STL File and Lithophane</h6>
+			<Accordion
+				className="text-left mb-5"
+				style={{ maxWidth: "900px", margin: "0 auto" }}
+			>
+				<Accordion.Item eventKey="0">
+					<Accordion.Header className="accordion-header">
+						Creating an .STL File
+					</Accordion.Header>
+					<Accordion.Body className="accordion-body">
+						<p>
+							Go to{" "}
+							<a
+								href="https://3dp.rocks/lithophane/"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="forgot-password-link"
+							>
+								https://3dp.rocks/lithophane/
+							</a>
+						</p>
+						<p>
+							Once there, click on “
+							<span style={{ fontWeight: "bold" }}>Images</span>” on the top
+							centre of the page. A menu will appear giving you the opportunity
+							to select a file.
+						</p>
+						<Image src={firstStlImage} alt="firstStlImage.png" />
+						<p>
+							Once you have chosen and uploaded your file, select the "
+							<span style={{ fontWeight: "bold" }}>Flat</span>" option from the
+							menu at the bottom.
+						</p>
+
+						<p>
+							Click on “<span style={{ fontWeight: "bold" }}>Download</span>”
+							and save the file in your computer. Once you have successfully
+							saved the file, upload the file to a Google Drive folder.
+						</p>
+
+						<Image src={secondStlImage} alt="secondStlImage.png" />
+
+						<p style={{ fontWeight: "bold" }}>
+							Once the .stl file is uploading to Google Drive, do not forget to
+							share the link with the Move&Act project team.{" "}
+						</p>
+					</Accordion.Body>
+				</Accordion.Item>
+
+				<Accordion.Item eventKey="1">
+					<Accordion.Header className="accordion-header">
+						What is a Lithophane?
+					</Accordion.Header>
+					<Accordion.Body className="accordion-body">
+						<p>
+							A lithophane is a unique work of art that transforms a flat,
+							twodimensional image into a{" "}
+							<span style={{ fontWeight: "bold" }}>
+								three-dimensional image
+							</span>
+							. By changing the thickness of a translucent material, lithophanes
+							really come into their own when backlit, revealing a detailed and
+							impressive image when light falls on them. This art form, which{" "}
+							<span style={{ fontWeight: "bold" }}>
+								originated in the 19th century
+							</span>
+							, combines intricate craftsmanship with the science of light and
+							shadow, turning each piece into a captivating visual story.
+						</p>
+
+						<p>
+							As part of the{" "}
+							<span style={{ fontWeight: "bold" }}>
+								MOVE & ACT Photo-Voice Contest
+							</span>
+							, lithophanes are a powerful medium for young participants to
+							express their creativity. This contest offers young people the
+							opportunity to practice and improve their digital skills while
+							developing artistic abilities.
+						</p>
 					</Accordion.Body>
 				</Accordion.Item>
 			</Accordion>
