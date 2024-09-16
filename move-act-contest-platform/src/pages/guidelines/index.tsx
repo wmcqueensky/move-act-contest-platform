@@ -8,8 +8,11 @@ import {
 	Image,
 } from "react-bootstrap";
 
-import firstStlImage from "./images/how-to-stl-1.png";
-import secondStlImage from "./images/how-to-stl-2.png";
+import firstShareFolderImage from "./images/share-folder-image-1.png";
+import secondShareFolderImage from "./images/share-folder-image-2.png";
+import thirdShareFolderImage from "./images/share-folder-image-3.png";
+import firstStlImage from "./images/how-to-stl-image-1.png";
+import secondStlImage from "./images/how-to-stl-image-2.png";
 import guidelinesPdf from "./docs/guidelines.pdf";
 import rulesPdf from "./docs/rules.pdf";
 
@@ -579,6 +582,59 @@ const AboutPage = () => {
 							These naming conventions help to ensure that submissions are
 							correctly identified and evaluated.
 						</p>
+					</Accordion.Body>
+				</Accordion.Item>
+
+				<Accordion.Item eventKey="3">
+					<Accordion.Header className="accordion-header">
+						How to share a folder?
+					</Accordion.Header>
+					<Accordion.Body>
+						<p
+							style={{
+								backgroundColor: "var(--light-yellow-color)",
+								padding: "10px",
+							}}
+						>
+							Make sure that the Move&Act team has{" "}
+							<span style={{ fontWeight: "bold" }}>access to your files</span>;
+							this is essential for{" "}
+							<span style={{ fontWeight: "bold" }}>qualifying</span> as a
+							finalist
+						</p>
+
+						<ul>
+							<li>
+								Upload the <span style={{ fontWeight: "bold" }}>.jpg/.png</span>{" "}
+								photo and <span style={{ fontWeight: "bold" }}>.stl</span> file
+								you want to submit to a{" "}
+								<span style={{ fontWeight: "bold" }}>Google Drive folder</span>.
+							</li>
+						</ul>
+
+						<Image src={firstShareFolderImage} alt="Share Folder Image" />
+
+						<ul>
+							<li>
+								Create a{" "}
+								<span style={{ fontWeight: "bold" }}>shareable link</span> for
+								the Google Drive folder (include this link in your email later
+								on).
+							</li>
+						</ul>
+
+						<ul>
+							<li>
+								You can grant <span style={{ fontWeight: "bold" }}>access</span>{" "}
+								by sharing the photo with the address:{" "}
+								<span style={{ color: "var(--bordo-color)" }}>
+									moveandact2022@gmail.com
+								</span>
+							</li>
+						</ul>
+
+						<Image src={thirdShareFolderImage} alt="Share Folder Image" />
+						<Image src={secondShareFolderImage} alt="Share Folder Image" />
 					</Accordion.Body>
 				</Accordion.Item>
 			</Accordion>
