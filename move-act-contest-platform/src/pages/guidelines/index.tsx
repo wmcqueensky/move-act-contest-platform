@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import {
 	Container,
 	Accordion,
@@ -20,6 +21,7 @@ import "./styles.css";
 
 const AboutPage = () => {
 	const [loading, setLoading] = useState(true);
+	const [t] = useTranslation("global");
 
 	useEffect(() => {
 		const images = document.querySelectorAll("img");
@@ -55,7 +57,7 @@ const AboutPage = () => {
 					animation="border"
 					role="status"
 				>
-					<span className="visually-hidden">Loading...</span>
+					<span className="visually-hidden">{t("misc.loading-text")}</span>
 				</Spinner>
 			</div>
 		);
@@ -65,24 +67,25 @@ const AboutPage = () => {
 		<div className="works-background text-center ">
 			<Container fluid className="about-image text-center mb-5">
 				<h1 className="welcome-header display-1">
-					EVERYTHING YOU NEED TO <br />
-					KNOW ABOUT THE CONTEST
+					{t("guidelines.first-header")}
+					<br />
+					{t("guidelines.second-header")}
 				</h1>
 			</Container>
 
 			<h2 className="about-introduction mb-5">
-				Welcome to the Move&Act&nbsp;
+				{t("guidelines.first-subheader")}{" "}
 				<span style={{ color: "var(--yellow-color)" }}>
-					Photo-Voice Contest
+					{t("guidelines.second-subheader")}
 				</span>
-				! Part of the Erasmus+ project <br />
+				{t("guidelines.third-subheader")}
+				<br />
 				<span style={{ color: "var(--orange-color)" }}>
-					"Move & Act - Empower Youth through Entrepreneurial and Digital
-					Skills."
+					{t("guidelines.fourth-subheader")}
 				</span>
 			</h2>
 
-			<h6 className="accordion-main-header">General Information</h6>
+			<h6 className="accordion-main-header">{t("guidelines.third-header")}</h6>
 			<Accordion
 				className="text-left mb-5"
 				style={{ maxWidth: "900px", margin: "0 auto" }}
@@ -90,90 +93,99 @@ const AboutPage = () => {
 			>
 				<Accordion.Item eventKey="0">
 					<Accordion.Header className="accordion-header">
-						What is the The Move&Act Photo-Voice Contest?
+						{t("guidelines.first-accordion-header")}
 					</Accordion.Header>
 					<Accordion.Body className="accordion-body">
-						The Move&Act
-						<span style={{ fontWeight: "bold" }}> Photo-Voice Contest</span> is
-						part of the Erasmus+ project{" "}
+						{t("guidelines.first-accordion-first-text")}
 						<span style={{ fontWeight: "bold" }}>
-							"Move & Act- Empower Youth through Entrepreneurial and Digital
-							Skills"
+							{" "}
+							{t("guidelines.first-accordion-second-text")}
 						</span>{" "}
-						This initiative aims to develop digital, creative and
-						entrepreneurial skills among young people, especially those who are
-						at risk due to disabilities, migration status or as NEETs (Not in
-						Education, Employment, or Training). The contest provides a{" "}
+						{t("guidelines.first-accordion-third-text")}{" "}
 						<span style={{ fontWeight: "bold" }}>
-							platform for participants to express their challenges and
-							experiences through photography
+							{t("guidelines.first-accordion-fourth-text")}
+						</span>{" "}
+						{t("guidelines.first-accordion-fifth-text")}{" "}
+						<span style={{ fontWeight: "bold" }}>
+							{t("guidelines.first-accordion-sixth-text")}
 						</span>
-						, thereby improving their employability, fostering a European
-						identity and{" "}
-						<span style={{ fontWeight: "bold" }}>encouraging interaction</span>{" "}
-						with the local, national and European community.
+						{t("guidelines.first-accordion-seventh-text")}{" "}
+						<span style={{ fontWeight: "bold" }}>
+							{t("guidelines.first-accordion-eighth-text")}
+						</span>{" "}
+						{t("guidelines.first-accordion-nineth-text")}
 					</Accordion.Body>
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="1">
 					<Accordion.Header className="accordion-header">
-						Purpose of the Contest
+						{t("guidelines.second-accordion-header")}
 					</Accordion.Header>
 					<Accordion.Body>
 						<p>
-							Photo-Voice is a qualitative research method that combines
-							<span style={{ fontWeight: "bold" }}> photography</span> and{" "}
-							<span style={{ fontWeight: "bold" }}>storytelling</span> to
-							document and address social issues. This method was developed in
-							the 1990s by Caroline Wang and Mary Ann Burris and enables
-							communities to{" "}
+							{t("guidelines.second-accordion-first-text")}{" "}
 							<span style={{ fontWeight: "bold" }}>
-								share their experiences
+								{t("guidelines.second-accordion-second-text")}
 							</span>{" "}
-							and{" "}
+							{t("guidelines.second-accordion-third-text")}{" "}
 							<span style={{ fontWeight: "bold" }}>
-								make their voices heard
+								{t("guidelines.second-accordion-fourth-text")}
+							</span>{" "}
+							{t("guidelines.second-accordion-fifth-text")}{" "}
+							<span style={{ fontWeight: "bold" }}>
+								{t("guidelines.second-accordion-sixth-text")}
+							</span>{" "}
+							{t("guidelines.second-accordion-third-text")}{" "}
+							<span style={{ fontWeight: "bold" }}>
+								{t("guidelines.second-accordion-seventh-text")}
 							</span>
 							.{" "}
 						</p>
 
 						<p>
-							Participants are{" "}
-							<span style={{ fontWeight: "bold" }}>invited to take photos</span>{" "}
-							that reflect their experiences, challenges or perspectives on
-							specific topics such as poverty, unemployment, education,
-							environmental issues and more. These photos will be accompanied by
-							narratives that{" "}
+							{t("guidelines.second-accordion-eighth-text")}{" "}
 							<span style={{ fontWeight: "bold" }}>
-								contextualise the images and provide deeper insight
+								{t("guidelines.second-accordion-nineth-text")}
 							</span>{" "}
-							into community issues.
+							{t("guidelines.second-accordion-tenth-text")}{" "}
+							<span style={{ fontWeight: "bold" }}>
+								{t("guidelines.second-accordion-eleventh-text")}
+							</span>{" "}
+							{t("guidelines.second-accordion-twelveth-text")}
 						</p>
 					</Accordion.Body>
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="2">
 					<Accordion.Header className="accordion-header">
-						Themes of the Contest
+						{t("guidelines.third-accordion-header")}
 					</Accordion.Header>
 					<Accordion.Body className="accordion-body">
-						Participants must submit photos that fit one of the following
-						themes:
+						{t("guidelines.third-accordion-first-text")}
 						<ul>
-							<li style={{ fontWeight: "bold" }}>Poverty</li>
-							<li style={{ fontWeight: "bold" }}>Unemployment</li>
-							<li style={{ fontWeight: "bold" }}>Education</li>
 							<li style={{ fontWeight: "bold" }}>
-								Environment (protection and/or degradation of biodiversity)
-							</li>
-							<li style={{ fontWeight: "bold" }}>Problems in Europe</li>
-							<li style={{ fontWeight: "bold" }}>Accessibility</li>
-							<li style={{ fontWeight: "bold" }}>
-								Realities of the different generations
+								{t("guidelines.third-accordion-second-text")}
 							</li>
 							<li style={{ fontWeight: "bold" }}>
-								Introspective images (e.g. self-portraits, LGBTQ+, mental
-								health)
+								{t("guidelines.third-accordion-third-text")}
+							</li>
+							<li style={{ fontWeight: "bold" }}>
+								{t("guidelines.third-accordion-fourth-text")}
+							</li>
+							<li style={{ fontWeight: "bold" }}>
+								{t("guidelines.third-accordion-fifth-text")}
+							</li>
+							<li style={{ fontWeight: "bold" }}>
+								{t("guidelines.third-accordion-sixth-text")}
+							</li>
+							<li style={{ fontWeight: "bold" }}>
+								{t("guidelines.third-accordion-seventh-text")}
+							</li>
+							<li style={{ fontWeight: "bold" }}>
+								{t("guidelines.third-accordion-eighth-text")}
+							</li>
+							<li style={{ fontWeight: "bold" }}>
+								{t("guidelines.third-accordion-nineth-text")}
 							</li>
 						</ul>
 					</Accordion.Body>
