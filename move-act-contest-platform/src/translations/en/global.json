@@ -37,7 +37,7 @@
 		"first-header": "EVERYTHING YOU NEED TO",
 		"second-header": "KNOW ABOUT THE CONTEST",
 		"third-header": "General Information",
-		"fourth-header": "KNOW ABOUT THE CONTEST",
+		"fourth-header": "Admission Criteria",
 		"fifth-header": "EVERYTHING YOU NEED TO",
 		"sixth-header": "KNOW ABOUT THE CONTEST",
 		"seventh-header": "EVERYTHING YOU NEED TO",
@@ -57,6 +57,9 @@
 		"first-accordion-header": "What is the The Move&Act Photo-Voice Contest?",
 		"second-accordion-header": "Purpose of the Contest",
 		"third-accordion-header": "Themes of the Contest",
+		"fourth-accordion-header": "Age",
+		"fifth-accordion-header": "Nationality",
+		"sixth-accordion-header": "Traits",
 
 		"first-accordion-first-text": "The Move&Act",
 		"first-accordion-second-text": "Photo-Voice Contest",
@@ -90,6 +93,19 @@
 		"third-accordion-seventh-text": "Accessibility",
 		"third-accordion-eighth-text": "Realities of the different generations",
 		"third-accordion-nineth-text": "Introspective images (e.g. self-portraits, LGBTQ+, mental health)",
+
+		"fourth-accordion-first-text": "Eligible participants must be between",
+		"fourth-accordion-second-text": "18 and 30 years old",
+		"fourth-accordion-third-text": "at the start of the contest.",
+
+		"fifth-accordion-first-text": "Eligible participants must",
+		"fifth-accordion-second-text": "reside",
+		"fifth-accordion-third-text": "in one of the participating European countries:",
+		"fifth-accordion-fourth-text": "Poland, Italy, Spain, Greece",
+		"fifth-accordion-fifth-text": "and",
+		"fifth-accordion-sixth-text": "Lithuania",
+
+		"sixth-accordion-first-text": "Eligible participants must be interested in raising public awareness of local community challenges.",
 
 		"first-button-text": "Rules",
 		"second-button-text": "Guidelines"

@@ -192,42 +192,51 @@ const AboutPage = () => {
 				</Accordion.Item>
 			</Accordion>
 
-			<h6 className="accordion-main-header">Admission Criteria</h6>
+			<h6 className="accordion-main-header">{t("guidelines.fourth-header")}</h6>
 			<Accordion
 				className="text-left mb-5"
 				style={{ maxWidth: "900px", margin: "0 auto" }}
 			>
 				<Accordion.Item eventKey="0">
-					<Accordion.Header className="accordion-header">Age</Accordion.Header>
+					<Accordion.Header className="accordion-header">
+						{t("guidelines.fourth-accordion-header")}
+					</Accordion.Header>
 					<Accordion.Body className="accordion-body">
-						Eligible participants must be between{" "}
-						<span style={{ fontWeight: "bold" }}>18 and 30 years old</span> at
-						the start of the contest.
+						{t("guidelines.fourth-accordion-first-text")}{" "}
+						<span style={{ fontWeight: "bold" }}>
+							{t("guidelines.fourth-accordion-second-text")}
+						</span>{" "}
+						{t("guidelines.fourth-accordion-third-text")}
 					</Accordion.Body>
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="1">
 					<Accordion.Header className="accordion-header">
-						Nationality
+						{t("guidelines.fifth-accordion-header")}
 					</Accordion.Header>
 					<Accordion.Body className="accordion-body">
-						Eligible participants must{" "}
-						<span style={{ fontWeight: "bold" }}>reside</span> in one of the
-						participating European countries:{" "}
+						{t("guidelines.fifth-accordion-first-text")}{" "}
 						<span style={{ fontWeight: "bold" }}>
-							Poland, Italy, Spain, Greece
+							{t("guidelines.fifth-accordion-second-text")}
 						</span>{" "}
-						and <span style={{ fontWeight: "bold" }}>Lithuania</span>.
+						{t("guidelines.fifth-accordion-third-text")}{" "}
+						<span style={{ fontWeight: "bold" }}>
+							{t("guidelines.fifth-accordion-fourth-text")}
+						</span>{" "}
+						{t("guidelines.fifth-accordion-fifth-text")}{" "}
+						<span style={{ fontWeight: "bold" }}>
+							{t("guidelines.fifth-accordion-sixth-text")}
+						</span>
+						.
 					</Accordion.Body>
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="2">
 					<Accordion.Header className="accordion-header">
-						Traits
+						{t("guidelines.sixth-accordion-header")}
 					</Accordion.Header>
 					<Accordion.Body className="accordion-body">
-						Eligible participants must be interested in raising public awareness
-						of local community challenges.
+						{t("guidelines.sixth-accordion-first-text")}
 					</Accordion.Body>
 				</Accordion.Item>
 			</Accordion>
