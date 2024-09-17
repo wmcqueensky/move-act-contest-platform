@@ -241,35 +241,40 @@ const AboutPage = () => {
 				</Accordion.Item>
 			</Accordion>
 
-			<h6 className="accordion-main-header">Criteria for Submission</h6>
+			<h6 className="accordion-main-header">{t("guidelines.fifth-header")}</h6>
 			<Accordion
 				className="text-left mb-5"
 				style={{ maxWidth: "900px", margin: "0 auto" }}
 			>
 				<Accordion.Item eventKey="0">
 					<Accordion.Header className="accordion-header">
-						Technical Requirements
+						{t("guidelines.seventh-accordion-header")}
 					</Accordion.Header>
 					<Accordion.Body className="accordion-body">
 						<ul>
 							<li>
 								<span style={{ fontWeight: "bold" }}>
-									Only 1 photo must be submitted
+									{t("guidelines.seventh-accordion-first-text")}
 								</span>{" "}
-								in <span style={{ fontWeight: "bold" }}>.jpg</span> or{" "}
-								<span style={{ fontWeight: "bold" }}>.png</span> format with a
-								resolution of{" "}
-								<span style={{ fontWeight: "bold" }}>1920x1080 pixels</span>.
+								{t("guidelines.seventh-accordion-second-text")}{" "}
+								<span style={{ fontWeight: "bold" }}>.jpg</span>{" "}
+								{t("guidelines.seventh-accordion-third-text")}{" "}
+								<span style={{ fontWeight: "bold" }}>.png</span>{" "}
+								{t("guidelines.seventh-accordion-fourth-text")}{" "}
+								<span style={{ fontWeight: "bold" }}>
+									{t("guidelines.seventh-accordion-fifth-text")}
+								</span>
+								.
 							</li>
 							<li>
-								A (1){" "}
+								{t("guidelines.seventh-accordion-sixth-text")}{" "}
 								<span style={{ fontWeight: "bold" }}>
 									{" "}
-									3D file (.stl) of the photo
+									{t("guidelines.seventh-accordion-seventh-text")}
 								</span>{" "}
-								should also be submitted{" "}
+								{t("guidelines.seventh-accordion-eighth-text")}{" "}
 								<span style={{ fontWeight: "bold" }}>
-									(no larger than 10 MB)
+									{t("guidelines.seventh-accordion-nineth-text")}
 								</span>
 								.
 							</li>
@@ -279,32 +284,51 @@ const AboutPage = () => {
 
 				<Accordion.Item eventKey="1">
 					<Accordion.Header className="accordion-header">
-						Submission Method
+						{t("guidelines.eighth-accordion-header")}
 					</Accordion.Header>
 					<Accordion.Body className="accordion-body">
-						Entries should be submitted{" "}
-						<span style={{ fontWeight: "bold" }}>via email</span> and{" "}
-						<span style={{ fontWeight: "bold" }}>photos</span> should{" "}
-						<span style={{ fontWeight: "bold" }}>be sent via a link</span> to a
-						shared drive folder.
+						{t("guidelines.eighth-accordion-first-text")}{" "}
+						<span style={{ fontWeight: "bold" }}>
+							{t("guidelines.eighth-accordion-second-text")}
+						</span>{" "}
+						{t("guidelines.eighth-accordion-third-text")}{" "}
+						<span style={{ fontWeight: "bold" }}>
+							{t("guidelines.eighth-accordion-fourth-text")}
+						</span>{" "}
+						{t("guidelines.eighth-accordion-fifth-text")}{" "}
+						<span style={{ fontWeight: "bold" }}>
+							{t("guidelines.eighth-accordion-sixth-text")}
+						</span>{" "}
+						{t("guidelines.eighth-accordion-seventh-text")}
 					</Accordion.Body>
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="2">
 					<Accordion.Header className="accordion-header">
-						Accompanying Information
+						{t("guidelines.nineth-accordion-header")}
 					</Accordion.Header>
 					<Accordion.Body className="accordion-body">
-						Include a <span style={{ fontWeight: "bold" }}>title</span> (up to{" "}
-						<span style={{ fontWeight: "bold" }}>5 words</span>), a{" "}
-						<span style={{ fontWeight: "bold" }}>short bio</span> of the author
-						(250-350 words) and{" "}
+						{t("guidelines.nineth-accordion-first-text")}{" "}
 						<span style={{ fontWeight: "bold" }}>
-							a brief description of the photo
+							{t("guidelines.nineth-accordion-second-text")}
 						</span>{" "}
-						(250-500 words). The message must also explicitly state which of the
-						competition <span style={{ fontWeight: "bold" }}>themes</span> the
-						photo belongs to.
+						{t("guidelines.nineth-accordion-third-text")}{" "}
+						<span style={{ fontWeight: "bold" }}>
+							{t("guidelines.nineth-accordion-fourth-text")}
+						</span>
+						,{" "}
+						<span style={{ fontWeight: "bold" }}>
+							{t("guidelines.nineth-accordion-fifth-text")}
+						</span>{" "}
+						{t("guidelines.nineth-accordion-sixth-text")}{" "}
+						<span style={{ fontWeight: "bold" }}>
+							{t("guidelines.nineth-accordion-seventh-text")}
+						</span>{" "}
+						{t("guidelines.nineth-accordion-eighth-text")}{" "}
+						<span style={{ fontWeight: "bold" }}>
+							{t("guidelines.nineth-accordion-nineth-text")}
+						</span>{" "}
+						{t("guidelines.nineth-accordion-tenth-text")}
 					</Accordion.Body>
 				</Accordion.Item>
 			</Accordion>
