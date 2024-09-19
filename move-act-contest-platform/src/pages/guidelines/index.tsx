@@ -333,23 +333,27 @@ const AboutPage = () => {
 				</Accordion.Item>
 			</Accordion>
 
-			<h6 className="accordion-main-header">Course of Contest</h6>
+			<h6 className="accordion-main-header">{t("guidelines.sixth-header")}</h6>
 			<Accordion
 				className="text-left mb-5"
 				style={{ maxWidth: "900px", margin: "0 auto" }}
 			>
 				<Accordion.Item eventKey="0">
 					<Accordion.Header className="accordion-header">
-						Submission Phase
+						{t("guidelines.tenth-accordion-header")}
 					</Accordion.Header>
 					<Accordion.Body className="accordion-body">
 						<p>
-							Participants must submit their{" "}
-							<span style={{ fontWeight: "bold" }}>photo</span> (.jpg or .png)
-							and their{" "}
-							<span style={{ fontWeight: "bold" }}>.stl file by email</span>{" "}
+							{t("guidelines.tenth-accordion-first-text")}{" "}
+							<span style={{ fontWeight: "bold" }}>
+								{t("guidelines.tenth-accordion-second-text")}
+							</span>{" "}
+							{t("guidelines.tenth-accordion-third-text")}{" "}
+							<span style={{ fontWeight: "bold" }}>
+								{t("guidelines.tenth-accordion-fourth-text")}
+							</span>{" "}
 							<span style={{ fontWeight: "bold", color: "var(--bordo-color)" }}>
-								[WHEN]
+								[WHEN]?
 							</span>
 							.
 						</p>
@@ -363,17 +367,21 @@ const AboutPage = () => {
 								borderRadius: "10px",
 							}}
 						>
-							In this phase, participants prepare their entries, access the
-							contest <span style={{ fontWeight: "bold" }}>guidelines</span> and
-							resources, and receive personalised support{" "}
-							<span style={{ fontWeight: "bold" }}>if needed</span>.
+							{t("guidelines.tenth-accordion-fifth-text")}{" "}
+							<span style={{ fontWeight: "bold" }}>
+								{t("guidelines.tenth-accordion-sixth-text")}
+							</span>{" "}
+							{t("guidelines.tenth-accordion-seventh-text")}{" "}
+							<span style={{ fontWeight: "bold" }}>
+								{t("guidelines.tenth-accordion-eighth-text")}
+							</span>
+							.
 						</p>
 
 						<p>
-							The key dates for judging and award announcements will be
-							communicated to participants via the project's official channels:{" "}
+							{t("guidelines.tenth-accordion-nineth-text")}{" "}
 							<span style={{ fontWeight: "bold", color: "var(--bordo-color)" }}>
-								[Facebook , Instagram and WEBSITE]
+								{t("guidelines.tenth-accordion-tenth-text")}
 							</span>
 							.
 						</p>
@@ -382,49 +390,60 @@ const AboutPage = () => {
 
 				<Accordion.Item eventKey="1">
 					<Accordion.Header className="accordion-header">
-						Judging Phase
+						{t("guidelines.eleventh-accordion-header")}
 					</Accordion.Header>
 					<Accordion.Body className="accordion-body">
 						<p>
-							The <span style={{ fontWeight: "bold" }}>jury</span> will select{" "}
-							<span style={{ fontWeight: "bold" }}>5 finalists from each</span>{" "}
-							participating country, resulting in a{" "}
 							<span style={{ fontWeight: "bold" }}>
-								total of 25 finalist photos
+								{t("guidelines.eleventh-accordion-first-text")}
+							</span>{" "}
+							{t("guidelines.eleventh-accordion-second-text")}{" "}
+							<span style={{ fontWeight: "bold" }}>
+								{t("guidelines.eleventh-accordion-third-text")}
+							</span>{" "}
+							{t("guidelines.eleventh-accordion-fourth-text")}{" "}
+							<span style={{ fontWeight: "bold" }}>
+								{t("guidelines.eleventh-accordion-fifth-text")}
 							</span>
-							. The finalists will be announced via the official channels of the
-							project:{" "}
+							{t("guidelines.eleventh-accordion-sixth-text")}{" "}
 							<span style={{ fontWeight: "bold", color: "var(--bordo-color)" }}>
-								[Facebook, Instagram and WEBSITE/platform]
+								{t("guidelines.eleventh-accordion-seventh-text")}
 							</span>
 							.
 						</p>
 
 						<p>
-							These <span style={{ fontWeight: "bold" }}>25 photos</span> will
-							be uploaded to{" "}
-							<span style={{ fontWeight: "bold", color: "var(--bordo-color)" }}>
-								"Works" section at this platform
+							<span style={{ fontWeight: "bold" }}>
+								{t("guidelines.eleventh-accordion-eighth-text")}
 							</span>{" "}
-							and showcased as part of the contest's{" "}
-							<span style={{ fontWeight: "bold" }}>online exhibition</span>.
+							{t("guidelines.eleventh-accordion-nineth-text")}{" "}
+							<span style={{ fontWeight: "bold", color: "var(--bordo-color)" }}>
+								{t("guidelines.eleventh-accordion-tenth-text")}
+							</span>{" "}
+							{t("guidelines.eleventh-accordion-eleventh-text")}{" "}
+							<span style={{ fontWeight: "bold" }}>
+								{t("guidelines.eleventh-accordion-twelveth-text")}
+							</span>
+							.
 						</p>
 					</Accordion.Body>
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="2">
 					<Accordion.Header className="accordion-header">
-						Photo-Voice Exhibition
+						{t("guidelines.twelveth-accordion-header")}
 					</Accordion.Header>
 					<Accordion.Body className="accordion-body">
-						The (25) <span style={{ fontWeight: "bold" }}>finalists'</span>{" "}
-						works will be presented in the{" "}
 						<span style={{ fontWeight: "bold" }}>
-							online exhibition on this
+							{t("guidelines.twelveth-accordion-first-text")}
 						</span>{" "}
-						website{" "}
+						{t("guidelines.twelveth-accordion-second-text")}{" "}
+						<span style={{ fontWeight: "bold" }}>
+							{t("guidelines.twelveth-accordion-third-text")}
+						</span>{" "}
+						{t("guidelines.twelveth-accordion-fourth-text")}{" "}
 						<span style={{ fontWeight: "bold", color: "var(--bordo-color)" }}>
-							in the "Works" section
+							{t("guidelines.twelveth-accordion-fifth-text")}
 						</span>
 						.
 					</Accordion.Body>
@@ -432,18 +451,27 @@ const AboutPage = () => {
 
 				<Accordion.Item eventKey="3">
 					<Accordion.Header className="accordion-header">
-						Voting Phase
+						{t("guidelines.thirteenth-accordion-header")}
 					</Accordion.Header>
 					<Accordion.Body className="accordion-body">
 						<p>
-							Anyone with access to the contest platform can{" "}
-							<span style={{ fontWeight: "bold" }}>participate in voting</span>.
-							Each voter can cast{" "}
-							<span style={{ fontWeight: "bold" }}>one vote</span> for their
-							favorite work from{" "}
-							<span style={{ fontWeight: "bold" }}>each</span> participating{" "}
-							<span style={{ fontWeight: "bold" }}>country</span>. The public
-							voting period will take place during{" "}
+							{t("guidelines.thirteenth-accordion-first-text")}{" "}
+							<span style={{ fontWeight: "bold" }}>
+								{t("guidelines.thirteenth-accordion-second-text")}{" "}
+							</span>
+							{t("guidelines.thirteenth-accordion-third-text")}{" "}
+							<span style={{ fontWeight: "bold" }}>
+								{t("guidelines.thirteenth-accordion-fourth-text")}
+							</span>{" "}
+							{t("guidelines.thirteenth-accordion-fifth-text")}{" "}
+							<span style={{ fontWeight: "bold" }}>
+								{t("guidelines.thirteenth-accordion-sixth-text")}
+							</span>{" "}
+							{t("guidelines.thirteenth-accordion-seventh-text")}{" "}
+							<span style={{ fontWeight: "bold" }}>
+								{t("guidelines.thirteenth-accordion-eighth-text")}{" "}
+							</span>
+							{t("guidelines.thirteenth-accordion-nineth-text")}{" "}
 							<span style={{ fontWeight: "bold", color: "var(--bordo-color)" }}>
 								[specified voting period]
 							</span>
@@ -451,36 +479,38 @@ const AboutPage = () => {
 						</p>
 
 						<p>
-							The <span style={{ fontWeight: "bold" }}>5 winners</span> will be
-							determined based on the highest number of votes received.
+							<span style={{ fontWeight: "bold" }}>
+								{t("guidelines.thirteenth-accordion-tenth-text")}
+							</span>{" "}
+							{t("guidelines.thirteenth-accordion-eleventh-text")}
 						</p>
 					</Accordion.Body>
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="4">
 					<Accordion.Header className="accordion-header">
-						Prizes and Awards
+						{t("guidelines.fourteenth-accordion-header")}
 					</Accordion.Header>
 					<Accordion.Body className="accordion-body">
 						<p>
-							<span style={{ fontWeight: "bold" }}>5 winners</span> will receive
-							recognition for their entries.
+							<span style={{ fontWeight: "bold" }}>
+								{t("guidelines.fourteenth-accordion-first-text")}
+							</span>{" "}
+							{t("guidelines.fourteenth-accordion-second-text")}
 						</p>
 
 						<p>
-							The{" "}
 							<span style={{ fontWeight: "bold" }}>
-								winning photo from each country
+								{t("guidelines.fourteenth-accordion-third-text")}
 							</span>{" "}
 							<span style={{ textDecoration: "underline" }}>
-								(Poland, Italy, Spain, Greece, and Lithuania){" "}
-							</span>
-							will be specially recognised by being{" "}
+								{t("guidelines.fourteenth-accordion-fourth-text")}{" "}
+							</span>{" "}
+							{t("guidelines.fourteenth-accordion-fifth-text")}{" "}
 							<span style={{ fontWeight: "bold" }}>
-								3D printed as a lithophane{" "}
+								{t("guidelines.fourteenth-accordion-sixth-text")}{" "}
 							</span>
-							and exhibited during national events. These events will celebrate
-							the culmination of the project and the contest.
+							{t("guidelines.fourteenth-accordion-seventh-text")}
 						</p>
 					</Accordion.Body>
 				</Accordion.Item>
