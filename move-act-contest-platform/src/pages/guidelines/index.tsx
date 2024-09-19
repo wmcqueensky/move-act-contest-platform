@@ -1235,115 +1235,110 @@ const AboutPage = () => {
 				</Accordion.Item>
 			</Accordion>
 
-			<h6 className="accordion-main-header">Contest Rules</h6>
+			<h6 className="accordion-main-header">
+				{t("guidelines.thirteenth-header")}
+			</h6>
 			<Accordion
 				className="text-left mb-5"
 				style={{ maxWidth: "900px", margin: "0 auto" }}
 			>
 				<Accordion.Item eventKey="0">
 					<Accordion.Header className="accordion-header">
-						Submission channel
+						{t("guidelines.28-accordion-header")}
 					</Accordion.Header>
 					<Accordion.Body className="accordion-body">
 						<ul>
-							<li>
-								Entries must be submitted via the official contest channel.
-							</li>
+							<li>{t("guidelines.28-accordion-first-text")}</li>
 
-							<li>
-								Entries submitted via other channels will be disqualified.
-							</li>
+							<li>{t("guidelines.28-accordion-second-text")}</li>
 						</ul>
 					</Accordion.Body>
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="1">
 					<Accordion.Header className="accordion-header">
-						Original Work
+						{t("guidelines.29-accordion-header")}
 					</Accordion.Header>
 					<Accordion.Body className="accordion-body">
 						<ul>
-							<li>The photos must be original and taken by the participant.</li>
-							<li>Third party material is not permitted.</li>
-							<li>
-								The photos must not infringe any intellectual property rights or
-								data protection rights.
-							</li>
+							<li>{t("guidelines.29-accordion-first-text")}</li>
+							<li>{t("guidelines.29-accordion-second-text")}</li>
+							<li>{t("guidelines.29-accordion-third-text")}</li>
 						</ul>
 					</Accordion.Body>
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="2">
 					<Accordion.Header className="accordion-header">
-						Photo Alterations
+						{t("guidelines.30-accordion-header")}
 					</Accordion.Header>
 					<Accordion.Body className="accordion-body">
 						<ul>
 							<li>
-								Photos may be altered by{" "}
-								<span style={{ fontWeight: "bold" }}>up to 20%</span> (e.g. by
-								adding or removing elements).
+								{t("guidelines.30-accordion-first-text")}{" "}
+								<span style={{ fontWeight: "bold" }}>
+									{t("guidelines.30-accordion-second-text")}
+								</span>{" "}
+								{t("guidelines.30-accordion-third-text")}
 							</li>
-							<li>
-								Excessive alterations will result in disqualification and
-								exclusion from future contests.
-							</li>
+							<li>{t("guidelines.30-accordion-fourth-text")}</li>
 						</ul>
 					</Accordion.Body>
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="3">
 					<Accordion.Header className="accordion-header">
-						AI-generated Content
+						{t("guidelines.31-accordion-header")}
 					</Accordion.Header>
 					<Accordion.Body className="accordion-body">
-						AI-generated content is{" "}
-						<span style={{ fontWeight: "bold" }}>allowed up to 20%</span> of the
-						total image. In order to maintain transparency, it must be clearly
-						disclosed (e.g. “This is an AI-generated image”).
+						{t("guidelines.31-accordion-first-text")}{" "}
+						<span style={{ fontWeight: "bold" }}>
+							{t("guidelines.31-accordion-second-text")}
+						</span>{" "}
+						{t("guidelines.31-accordion-third-text")}
 					</Accordion.Body>
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="4">
 					<Accordion.Header className="accordion-header">
-						Judging
+						{t("guidelines.32-accordion-header")}
 					</Accordion.Header>
 					<Accordion.Body className="accordion-body">
 						<ul>
-							<li>A jury of seven professionals will judge the entries.</li>
-							<li>Their decisions are final.</li>
-							<li>
-								Move&Act reserves the right to disqualify entries that are
-								inappropriate or violate the rules.
-							</li>
+							<li>{t("guidelines.32-accordion-first-text")}</li>
+							<li>{t("guidelines.32-accordion-second-text")}</li>
+							<li>{t("guidelines.32-accordion-third-text")}</li>
 						</ul>
 					</Accordion.Body>
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="5">
 					<Accordion.Header className="accordion-header">
-						Data Protection and Consent
+						{t("guidelines.33-accordion-header")}
 					</Accordion.Header>
 					<Accordion.Body className="accordion-body">
 						<ul>
 							<li>
-								All content deemed{" "}
-								<span style={{ fontWeight: "bold" }}>inappropriate</span> or
-								invasive of privacy will be removed and not considered for the
-								contest.
+								{t("guidelines.33-accordion-first-text")}{" "}
+								<span style={{ fontWeight: "bold" }}>
+									{t("guidelines.33-accordion-second-text")}
+								</span>{" "}
+								{t("guidelines.33-accordion-third-text")}
 							</li>
 							<li>
-								For photos featuring{" "}
+								{t("guidelines.33-accordion-fourth-text")}{" "}
 								<span style={{ fontWeight: "bold" }}>
-									young people or minors
+									{t("guidelines.33-accordion-fifth-text")}{" "}
 								</span>
-								, age verification and{" "}
-								<span style={{ fontWeight: "bold" }}>explicit consent</span> is
-								required. If a submitted photo shows a recognisable minor, a
-								declaration of consent{" "}
-								<span style={{ fontWeight: "bold" }}>must be provided</span> to
-								ensure that the rights of the minor(s)/young person(s) are
-								protected.
+								{t("guidelines.33-accordion-sixth-text")}{" "}
+								<span style={{ fontWeight: "bold" }}>
+									{t("guidelines.33-accordion-seventh-text")}
+								</span>{" "}
+								{t("guidelines.33-accordion-eighth-text")}{" "}
+								<span style={{ fontWeight: "bold" }}>
+									{t("guidelines.33-accordion-nineth-text")}
+								</span>{" "}
+								{t("guidelines.33-accordion-tenth-text")}
 							</li>
 						</ul>
 					</Accordion.Body>
@@ -1351,71 +1346,55 @@ const AboutPage = () => {
 
 				<Accordion.Item eventKey="6">
 					<Accordion.Header className="accordion-header">
-						Use of Photos
+						{t("guidelines.34-accordion-header")}
 					</Accordion.Header>
 					<Accordion.Body className="accordion-body">
 						<ul>
-							<li>
-								The submitted works remain the property of the Move&Act project.
-							</li>
-							<li>
-								By entering, participants agree that their photos/files can be
-								used by Move&Act for educational and promotional purposes.
-							</li>
+							<li>{t("guidelines.34-accordion-first-text")}</li>
+							<li>{t("guidelines.34-accordion-second-text")}</li>
 						</ul>
 					</Accordion.Body>
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="7">
 					<Accordion.Header className="accordion-header">
-						Submission Deadline
+						{t("guidelines.35-accordion-header")}
 					</Accordion.Header>
 					<Accordion.Body className="accordion-body">
 						<ul>
-							<li>No entries will be accepted after the closing date.</li>
-							<li>
-								The winners will be notified via the email address provided.
-							</li>
-							<li>
-								If there is no response within three working days, a new winner
-								will be selected and the previous winner will forfeit their
-								prize.
-							</li>
+							<li>{t("guidelines.35-accordion-first-text")}</li>
+							<li>{t("guidelines.35-accordion-second-text")}</li>
+							<li>{t("guidelines.35-accordion-third-text")}</li>
 						</ul>
 					</Accordion.Body>
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="8">
 					<Accordion.Header className="accordion-header">
-						Legal Restrictions
+						{t("guidelines.36-accordion-header")}
 					</Accordion.Header>
 					<Accordion.Body className="accordion-body">
 						<ul>
-							<li>The contest is void where prohibited by law.</li>
+							<li>{t("guidelines.36-accordion-first-text")}</li>
 						</ul>
 					</Accordion.Body>
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="9">
 					<Accordion.Header className="accordion-header">
-						Intellectual Property Rights
+						{t("guidelines.37-accordion-header")}
 					</Accordion.Header>
 					<Accordion.Body className="accordion-body">
-						The participants retain the copyright to their contributions.
-						Move&Act reserves the right to use, reproduce and exhibit these
-						works in future project outputs and reports, with appropriate
-						attribution to the author. This use is in line with the Erasmus+
-						objectives of sharing educational content and promoting cultural
-						understanding.
+						{t("guidelines.37-accordion-first-text")}
 					</Accordion.Body>
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="10">
 					<Accordion.Header className="accordion-header">
-						Account Deletion
+						{t("guidelines.38-accordion-header")}
 					</Accordion.Header>
 					<Accordion.Body className="accordion-body">
-						To delete your account on the platform, contact us at our email.
+						{t("guidelines.38-accordion-first-text")}
 					</Accordion.Body>
 				</Accordion.Item>
 			</Accordion>
@@ -1425,13 +1404,13 @@ const AboutPage = () => {
 					className="rules-button"
 					onClick={() => window.open(rulesPdf, "_blank")}
 				>
-					Rules
+					{t("guidelines.first-button-text")}
 				</Button>
 				<Button
 					className="guidelines-button"
 					onClick={() => window.open(guidelinesPdf, "_blank")}
 				>
-					Guidelines
+					{t("guidelines.second-button-text")}
 				</Button>
 			</Container>
 		</div>

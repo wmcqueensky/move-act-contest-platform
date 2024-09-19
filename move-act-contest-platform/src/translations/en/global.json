@@ -46,8 +46,7 @@
 		"tenth-header": "STL File and Lithophane",
 		"eleventh-header": "Support",
 		"twelveth-header": "Regulations & Ethics",
-		"thirteenth-header": "EVERYTHING YOU NEED TO",
-		"fourteenth-header": "KNOW ABOUT THE CONTEST",
+		"thirteenth-header": "Contest Rules",
 
 		"first-subheader": "Welcome to the Move&Act",
 		"second-subheader": "Photo-Voice Contest",
@@ -81,20 +80,17 @@
 		"25-accordion-header": "Email Support",
 		"26-accordion-header": "Ethical Considerations",
 		"27-accordion-header": "Acceptance of Terms and Conditions",
-		"28-accordion-header": "",
-		"29-accordion-header": "Guidelines",
-		"30-accordion-header": "dasdasdf",
-		"31-accordion-header": "Creating an .STL File",
-		"32-accordion-header": "What is a Lithophane?",
-		"33-accordion-header": "Guidelines",
-		"34-accordion-header": "fas",
-		"35-accordion-header": "Creating an .STL File",
-		"36-accordion-header": "What is a Lithophane?",
-		"37-accordion-header": "Guidelines",
-		"38-accordion-header": "fasfa",
-		"39-accordion-header": "Creating an .STL File",
-		"40-accordion-header": "What is a Lithophane?",
-		"41-accordion-header": "Guidelines",
+		"28-accordion-header": "Submission channel",
+		"29-accordion-header": "Original Work",
+		"30-accordion-header": "Photo Alterations",
+		"31-accordion-header": "AI-generated Content",
+		"32-accordion-header": "Judging",
+		"33-accordion-header": "Data Protection and Consent",
+		"34-accordion-header": "Use of Photos",
+		"35-accordion-header": "Submission Deadline",
+		"36-accordion-header": "Legal Restrictions",
+		"37-accordion-header": "Intellectual Property Rights",
+		"38-accordion-header": "Account Deletion",
 
 		"first-accordion-first-text": "The Move&Act",
 		"first-accordion-second-text": "Photo-Voice Contest",
@@ -402,6 +398,50 @@
 		"27-accordion-fifth-text": "and copyright policies, and",
 		"27-accordion-sixth-text": "grant Move&Act the right to use the submitted images",
 		"27-accordion-seventh-text": "for educational and promotional purposes.",
+
+		"28-accordion-first-text": "Entries must be submitted via the official contest channel.",
+		"28-accordion-second-text": "Entries submitted via other channels will be disqualified.",
+
+		"29-accordion-first-text": "The photos must be original and taken by the participant.",
+		"29-accordion-second-text": "Third party material is not permitted.",
+		"29-accordion-third-text": "The photos must not infringe any intellectual property rights or data protection rights.",
+
+		"30-accordion-first-text": "Photos may be altered by",
+		"30-accordion-second-text": "up to 25%",
+		"30-accordion-third-text": "(e.g. by adding or removing elements).",
+		"30-accordion-fourth-text": "Excessive alterations will result in disqualification and exclusion from future contests.",
+
+		"31-accordion-first-text": "AI-generated content is",
+		"31-accordion-second-text": "allowed up to 25%",
+		"31-accordion-third-text": "of the total image. In order to maintain transparency, it must be clearly disclosed (e.g. “This is an AI-generated image”).",
+
+		"32-accordion-first-text": "A jury of seven professionals will judge the entries.",
+		"32-accordion-second-text": "Their decisions are final.",
+		"32-accordion-third-text": "Move&Act reserves the right to disqualify entries that are inappropriate or violate the rules.",
+
+		"33-accordion-first-text": "All content deemed",
+		"33-accordion-second-text": "inappropriate",
+		"33-accordion-third-text": "or invasive of privacy will be removed and not considered for the contest.",
+		"33-accordion-fourth-text": "For photos featuring",
+		"33-accordion-fifth-text": "young people or minors,",
+		"33-accordion-sixth-text": "age verification and",
+		"33-accordion-seventh-text": "explicit consent",
+		"33-accordion-eighth-text": "is required. If a submitted photo shows a recognisable minor, a declaration of consent.",
+		"33-accordion-nineth-text": "must be provided",
+		"33-accordion-tenth-text": "to ensure that the rights of the minor(s)/young person(s) are protected.",
+
+		"34-accordion-first-text": "The submitted works remain the property of the Move&Act project.",
+		"34-accordion-second-text": "By entering, participants agree that their photos/files can be used by Move&Act for educational and promotional purposes.",
+
+		"35-accordion-first-text": "No entries will be accepted after the closing date.",
+		"35-accordion-second-text": "The winners will be notified via the email address provided.",
+		"35-accordion-third-text": "If there is no response within three working days, a new winner will be selected and the previous winner will forfeit their prize.",
+
+		"36-accordion-first-text": "The contest is void where prohibited by law.",
+
+		"37-accordion-first-text": "The participants retain the copyright to their contributions. Move&Act reserves the right to use, reproduce and exhibit these works in future project outputs and reports, with appropriate attribution to the author. This use is in line with the Erasmus+ objectives of sharing educational content and promoting cultural understanding.",
+
+		"38-accordion-first-text": "To delete your account on the platform, contact us at our email.",
 
 		"first-button-text": "Rules",
 		"second-button-text": "Guidelines"
