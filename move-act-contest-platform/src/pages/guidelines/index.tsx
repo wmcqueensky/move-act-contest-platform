@@ -1068,20 +1068,19 @@ const AboutPage = () => {
 				</Accordion.Item>
 			</Accordion>
 
-			<h6 className="accordion-main-header">Support</h6>
+			<h6 className="accordion-main-header">
+				{t("guidelines.eleventh-header")}
+			</h6>
 			<Accordion
 				className="text-left mb-5"
 				style={{ maxWidth: "900px", margin: "0 auto" }}
 			>
 				<Accordion.Item eventKey="0">
 					<Accordion.Header className="accordion-header">
-						Guidelines
+						{t("guidelines.24-accordion-header")}
 					</Accordion.Header>
 					<Accordion.Body className="accordion-body">
-						<p>
-							Step-by-step instructions to help them with technical aspects,
-							along with storytelling techniques and other useful information.
-						</p>
+						<p>{t("guidelines.24-accordion-first-text")}</p>
 
 						<div>
 							<a
@@ -1094,7 +1093,7 @@ const AboutPage = () => {
 									textDecoration: "none",
 								}}
 							>
-								Click to see guidelines
+								{t("guidelines.24-accordion-second-text")}
 							</a>
 						</div>
 					</Accordion.Body>
@@ -1102,14 +1101,14 @@ const AboutPage = () => {
 
 				<Accordion.Item eventKey="1">
 					<Accordion.Header className="accordion-header">
-						Email Support
+						{t("guidelines.25-accordion-header")}
 					</Accordion.Header>
 					<Accordion.Body className="accordion-body">
 						<p>
-							For{" "}
-							<span style={{ fontWeight: "bold" }}>personalised guidance</span>,
-							participants can contact the official project support team by
-							email using the following format for the subject line:
+							<span style={{ fontWeight: "bold" }}>
+								{t("guidelines.25-accordion-first-text")}{" "}
+							</span>
+							{t("guidelines.25-accordion-second-text")}
 						</p>
 
 						<p
@@ -1121,15 +1120,19 @@ const AboutPage = () => {
 							}}
 							className="text-center"
 						>
-							[country code]_[enquiry]_[Participant's Name and surname]
+							{t("guidelines.25-accordion-third-text")}
 						</p>
 
 						<div className="mb-3">
-							<h6 style={{ fontWeight: "bold" }}>Example:</h6>
-							GR_Query_Georgios Papadopoulos (Greece)
+							<h6 style={{ fontWeight: "bold" }}>
+								{t("guidelines.25-accordion-fourth-text")}
+							</h6>
+							{t("guidelines.25-accordion-fifth-text")}
 						</div>
 
-						<h6 style={{ fontWeight: "bold" }}>Email: </h6>
+						<h6 style={{ fontWeight: "bold" }}>
+							{t("guidelines.25-accordion-sixth-text")}{" "}
+						</h6>
 						<p
 							style={{
 								backgroundColor: "var(--bordo-color)",
