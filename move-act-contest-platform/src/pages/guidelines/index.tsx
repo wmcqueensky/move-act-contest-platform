@@ -887,22 +887,17 @@ const AboutPage = () => {
 				</Accordion.Item>
 			</Accordion>
 
-			<h6 className="accordion-main-header">Key Dates and Phases</h6>
+			<h6 className="accordion-main-header">{t("guidelines.nineth-header")}</h6>
 			<Accordion
 				className="text-left mb-5"
 				style={{ maxWidth: "900px", margin: "0 auto" }}
 			>
 				<Accordion.Item eventKey="0">
 					<Accordion.Header className="accordion-header">
-						Contest Overview
+						{t("guidelines.21-accordion-header")}
 					</Accordion.Header>
 					<Accordion.Body className="accordion-body">
-						<p>
-							To ensure a smooth participation process, it's important to know
-							the important dates and phases of the Move&Act Photo-Voice
-							Contest. Below are the most important dates that participants need
-							to be aware of.
-						</p>
+						<p>{t("guidelines.21-accordion-first-text")}</p>
 
 						<Table bordered hover responsive="md" style={{ border: "none" }}>
 							<thead>
@@ -914,7 +909,7 @@ const AboutPage = () => {
 											border: "none",
 										}}
 									>
-										Phase
+										{t("guidelines.21-accordion-second-text")}
 									</th>
 									<th
 										style={{
@@ -923,7 +918,7 @@ const AboutPage = () => {
 											border: "none",
 										}}
 									>
-										Action
+										{t("guidelines.21-accordion-third-text")}
 									</th>
 									<th
 										style={{
@@ -932,83 +927,58 @@ const AboutPage = () => {
 											border: "none",
 										}}
 									>
-										Date
+										{t("guidelines.21-accordion-fourth-text")}
 									</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
-									<td>Submission/ Orientation Phase</td>
-									<td>
-										Participants prepare their entries, access the contest
-										guidelines and resources, and receive personalised support
-										if needed.
-									</td>
+									<td>{t("guidelines.21-accordion-fifth-text")}</td>
+									<td>{t("guidelines.21-accordion-sixth-text")}</td>
 									<td style={{ fontWeight: "bold" }} className="text-center">
-										4 October - 14 November{" "}
+										{t("guidelines.21-accordion-seventh-text")}{" "}
 									</td>
 								</tr>
 								<tr>
-									<td>Judging Period</td>
-									<td>
-										The jury reviews all entries and selects the finalists.
-									</td>
+									<td>{t("guidelines.21-accordion-eighth-text")}</td>
+									<td>{t("guidelines.21-accordion-nineth-text")}</td>
 									<td style={{ fontWeight: "bold" }} className="text-center">
-										Until 20 November
+										{t("guidelines.21-accordion-tenth-text")}
 									</td>
 								</tr>
 								<tr>
-									<td>Announcement of the Finalists</td>
-									<td>
-										The 25 finalists are announced on the project's Social Media
-										channels.
-									</td>
+									<td>{t("guidelines.21-accordion-eleventh-text")}</td>
+									<td>{t("guidelines.21-accordion-twelveth-text")}</td>
 									<td style={{ fontWeight: "bold" }} className="text-center">
-										22 November
+										{t("guidelines.21-accordion-thirteenth-text")}
 									</td>
 								</tr>
 								<tr>
-									<td>Online Exhibition</td>
-									<td>
-										The works of the selected finalists are presented on the
-										contest platform so that the public can view and vote for
-										their favourite works.
-									</td>
+									<td>{t("guidelines.21-accordion-fourteenth-text")}</td>
+									<td>{t("guidelines.21-accordion-fifteenth-text")}</td>
 									<td style={{ fontWeight: "bold" }} className="text-center">
-										Starting 22 November
+										{t("guidelines.21-accordion-sixteenth-text")}
 									</td>
 								</tr>
 								<tr>
-									<td>Voting Period</td>
-									<td>
-										Participants are encouraged to engage, share the news and
-										motivate people to vote.
-									</td>
+									<td>{t("guidelines.21-accordion-seventeenth-text")}</td>
+									<td>{t("guidelines.21-accordion-eighteenth-text")}</td>
 									<td style={{ fontWeight: "bold" }} className="text-center">
-										22 November 2024 - 3 January 2025
+										{t("guidelines.21-accordion-nineteenth-text")}
 									</td>
 								</tr>
 								<tr>
-									<td>National Winners: Announcement</td>
-									<td>
-										The 5 national winners are announced on the contest platform
-										and Social Media channels. Each winner is also notified by
-										email.
-									</td>
+									<td>{t("guidelines.21-accordion-20-text")}</td>
+									<td>{t("guidelines.21-accordion-21-text")}</td>
 									<td style={{ fontWeight: "bold" }} className="text-center">
-										13 January
+										{t("guidelines.21-accordion-22-text")}
 									</td>
 								</tr>
 								<tr>
-									<td>Award Ceremony</td>
-									<td>
-										The project partners organise an event in each country and
-										present the winners' printed works (lithophane format). The
-										winners (are welcome to) attend the event(s) and share their
-										experiences.
-									</td>
+									<td>{t("guidelines.21-accordion-23-text")}</td>
+									<td>{t("guidelines.21-accordion-24-text")}</td>
 									<td style={{ fontWeight: "bold" }} className="text-center">
-										January - February
+										{t("guidelines.21-accordion-25-text")}
 									</td>
 								</tr>
 							</tbody>
