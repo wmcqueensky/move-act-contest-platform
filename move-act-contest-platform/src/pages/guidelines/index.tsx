@@ -517,7 +517,7 @@ const AboutPage = () => {
 			</Accordion>
 
 			<h6 className="accordion-main-header">
-				Instructions for Submitting Entries
+				{t("guidelines.seventh-header")}
 			</h6>
 			<Accordion
 				className="text-left mb-5"
@@ -525,18 +525,19 @@ const AboutPage = () => {
 			>
 				<Accordion.Item eventKey="0">
 					<Accordion.Header className="accordion-header">
-						Email Contact
+						{t("guidelines.fifteenth-accordion-header")}
 					</Accordion.Header>
 					<Accordion.Body className="accordion-body">
 						<p>
-							In order to be eligible to participate and avoid disqualification,
-							participants{" "}
-							<span style={{ fontWeight: "bold" }}>must adhere</span> to the
-							following guidelines when{" "}
+							{t("guidelines.fifteenth-accordion-first-text")}{" "}
 							<span style={{ fontWeight: "bold" }}>
-								submitting their entries
+								{t("guidelines.fifteenth-accordion-second-text")}
 							</span>{" "}
-							by email:
+							{t("guidelines.fifteenth-accordion-third-text")}{" "}
+							<span style={{ fontWeight: "bold" }}>
+								{t("guidelines.fifteenth-accordion-fourth-text")}
+							</span>{" "}
+							{t("guidelines.fifteenth-accordion-fifth-text")}
 						</p>
 
 						<p
@@ -556,13 +557,10 @@ const AboutPage = () => {
 
 				<Accordion.Item eventKey="1">
 					<Accordion.Header className="accordion-header">
-						Email Subject
+						{t("guidelines.sixteenth-accordion-header")}
 					</Accordion.Header>
 					<Accordion.Body className="accordion-body">
-						<p>
-							Participants must use the following format for the subject of
-							their email:
-						</p>
+						<p>{t("guidelines.sixteenth-accordion-first-text")}</p>
 
 						<p
 							style={{
@@ -573,43 +571,51 @@ const AboutPage = () => {
 							}}
 							className="text-center"
 						>
-							[country code]_[contest entry]_[participant's name and surname]
+							{t("guidelines.sixteenth-accordion-second-text")}
 						</p>
 
 						<div>
-							<h6 style={{ fontWeight: "bold" }}>Country codes:</h6>
+							<h6 style={{ fontWeight: "bold" }}>
+								{t("guidelines.sixteenth-accordion-third-text")}
+							</h6>
 							<ul>
-								<li>Spain: ES</li>
-								<li>Greece: GR</li>
-								<li>Lithuania: LT</li>
-								<li>Poland: PL</li>
-								<li>Italy: IT</li>
+								<li>{t("guidelines.sixteenth-accordion-fourth-text")}</li>
+								<li>{t("guidelines.sixteenth-accordion-fifth-text")}</li>
+								<li>{t("guidelines.sixteenth-accordion-sixth-text")}</li>
+								<li>{t("guidelines.sixteenth-accordion-seventh-text")}</li>
+								<li>{t("guidelines.sixteenth-accordion-eighth-text")}</li>
 							</ul>
 						</div>
 
 						<div>
-							<h6 style={{ fontWeight: "bold" }}>Example:</h6>
-							ES_Contest Entry_Manuel García (for participants from Spain){" "}
-							<br />
-							IT_Contest Entry_Giovanna Russo (for participants from Italy)
+							<h6 style={{ fontWeight: "bold" }}>
+								{t("guidelines.sixteenth-accordion-nineth-text")}
+							</h6>
+							{t("guidelines.sixteenth-accordion-tenth-text")} <br />
+							{t("guidelines.sixteenth-accordion-eleventh-text")}
 						</div>
 					</Accordion.Body>
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="2">
 					<Accordion.Header className="accordion-header">
-						File Submission
+						{t("guidelines.seventeenth-accordion-header")}
 					</Accordion.Header>
 					<Accordion.Body>
 						<p>
-							The files, i.e.{" "}
+							{t("guidelines.seventeenth-accordion-first-text")}{" "}
 							<span style={{ fontWeight: "bold" }}>
-								the photo and .stl file
+								{t("guidelines.seventeenth-accordion-second-text")}{" "}
 							</span>
-							, should be uploaded to a Google Drive folder. The{" "}
-							<span style={{ fontWeight: "bold" }}>link to this folder</span>{" "}
-							should be included in the email and{" "}
-							<span style={{ fontWeight: "bold" }}>shared with the email</span>:
+							{t("guidelines.seventeenth-accordion-third-text")}{" "}
+							<span style={{ fontWeight: "bold" }}>
+								{t("guidelines.seventeenth-accordion-fourth-text")}
+							</span>{" "}
+							{t("guidelines.seventeenth-accordion-fifth-text")}{" "}
+							<span style={{ fontWeight: "bold" }}>
+								{t("guidelines.seventeenth-accordion-sixth-text")}
+							</span>
+							:
 						</p>
 
 						<p
@@ -625,7 +631,7 @@ const AboutPage = () => {
 							moveandact2022@gmail.com
 						</p>
 
-						<p>The files must be named in the following format:</p>
+						<p>{t("guidelines.seventeenth-accordion-seventh-text")}</p>
 						<p
 							style={{
 								backgroundColor: "var(--yellow-color)",
@@ -635,34 +641,36 @@ const AboutPage = () => {
 							}}
 							className="text-center"
 						>
-							[country code]_[file format]_[participant's name and surname]
+							{t("guidelines.seventeenth-accordion-eighth-text")}
 						</p>
 
 						<div className="mb-3">
-							<h6 style={{ fontWeight: "bold" }}>File codes:</h6>
-							For photos: use "<span style={{ fontWeight: "bold" }}>jpg</span>"
-							or "<span style={{ fontWeight: "bold" }}>png</span>" <br />
-							For .stl files (3D models): "
+							<h6 style={{ fontWeight: "bold" }}>
+								{t("guidelines.seventeenth-accordion-nineth-text")}
+							</h6>
+							{t("guidelines.seventeenth-accordion-tenth-text")}
+							<span style={{ fontWeight: "bold" }}>jpg</span>
+							{t("guidelines.seventeenth-accordion-eleventh-text")}
+							<span style={{ fontWeight: "bold" }}>png</span>" <br />
+							{t("guidelines.seventeenth-accordion-twelveth-text")}
 							<span style={{ fontWeight: "bold" }}>stl</span>"
 						</div>
 
 						<div>
-							<h6 style={{ fontWeight: "bold" }}>Example:</h6>
-							IT_jpg_Giovanna Russo (for a photo submission from Italy) <br />
-							LT_stl_Emiljia Kazlauskaite (for the submission of an .stl file
-							from Lithuania)
+							<h6 style={{ fontWeight: "bold" }}>
+								{t("guidelines.seventeenth-accordion-thirteenth-text")}
+							</h6>
+							{t("guidelines.seventeenth-accordion-fourteenth-text")} <br />
+							{t("guidelines.seventeenth-accordion-fifteenth-text")}
 						</div>
 
-						<p>
-							These naming conventions help to ensure that submissions are
-							correctly identified and evaluated.
-						</p>
+						<p>{t("guidelines.seventeenth-accordion-sixteenth-text")}</p>
 					</Accordion.Body>
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="3">
 					<Accordion.Header className="accordion-header">
-						How to share a folder?
+						{t("guidelines.eighteenth-accordion-header")}
 					</Accordion.Header>
 					<Accordion.Body>
 						<p
@@ -671,19 +679,27 @@ const AboutPage = () => {
 								padding: "10px",
 							}}
 						>
-							Make sure that the Move&Act team has{" "}
-							<span style={{ fontWeight: "bold" }}>access to your files</span>;
-							this is essential for{" "}
-							<span style={{ fontWeight: "bold" }}>qualifying</span> as a
-							finalist
+							{t("guidelines.eighteenth-accordion-first-text")}{" "}
+							<span style={{ fontWeight: "bold" }}>
+								{t("guidelines.eighteenth-accordion-second-text")}{" "}
+							</span>
+							{t("guidelines.eighteenth-accordion-third-text")}{" "}
+							<span style={{ fontWeight: "bold" }}>
+								{t("guidelines.eighteenth-accordion-fourth-text")}
+							</span>{" "}
 						</p>
 
 						<ul>
 							<li>
-								Upload the <span style={{ fontWeight: "bold" }}>.jpg/.png</span>{" "}
-								photo and <span style={{ fontWeight: "bold" }}>.stl</span> file
-								you want to submit to a{" "}
-								<span style={{ fontWeight: "bold" }}>Google Drive folder</span>.
+								{t("guidelines.eighteenth-accordion-fifth-text")}{" "}
+								<span style={{ fontWeight: "bold" }}>.jpg/.png </span>
+								{t("guidelines.eighteenth-accordion-sixth-text")}{" "}
+								<span style={{ fontWeight: "bold" }}>.stl </span>
+								{t("guidelines.eighteenth-accordion-seventh-text")}{" "}
+								<span style={{ fontWeight: "bold" }}>
+									{t("guidelines.eighteenth-accordion-eighth-text")}
+								</span>
+								.
 							</li>
 						</ul>
 
@@ -691,17 +707,21 @@ const AboutPage = () => {
 
 						<ul>
 							<li>
-								Create a{" "}
-								<span style={{ fontWeight: "bold" }}>shareable link</span> for
-								the Google Drive folder (include this link in your email later
-								on).
+								{t("guidelines.eighteenth-accordion-nineth-text")}{" "}
+								<span style={{ fontWeight: "bold" }}>
+									{t("guidelines.eighteenth-accordion-tenth-text")}
+								</span>{" "}
+								{t("guidelines.eighteenth-accordion-eleventh-text")}
 							</li>
 						</ul>
 
 						<ul>
 							<li>
-								You can grant <span style={{ fontWeight: "bold" }}>access</span>{" "}
-								by sharing the photo with the address:{" "}
+								{t("guidelines.eighteenth-accordion-twelveth-text")}{" "}
+								<span style={{ fontWeight: "bold" }}>
+									{t("guidelines.eighteenth-accordion-thirteenth-text")}
+								</span>{" "}
+								{t("guidelines.eighteenth-accordion-fourteenth-text")}{" "}
 								<span style={{ color: "var(--bordo-color)" }}>
 									moveandact2022@gmail.com
 								</span>
