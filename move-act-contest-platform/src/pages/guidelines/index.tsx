@@ -734,14 +734,14 @@ const AboutPage = () => {
 				</Accordion.Item>
 			</Accordion>
 
-			<h6 className="accordion-main-header">Judging Procedure</h6>
+			<h6 className="accordion-main-header">{t("guidelines.eighth-header")}</h6>
 			<Accordion
 				className="text-left mb-5"
 				style={{ maxWidth: "900px", margin: "0 auto" }}
 			>
 				<Accordion.Item eventKey="0">
 					<Accordion.Header className="accordion-header">
-						Step 1: Initial Screening
+						{t("guidelines.nineteenth-accordion-header")}
 					</Accordion.Header>
 					<Accordion.Body className="accordion-body">
 						<p
@@ -753,69 +753,72 @@ const AboutPage = () => {
 								fontWeight: "bold",
 							}}
 						>
-							All entries will undergo an initial screening to ensure tht they
-							fulfill the basic entry and submission criteria.
+							{t("guidelines.nineteenth-accordion-first-text")}
 						</p>
 
 						<div>
 							<h6 style={{ fontWeight: "bold" }}>
-								Eligibility to participate:
+								{t("guidelines.nineteenth-accordion-second-text")}
 							</h6>
 							<div>
 								<ul>
-									<li>
-										It will be checked whether the participant is between 18 and
-										30 years old and is a national/resident in one of the
-										participating countries (Poland, Italy, Spain, Greece,
-										Lithuania).
-									</li>
+									<li>{t("guidelines.nineteenth-accordion-third-text")}</li>
 								</ul>
 							</div>
 						</div>
 
 						<div>
-							<h6 style={{ fontWeight: "bold" }}>Completeness of the entry:</h6>
+							<h6 style={{ fontWeight: "bold" }}>
+								{t("guidelines.nineteenth-accordion-fourth-text")}
+							</h6>
 							<div>
 								<ul>
 									<li>
-										The image has a{" "}
-										<span style={{ fontWeight: "bold" }}>title</span> and
-										includes an{" "}
-										<span style={{ fontWeight: "bold" }}>author bio</span> with
-										a{" "}
+										{t("guidelines.nineteenth-accordion-fifth-text")}{" "}
 										<span style={{ fontWeight: "bold" }}>
-											description or story
+											{t("guidelines.nineteenth-accordion-sixth-text")}
+										</span>{" "}
+										{t("guidelines.nineteenth-accordion-seventh-text")}{" "}
+										<span style={{ fontWeight: "bold" }}>
+											{t("guidelines.nineteenth-accordion-eighth-text")}
+										</span>{" "}
+										{t("guidelines.nineteenth-accordion-nineth-text")}{" "}
+										<span style={{ fontWeight: "bold" }}>
+											{t("guidelines.nineteenth-accordion-tenth-text")}
 										</span>
-										of the image.
+										{t("guidelines.nineteenth-accordion-eleventh-text")}
 									</li>
 									<li>
-										The uploaded files are in the{" "}
+										{t("guidelines.nineteenth-accordion-twelveth-text")}{" "}
 										<span style={{ fontWeight: "bold" }}>
-											required formats{" "}
+											{t("guidelines.nineteenth-accordion-thirteenth-text")}{" "}
 										</span>
-										(photo: <span style={{ fontWeight: "bold" }}>.jpg </span>
-										or <span style={{ fontWeight: "bold" }}>.png </span>; 3D
-										file: <span style={{ fontWeight: "bold" }}>.stl </span>
+										{t("guidelines.nineteenth-accordion-fourteenth-text")}
+										<span style={{ fontWeight: "bold" }}>.jpg </span>
+										{t("guidelines.nineteenth-accordion-fifteenth-text")}{" "}
+										<span style={{ fontWeight: "bold" }}>.png; </span>
+										{t("guidelines.nineteenth-accordion-sixteenth-text")}{" "}
+										<span style={{ fontWeight: "bold" }}>.stl </span>
 										).
 									</li>
 									<li>
-										The image matches the selected{" "}
-										<span style={{ textDecoration: "underline" }}>theme</span>.
+										{t("guidelines.nineteenth-accordion-seventeenth-text")}{" "}
+										<span style={{ textDecoration: "underline" }}>
+											{t("guidelines.nineteenth-accordion-eighteenth-text")}
+										</span>
+										.
 									</li>
 								</ul>
 							</div>
 						</div>
 
-						<p>
-							Only entries that pass this first check will make it to the next
-							round.
-						</p>
+						<p>{t("guidelines.nineteenth-accordion-nineteenth-text")}</p>
 					</Accordion.Body>
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="1">
 					<Accordion.Header className="accordion-header">
-						Step 2: Selection of Finalists
+						{t("guidelines.20-accordion-header")}
 					</Accordion.Header>
 					<Accordion.Body className="accordion-body">
 						<p
@@ -827,40 +830,58 @@ const AboutPage = () => {
 								fontWeight: "bold",
 							}}
 						>
-							Entries will be evaluated by a jury of seven professionals based
-							on the following criteria:
+							{t("guidelines.20-accordion-first-text")}
 						</p>
 
 						<ul>
 							<li>
-								<span style={{ fontWeight: "bold" }}>Visual Impact</span> (30
-								points): The striking and memorable overall effect of the image.
+								<span style={{ fontWeight: "bold" }}>
+									{t("guidelines.20-accordion-second-text")}
+								</span>{" "}
+								{t("guidelines.20-accordion-third-text")}
 							</li>
 							<li>
-								<span style={{ fontWeight: "bold" }}>Creativity</span> (30
-								points): Originality of composition, lighting and subject
-								matter.
+								<span style={{ fontWeight: "bold" }}>
+									{t("guidelines.20-accordion-fourth-text")}
+								</span>{" "}
+								{t("guidelines.20-accordion-fifth-text")}
 							</li>
 							<li>
-								<span style={{ fontWeight: "bold" }}>Storytelling Ability</span>{" "}
-								(30 points): The ability of the photograph and written
-								description to convey a story or message.
+								<span style={{ fontWeight: "bold" }}>
+									{t("guidelines.20-accordion-sixth-text")}
+								</span>{" "}
+								{t("guidelines.20-accordion-seventh-text")}
 							</li>
 							<li>
-								<span style={{ fontWeight: "bold" }}>Technical Skills</span> (10
-								points): Evaluation of technical aspects such as image
-								composition, focus and use of light or editing.
+								<span style={{ fontWeight: "bold" }}>
+									{t("guidelines.20-accordion-eighth-text")}
+								</span>{" "}
+								{t("guidelines.20-accordion-nineth-text")}
 							</li>
 						</ul>
 
 						<p>
-							Each criterion is scored from{" "}
-							<span style={{ fontWeight: "bold" }}>6 (Fair)</span> to{" "}
-							<span style={{ fontWeight: "bold" }}>30 (Excellent)</span> or{" "}
-							<span style={{ fontWeight: "bold" }}>2 (Fair)</span> to{" "}
-							<span style={{ fontWeight: "bold" }}>10 (Excellent)</span>, with a
-							maximum of{" "}
-							<span style={{ fontWeight: "bold" }}>100 points possible</span>.
+							{t("guidelines.20-accordion-tenth-text")}{" "}
+							<span style={{ fontWeight: "bold" }}>
+								{t("guidelines.20-accordion-eleventh-text")}
+							</span>{" "}
+							{t("guidelines.20-accordion-twelveth-text")}{" "}
+							<span style={{ fontWeight: "bold" }}>
+								{t("guidelines.20-accordion-thirteenth-text")}
+							</span>{" "}
+							{t("guidelines.20-accordion-fourteenth-text")}{" "}
+							<span style={{ fontWeight: "bold" }}>
+								{t("guidelines.20-accordion-fifteenth-text")}
+							</span>{" "}
+							{t("guidelines.20-accordion-sixteenth-text")}{" "}
+							<span style={{ fontWeight: "bold" }}>
+								{t("guidelines.20-accordion-seventeenth-text")}{" "}
+							</span>
+							{t("guidelines.20-accordion-eighteenth-text")}{" "}
+							<span style={{ fontWeight: "bold" }}>
+								{t("guidelines.20-accordion-nineteenth-text")}
+							</span>
+							.
 						</p>
 					</Accordion.Body>
 				</Accordion.Item>
