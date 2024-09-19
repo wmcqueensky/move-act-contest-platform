@@ -987,18 +987,18 @@ const AboutPage = () => {
 				</Accordion.Item>
 			</Accordion>
 
-			<h6 className="accordion-main-header">STL File and Lithophane</h6>
+			<h6 className="accordion-main-header">{t("guidelines.tenth-header")}</h6>
 			<Accordion
 				className="text-left mb-5"
 				style={{ maxWidth: "900px", margin: "0 auto" }}
 			>
 				<Accordion.Item eventKey="0">
 					<Accordion.Header className="accordion-header">
-						Creating an .STL File
+						{t("guidelines.22-accordion-header")}
 					</Accordion.Header>
 					<Accordion.Body className="accordion-body">
 						<p>
-							Go to{" "}
+							{t("guidelines.22-accordion-first-text")}{" "}
 							<a
 								href="https://3dp.rocks/lithophane/"
 								target="_blank"
@@ -1009,63 +1009,60 @@ const AboutPage = () => {
 							</a>
 						</p>
 						<p>
-							Once there, click on “
-							<span style={{ fontWeight: "bold" }}>Images</span>” on the top
-							centre of the page. A menu will appear giving you the opportunity
-							to select a file.
+							{t("guidelines.22-accordion-second-text")}
+							<span style={{ fontWeight: "bold" }}>
+								{t("guidelines.21-accordion-third-text")}
+							</span>
+							{t("guidelines.22-accordion-fourth-text")}
 						</p>
 						<Image src={firstStlImage} alt="firstStlImage.png" />
 						<p>
-							Once you have chosen and uploaded your file, select the "
-							<span style={{ fontWeight: "bold" }}>Flat</span>" option from the
-							menu at the bottom.
+							{t("guidelines.22-accordion-fifth-text")}
+							<span style={{ fontWeight: "bold" }}>
+								{t("guidelines.22-accordion-sixth-text")}
+							</span>
+							{t("guidelines.22-accordion-seventh-text")}
 						</p>
 
 						<p>
-							Click on “<span style={{ fontWeight: "bold" }}>Download</span>”
-							and save the file in your computer. Once you have successfully
-							saved the file, upload the file to a Google Drive folder.
+							{t("guidelines.22-accordion-eighth-text")}
+							<span style={{ fontWeight: "bold" }}>
+								{t("guidelines.22-accordion-nineth-text")}
+							</span>
+							{t("guidelines.22-accordion-tenth-text")}
 						</p>
 
 						<Image src={secondStlImage} alt="secondStlImage.png" />
 
 						<p style={{ fontWeight: "bold" }}>
-							Once the .stl file is uploading to Google Drive, do not forget to
-							share the link with the Move&Act project team.{" "}
+							{t("guidelines.22-accordion-eleventh-text")}{" "}
 						</p>
 					</Accordion.Body>
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="1">
 					<Accordion.Header className="accordion-header">
-						What is a Lithophane?
+						{t("guidelines.23-accordion-header")}
 					</Accordion.Header>
 					<Accordion.Body className="accordion-body">
 						<p>
-							A lithophane is a unique work of art that transforms a flat,
-							twodimensional image into a{" "}
+							{t("guidelines.23-accordion-first-text")}{" "}
 							<span style={{ fontWeight: "bold" }}>
-								three-dimensional image
+								{t("guidelines.23-accordion-second-text")}{" "}
 							</span>
-							. By changing the thickness of a translucent material, lithophanes
-							really come into their own when backlit, revealing a detailed and
-							impressive image when light falls on them. This art form, which{" "}
+							{t("guidelines.23-accordion-third-text")}{" "}
 							<span style={{ fontWeight: "bold" }}>
-								originated in the 19th century
+								{t("guidelines.23-accordion-fourth-text")}{" "}
 							</span>
-							, combines intricate craftsmanship with the science of light and
-							shadow, turning each piece into a captivating visual story.
+							{t("guidelines.23-accordion-fifth-text")}
 						</p>
 
 						<p>
-							As part of the{" "}
+							{t("guidelines.23-accordion-sixth-text")}{" "}
 							<span style={{ fontWeight: "bold" }}>
-								MOVE & ACT Photo-Voice Contest
+								{t("guidelines.23-accordion-seventh-text")}{" "}
 							</span>
-							, lithophanes are a powerful medium for young participants to
-							express their creativity. This contest offers young people the
-							opportunity to practice and improve their digital skills while
-							developing artistic abilities.
+							{t("guidelines.23-accordion-eighth-text")}
 						</p>
 					</Accordion.Body>
 				</Accordion.Item>
