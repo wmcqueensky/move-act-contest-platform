@@ -1149,35 +1149,41 @@ const AboutPage = () => {
 				</Accordion.Item>
 			</Accordion>
 
-			<h6 className="accordion-main-header">Regulations & Ethics</h6>
+			<h6 className="accordion-main-header">
+				{t("guidelines.twelveth-header")}
+			</h6>
 			<Accordion
 				className="text-left mb-5"
 				style={{ maxWidth: "900px", margin: "0 auto" }}
 			>
 				<Accordion.Item eventKey="0">
 					<Accordion.Header className="accordion-header">
-						Ethical Considerations
+						{t("guidelines.26-accordion-header")}
 					</Accordion.Header>
 					<Accordion.Body className="accordion-body">
-						Participants must:
+						{t("guidelines.26-accordion-first-text")}
 						<ul>
 							<li>
 								<span style={{ fontWeight: "bold" }}>
-									respect intellectual property rights
+									{t("guidelines.26-accordion-second-text")}
 								</span>
-								,
 							</li>
 							<li>
-								ensure that{" "}
+								{t("guidelines.26-accordion-third-text")}{" "}
 								<span style={{ fontWeight: "bold" }}>
-									consent has been obtained{" "}
+									{t("guidelines.26-accordion-fourth-text")}{" "}
 								</span>
-								from those depicted in the photos, and
+								{t("guidelines.26-accordion-fifth-text")}
 							</li>
 							<li>
-								<span style={{ fontWeight: "bold" }}>follow guidelines</span> on{" "}
-								<span style={{ fontWeight: "bold" }}>data protection</span> and
-								sensitive issues (click here for detailed information).
+								<span style={{ fontWeight: "bold" }}>
+									{t("guidelines.26-accordion-sixth-text")}
+								</span>{" "}
+								{t("guidelines.26-accordion-seventh-text")}{" "}
+								<span style={{ fontWeight: "bold" }}>
+									{t("guidelines.26-accordion-eighth-text")}
+								</span>{" "}
+								{t("guidelines.26-accordion-nineth-text")}
 							</li>
 						</ul>
 						<p
@@ -1187,30 +1193,44 @@ const AboutPage = () => {
 								borderRadius: "10px",
 							}}
 						>
-							<span style={{ fontWeight: "bold" }}>Photo editing</span> and{" "}
-							<span style={{ fontWeight: "bold" }}>AI-generated content</span>{" "}
-							is <span style={{ fontWeight: "bold" }}>allowed up to 20%</span>{" "}
-							and <span style={{ fontWeight: "bold" }}>must be disclosed</span>{" "}
-							(e.g. "...this is an AI-generated image").
+							<span style={{ fontWeight: "bold" }}>
+								{t("guidelines.26-accordion-tenth-text")}
+							</span>{" "}
+							{t("guidelines.26-accordion-eleventh-text")}{" "}
+							<span style={{ fontWeight: "bold" }}>
+								{t("guidelines.26-accordion-twelveth-text")}
+							</span>{" "}
+							{t("guidelines.26-accordion-thirteenth-text")}{" "}
+							<span style={{ fontWeight: "bold" }}>
+								{t("guidelines.26-accordion-fourteenth-text")}
+							</span>{" "}
+							{t("guidelines.26-accordion-fifteenth-text")}{" "}
+							<span style={{ fontWeight: "bold" }}>
+								{t("guidelines.26-accordion-sixteenth-text")}
+							</span>{" "}
+							{t("guidelines.26-accordion-seventeenth-text")}
 						</p>
 					</Accordion.Body>
 				</Accordion.Item>
 
 				<Accordion.Item eventKey="1">
 					<Accordion.Header className="accordion-header">
-						Acceptance of Terms and Conditions
+						{t("guidelines.27-accordion-header")}
 					</Accordion.Header>
 					<Accordion.Body className="accordion-body">
-						By entering, participants{" "}
+						{t("guidelines.27-accordion-first-text")}{" "}
 						<span style={{ fontWeight: "bold", textDecoration: "underline" }}>
-							agree to the Contest Rules
+							{t("guidelines.27-accordion-second-text")}
 						</span>
-						, including the <span style={{ fontWeight: "bold" }}>privacy </span>
-						and copyright policies, and{" "}
+						{t("guidelines.27-accordion-third-text")}{" "}
 						<span style={{ fontWeight: "bold" }}>
-							grant Move&Act the right to use the submitted images{" "}
+							{t("guidelines.27-accordion-fourth-text")}{" "}
+						</span>
+						{t("guidelines.27-accordion-fifth-text")}{" "}
+						<span style={{ fontWeight: "bold" }}>
+							{t("guidelines.27-accordion-sixth-text")}{" "}
 						</span>{" "}
-						for educational and promotional purposes.
+						{t("guidelines.27-accordion-seventh-text")}
 					</Accordion.Body>
 				</Accordion.Item>
 			</Accordion>
