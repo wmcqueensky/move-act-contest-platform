@@ -352,9 +352,6 @@ const AboutPage = () => {
 							<span style={{ fontWeight: "bold" }}>
 								{t("guidelines.tenth-accordion-fourth-text")}
 							</span>{" "}
-							<span style={{ fontWeight: "bold", color: "var(--bordo-color)" }}>
-								[WHEN]?
-							</span>
 							.
 						</p>
 
@@ -443,7 +440,7 @@ const AboutPage = () => {
 						</span>{" "}
 						{t("guidelines.twelveth-accordion-fourth-text")}{" "}
 						<span style={{ fontWeight: "bold", color: "var(--bordo-color)" }}>
-							{t("guidelines.twelveth-accordion-fifth-text")}
+							{t("guidelines.twelveth-accordion-fifth-text")}{" "}
 						</span>
 						.
 					</Accordion.Body>
@@ -471,11 +468,7 @@ const AboutPage = () => {
 							<span style={{ fontWeight: "bold" }}>
 								{t("guidelines.thirteenth-accordion-eighth-text")}{" "}
 							</span>
-							{t("guidelines.thirteenth-accordion-nineth-text")}{" "}
-							<span style={{ fontWeight: "bold", color: "var(--bordo-color)" }}>
-								[specified voting period]
-							</span>
-							.
+							{t("guidelines.thirteenth-accordion-nineth-text")} .
 						</p>
 
 						<p>

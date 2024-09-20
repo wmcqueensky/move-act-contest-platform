@@ -9,8 +9,7 @@
 		"second-subheader": "2022-1-PL01-KA220-YOU-000086569",
 		"third-subheader": "01.09.2024 – 31.12.2024",
 
-		"first-text": "For three months, the MOVE & ACT consortium will be conducting the Photovoice Contest Platform. This innovative project encourages young people to express their creativity and voice through digital photography. The main purpose of this platform is to empower youth, increase their employability, help them form a European identity, and engage with local, national, and European communities.",
-
+		"first-text": "For four months, the Photo-Voice competition, part of the MOVE & ACT project, will run as a platform for young people to showcase their talent and raise their voices about issues in their community. MOVE & ACT encourages young people to express their creativity and concerns through digital photography. The main objective of the project is to empower participants, improve their employability, help them build a European identity and foster their engagement with local, national and European communities.",
 		"first-button-text": "Go to project website",
 		"second-button-text": "Go to voting page",
 		"third-button-text": "Get more info"
@@ -36,72 +35,26 @@
 	"guidelines": {
 		"first-header": "EVERYTHING YOU NEED TO",
 		"second-header": "KNOW ABOUT THE CONTEST",
-		"third-header": "General Information",
-		"fourth-header": "Admission Criteria",
-		"fifth-header": "Criteria for Submission",
-		"sixth-header": "Course of Contest",
-		"seventh-header": "Instructions for Submitting Entries",
-		"eighth-header": "Judging Procedure",
-		"nineth-header": "Key Dates and Phases",
-		"tenth-header": "STL File and Lithophane",
-		"eleventh-header": "Support",
-		"twelveth-header": "Regulations & Ethics",
-		"thirteenth-header": "Contest Rules",
 
 		"first-subheader": "Welcome to the Move&Act",
 		"second-subheader": "Photo-Voice Contest",
 		"third-subheader": "! Part of the Erasmus+ project",
 		"fourth-subheader": "Move & Act - Empower Youth through Entrepreneurial and Digital Skills.",
 
-		"first-accordion-header": "What is the The Move&Act Photo-Voice Contest?",
-		"second-accordion-header": "Purpose of the Contest",
-		"third-accordion-header": "Themes of the Contest",
-		"fourth-accordion-header": "Age",
-		"fifth-accordion-header": "Nationality",
-		"sixth-accordion-header": "Traits",
-		"seventh-accordion-header": "Technical Requirements",
-		"eighth-accordion-header": "Submission Method",
-		"nineth-accordion-header": "Accompanying Information",
-		"tenth-accordion-header": "Submission Phase",
-		"eleventh-accordion-header": "Judging Phase",
-		"twelveth-accordion-header": "Photo-Voice Exhibition",
-		"thirteenth-accordion-header": "Voting Phase",
-		"fourteenth-accordion-header": "Prizes and Awards",
-		"fifteenth-accordion-header": "Email Contact",
-		"sixteenth-accordion-header": "Email Subject",
-		"seventeenth-accordion-header": "File Submission",
-		"eighteenth-accordion-header": "How to share a folder?",
-		"nineteenth-accordion-header": "Step 1: Initial Screening",
-		"20-accordion-header": "Step 2: Selection of Finalists",
-		"21-accordion-header": "Contest Overview",
-		"22-accordion-header": "Creating an .STL File",
-		"23-accordion-header": "What is a Lithophane?",
-		"24-accordion-header": "Guidelines",
-		"25-accordion-header": "Email Support",
-		"26-accordion-header": "Ethical Considerations",
-		"27-accordion-header": "Acceptance of Terms and Conditions",
-		"28-accordion-header": "Submission channel",
-		"29-accordion-header": "Original Work",
-		"30-accordion-header": "Photo Alterations",
-		"31-accordion-header": "AI-generated Content",
-		"32-accordion-header": "Judging",
-		"33-accordion-header": "Data Protection and Consent",
-		"34-accordion-header": "Use of Photos",
-		"35-accordion-header": "Submission Deadline",
-		"36-accordion-header": "Legal Restrictions",
-		"37-accordion-header": "Intellectual Property Rights",
-		"38-accordion-header": "Account Deletion",
+		"third-header": "General Information",
 
+		"first-accordion-header": "What is the The Move&Act Photo-Voice Contest?",
 		"first-accordion-first-text": "The Move&Act",
 		"first-accordion-second-text": "Photo-Voice Contest",
 		"first-accordion-third-text": "is part of the Erasmus+ project",
 		"first-accordion-fourth-text": "Move & Act- Empower Youth through Entrepreneurial and Digital Skills",
-		"first-accordion-fifth-text": "This initiative aims to develop digital, creative and entrepreneurial skills among young people, especially those who are at risk due to disabilities, migration status or as NEETs (Not in Education, Employment, or Training). The contest provides a",
+		"first-accordion-fifth-text": "This initiative aims to develop digital, creative and entrepreneurial skills among young people. The contest provides a",
 		"first-accordion-sixth-text": "platform for participants to express their challenges and experiences through photography",
 		"first-accordion-seventh-text": ", thereby improving their employability, fostering a European identity and",
 		"first-accordion-eighth-text": "encouraging interaction",
 		"first-accordion-nineth-text": "with the local, national and European community.",
 
+		"second-accordion-header": "Purpose of the Contest",
 		"second-accordion-first-text": "Photo-Voice is a qualitative research method that combines",
 		"second-accordion-second-text": "photography",
 		"second-accordion-third-text": "and",
@@ -115,6 +68,7 @@
 		"second-accordion-eleventh-text": "contextualise the images and provide deeper insight",
 		"second-accordion-twelveth-text": "into community issues.",
 
+		"third-accordion-header": "Themes of the Contest",
 		"third-accordion-first-text": "Participants must submit photos that fit one of the following themes:",
 		"third-accordion-second-text": "Poverty",
 		"third-accordion-third-text": "Unemployment",
@@ -125,10 +79,14 @@
 		"third-accordion-eighth-text": "Realities of the different generations",
 		"third-accordion-nineth-text": "Introspective images (e.g. self-portraits, LGBTQ+, mental health)",
 
+		"fourth-header": "Admission Criteria",
+
+		"fourth-accordion-header": "Age",
 		"fourth-accordion-first-text": "Eligible participants must be between",
 		"fourth-accordion-second-text": "18 and 30 years old",
 		"fourth-accordion-third-text": "at the start of the contest.",
 
+		"fifth-accordion-header": "Nationality",
 		"fifth-accordion-first-text": "Eligible participants must",
 		"fifth-accordion-second-text": "reside",
 		"fifth-accordion-third-text": "in one of the participating European countries:",
@@ -136,8 +94,12 @@
 		"fifth-accordion-fifth-text": "and",
 		"fifth-accordion-sixth-text": "Lithuania",
 
+		"sixth-accordion-header": "Motivation",
 		"sixth-accordion-first-text": "Eligible participants must be interested in raising public awareness of local community challenges.",
 
+		"fifth-header": "Criteria for Submission",
+
+		"seventh-accordion-header": "Technical Requirements",
 		"seventh-accordion-first-text": "Only 1 photo must be submitted",
 		"seventh-accordion-second-text": "in",
 		"seventh-accordion-third-text": "or",
@@ -148,6 +110,7 @@
 		"seventh-accordion-eighth-text": "should also be submitted",
 		"seventh-accordion-nineth-text": "(no larger than 10 MB)",
 
+		"eighth-accordion-header": "Submission Method",
 		"eighth-accordion-first-text": "Entries should be submitted",
 		"eighth-accordion-second-text": "via email",
 		"eighth-accordion-third-text": "and",
@@ -156,6 +119,7 @@
 		"eighth-accordion-sixth-text": "be sent via a link",
 		"eighth-accordion-seventh-text": "to a shared drive folder.",
 
+		"nineth-accordion-header": "Accompanying Information",
 		"nineth-accordion-first-text": "Include a",
 		"nineth-accordion-second-text": "title",
 		"nineth-accordion-third-text": "(up to",
@@ -167,10 +131,13 @@
 		"nineth-accordion-nineth-text": "themes",
 		"nineth-accordion-tenth-text": "the photo belongs to.",
 
+		"sixth-header": "Course of Contest",
+
+		"tenth-accordion-header": "Submission Phase",
 		"tenth-accordion-first-text": "Participants must submit their",
 		"tenth-accordion-second-text": "photo",
 		"tenth-accordion-third-text": "(.jpg or .png) and their",
-		"tenth-accordion-fourth-text": ".stl file by email",
+		"tenth-accordion-fourth-text": ".stl file by email 14 November",
 		"tenth-accordion-fifth-text": "In this phase, participants prepare their entries, access the contest",
 		"tenth-accordion-sixth-text": "guidelines",
 		"tenth-accordion-seventh-text": "and resources, and receive personalised support",
@@ -178,6 +145,7 @@
 		"tenth-accordion-nineth-text": "The key dates for judging and award announcements will be communicated to participants via the project's official channels:",
 		"tenth-accordion-tenth-text": "[Facebook , Instagram and WEBSITE]",
 
+		"eleventh-accordion-header": "Judging Phase",
 		"eleventh-accordion-first-text": "The jury",
 		"eleventh-accordion-second-text": "will select",
 		"eleventh-accordion-third-text": "5 finalists from each",
@@ -191,12 +159,14 @@
 		"eleventh-accordion-eleventh-text": "and showcased as part of the contest's",
 		"eleventh-accordion-twelveth-text": "online exhibition",
 
+		"twelveth-accordion-header": "Photo-Voice Exhibition",
 		"twelveth-accordion-first-text": "The (25) finalists'",
 		"twelveth-accordion-second-text": "works will be presented in the",
 		"twelveth-accordion-third-text": "online exhibition on this",
 		"twelveth-accordion-fourth-text": "website",
 		"twelveth-accordion-fifth-text": "in the \"Works\" section",
 
+		"thirteenth-accordion-header": "Voting Phase",
 		"thirteenth-accordion-first-text": "Anyone with access to the contest platform can",
 		"thirteenth-accordion-second-text": "participate in voting.",
 		"thirteenth-accordion-third-text": "Each voter can cast",
@@ -205,10 +175,11 @@
 		"thirteenth-accordion-sixth-text": "each",
 		"thirteenth-accordion-seventh-text": "participating",
 		"thirteenth-accordion-eighth-text": "country.",
-		"thirteenth-accordion-nineth-text": "The public voting period will take place during",
+		"thirteenth-accordion-nineth-text": "The public voting period will take place during 22 November 2024 - 3 January 2025",
 		"thirteenth-accordion-tenth-text": "The 5 winners",
 		"thirteenth-accordion-eleventh-text": "will be determined based on the highest number of votes received.",
 
+		"fourteenth-accordion-header": "Prizes and Awards",
 		"fourteenth-accordion-first-text": "5 winners",
 		"fourteenth-accordion-second-text": "will receive recognition for their entries.",
 		"fourteenth-accordion-third-text": "The winning photo from each country",
@@ -217,12 +188,16 @@
 		"fourteenth-accordion-sixth-text": "3D printed as a lithophane",
 		"fourteenth-accordion-seventh-text": "and exhibited during national events. These events will celebrate the culmination of the project and the contest.",
 
+		"seventh-header": "Instructions for Submitting Entries",
+
+		"fifteenth-accordion-header": "Email Contact",
 		"fifteenth-accordion-first-text": "In order to be eligible to participate and avoid disqualification, participants",
 		"fifteenth-accordion-second-text": "must adhere",
 		"fifteenth-accordion-third-text": "to the following guidelines when",
 		"fifteenth-accordion-fourth-text": "submitting their entries",
 		"fifteenth-accordion-fifth-text": "by email:",
 
+		"sixteenth-accordion-header": "Email Subject",
 		"sixteenth-accordion-first-text": "Participants must use the following format for the subject of their email:",
 		"sixteenth-accordion-second-text": "[country_code]_[contest entry]_[participant's name and surname]",
 		"sixteenth-accordion-third-text": "Country codes:",
@@ -235,6 +210,7 @@
 		"sixteenth-accordion-tenth-text": "ES_Contest Entry_Manuel García (for participants from Spain)",
 		"sixteenth-accordion-eleventh-text": "IT_Contest Entry_Giovanna Russo (for participants from Italy)",
 
+		"seventeenth-accordion-header": "File Submission",
 		"seventeenth-accordion-first-text": "The files, i.e.",
 		"seventeenth-accordion-second-text": "the photo and .stl file,",
 		"seventeenth-accordion-third-text": "should be uploaded to a Google Drive folder.",
@@ -243,7 +219,7 @@
 		"seventeenth-accordion-sixth-text": "shared with the email",
 		"seventeenth-accordion-seventh-text": "The files must be named in the following format:",
 		"seventeenth-accordion-eighth-text": "[country code]_[file format]_[participant's name and surname]",
-		"seventeenth-accordion-nineth-text": "File codes:",
+		"seventeenth-accordion-nineth-text": "File format codes:",
 		"seventeenth-accordion-tenth-text": "For photos: use \"",
 		"seventeenth-accordion-eleventh-text": "\" or \"",
 		"seventeenth-accordion-twelveth-text": "For .stl files (3D models): \"",
@@ -252,6 +228,7 @@
 		"seventeenth-accordion-fifteenth-text": "LT_stl_Emiljia Kazlauskaite (for the submission of an .stl file from Lithuania)",
 		"seventeenth-accordion-sixteenth-text": "These naming conventions help to ensure that submissions are correctly identified and evaluated.",
 
+		"eighteenth-accordion-header": "How to share a folder?",
 		"eighteenth-accordion-first-text": "Make sure that the Move&Act team has",
 		"eighteenth-accordion-second-text": "access to your files;",
 		"eighteenth-accordion-third-text": "this is essential for",
@@ -267,6 +244,9 @@
 		"eighteenth-accordion-thirteenth-text": "access",
 		"eighteenth-accordion-fourteenth-text": "by sharing the photo with the address:",
 
+		"eighth-header": "Judging Procedure",
+
+		"nineteenth-accordion-header": "Step 1: Initial Screening",
 		"nineteenth-accordion-first-text": "All entries will undergo an initial screening to ensure that they fulfill the basic entry and submission criteria.",
 		"nineteenth-accordion-second-text": "Eligibility to participate:",
 		"nineteenth-accordion-third-text": "It will be checked whether the participant is between 18 and 30 years old and is a national/resident in one of the participating countries (Poland, Italy, Spain, Greece, Lithuania).",
@@ -287,6 +267,7 @@
 		"nineteenth-accordion-eighteenth-text": "theme",
 		"nineteenth-accordion-nineteenth-text": "Only entries that pass this first check will make it to the next round.",
 
+		"20-accordion-header": "Step 2: Selection of Finalists",
 		"20-accordion-first-text": "Entries will be evaluated by a jury of seven professionals based on the following criteria:",
 		"20-accordion-second-text": "Visual Impact",
 		"20-accordion-third-text": "(30 points): The striking and memorable overall effect of the image.",
@@ -307,6 +288,9 @@
 		"20-accordion-eighteenth-text": "with a maximum of",
 		"20-accordion-nineteenth-text": "100 points possible",
 
+		"nineth-header": "Key Dates and Phases",
+
+		"21-accordion-header": "Contest Overview",
 		"21-accordion-first-text": "To ensure a smooth participation process, it's important to know the important dates and phases of the Move&Act Photo-Voice Contest. Below are the most important dates that participants need to be aware of.",
 		"21-accordion-second-text": "Phase",
 		"21-accordion-third-text": "Action",
@@ -333,6 +317,9 @@
 		"21-accordion-24-text": "The project partners organise an event in each country and present the winners' printed works (lithophane format). The winners (are welcome to) attend the event(s) and share their experiences.",
 		"21-accordion-25-text": "January - February",
 
+		"tenth-header": "STL File and Lithophane",
+
+		"22-accordion-header": "Creating an .STL File",
 		"22-accordion-first-text": "Go to",
 		"22-accordion-second-text": "Once there, click on “",
 		"22-accordion-third-text": "Images",
@@ -345,6 +332,7 @@
 		"22-accordion-tenth-text": "” and save the file in your computer. Once you have successfully saved the file, upload the file to a Google Drive folder.",
 		"22-accordion-eleventh-text": "Once the .stl file is uploading to Google Drive, do not forget to share the link with the Move&Act project team.",
 
+		"23-accordion-header": "What is a Lithophane?",
 		"23-accordion-first-text": "A lithophane is a unique work of art that transforms a flat, two-dimensional image into a",
 		"23-accordion-second-text": "three-dimensional image.",
 		"23-accordion-third-text": "By changing the thickness of a translucent material, lithophanes really come into their own when backlit, revealing a detailed and impressive image when light falls on them. This art form, which",
@@ -354,6 +342,9 @@
 		"23-accordion-seventh-text": "MOVE & ACT Photo-Voice Contest,",
 		"23-accordion-eighth-text": "lithophanes are a powerful medium for young participants to express their creativity. This contest offers young people the opportunity to practice and improve their digital skills while developing artistic abilities.",
 
+		"eleventh-header": "Support",
+
+		"24-accordion-header": "Guidelines",
 		"24-accordion-first-text": "Step-by-step instructions to help them with technical aspects, along with storytelling techniques and other useful information.",
 		"24-accordion-second-text": "Click to see guidelines",
 		"24-accordion-third-text": "Images",
@@ -366,6 +357,7 @@
 		"24-accordion-tenth-text": "” and save the file in your computer. Once you have successfully saved the file, upload the file to a Google Drive folder.",
 		"24-accordion-eleventh-text": "Once the .stl file is uploading to Google Drive, do not forget to share the link with the Move&Act project team.",
 
+		"25-accordion-header": "Email Support",
 		"25-accordion-first-text": "For personalised guidance,",
 		"25-accordion-second-text": "participants can contact the official project support team by email using the following format for the subject line:",
 		"25-accordion-third-text": "[country code]_[enquiry]_[Participant's Name and surname]",
@@ -373,6 +365,9 @@
 		"25-accordion-fifth-text": "GR_Query_Georgios Papadopoulos (Greece)",
 		"25-accordion-sixth-text": "Email:",
 
+		"twelveth-header": "Regulations & Ethics",
+
+		"26-accordion-header": "Ethical Considerations",
 		"26-accordion-first-text": "Participants must:",
 		"26-accordion-second-text": "respect intellectual property rights,",
 		"26-accordion-third-text": "ensure that",
@@ -391,6 +386,7 @@
 		"26-accordion-sixteenth-text": "must be disclosed",
 		"26-accordion-seventeenth-text": "(e.g. \"...this is an AI-generated image\").",
 
+		"27-accordion-header": "Acceptance of Terms and Conditions",
 		"27-accordion-first-text": "By entering, participants",
 		"27-accordion-second-text": "agree to the Contest Rules,",
 		"27-accordion-third-text": "including the",
@@ -399,26 +395,34 @@
 		"27-accordion-sixth-text": "grant Move&Act the right to use the submitted images",
 		"27-accordion-seventh-text": "for educational and promotional purposes.",
 
+		"thirteenth-header": "Contest Rules",
+
+		"28-accordion-header": "Submission channel",
 		"28-accordion-first-text": "Entries must be submitted via the official contest channel.",
 		"28-accordion-second-text": "Entries submitted via other channels will be disqualified.",
 
+		"29-accordion-header": "Original Work",
 		"29-accordion-first-text": "The photos must be original and taken by the participant.",
 		"29-accordion-second-text": "Third party material is not permitted.",
 		"29-accordion-third-text": "The photos must not infringe any intellectual property rights or data protection rights.",
 
+		"30-accordion-header": "Photo Alterations",
 		"30-accordion-first-text": "Photos may be altered by",
 		"30-accordion-second-text": "up to 25%",
 		"30-accordion-third-text": "(e.g. by adding or removing elements).",
 		"30-accordion-fourth-text": "Excessive alterations will result in disqualification and exclusion from future contests.",
 
+		"31-accordion-header": "AI-generated Content",
 		"31-accordion-first-text": "AI-generated content is",
 		"31-accordion-second-text": "allowed up to 25%",
 		"31-accordion-third-text": "of the total image. In order to maintain transparency, it must be clearly disclosed (e.g. “This is an AI-generated image”).",
 
+		"32-accordion-header": "Judging",
 		"32-accordion-first-text": "A jury of seven professionals will judge the entries.",
 		"32-accordion-second-text": "Their decisions are final.",
 		"32-accordion-third-text": "Move&Act reserves the right to disqualify entries that are inappropriate or violate the rules.",
 
+		"33-accordion-header": "Data Protection and Consent",
 		"33-accordion-first-text": "All content deemed",
 		"33-accordion-second-text": "inappropriate",
 		"33-accordion-third-text": "or invasive of privacy will be removed and not considered for the contest.",
@@ -430,21 +434,26 @@
 		"33-accordion-nineth-text": "must be provided",
 		"33-accordion-tenth-text": "to ensure that the rights of the minor(s)/young person(s) are protected.",
 
+		"34-accordion-header": "Use of Photos",
 		"34-accordion-first-text": "The submitted works remain the property of the Move&Act project.",
 		"34-accordion-second-text": "By entering, participants agree that their photos/files can be used by Move&Act for educational and promotional purposes.",
 
+		"35-accordion-header": "Submission Deadline",
 		"35-accordion-first-text": "No entries will be accepted after the closing date.",
 		"35-accordion-second-text": "The winners will be notified via the email address provided.",
 		"35-accordion-third-text": "If there is no response within three working days, a new winner will be selected and the previous winner will forfeit their prize.",
 
+		"36-accordion-header": "Legal Restrictions",
 		"36-accordion-first-text": "The contest is void where prohibited by law.",
 
+		"37-accordion-header": "Intellectual Property Rights",
 		"37-accordion-first-text": "The participants retain the copyright to their contributions. Move&Act reserves the right to use, reproduce and exhibit these works in future project outputs and reports, with appropriate attribution to the author. This use is in line with the Erasmus+ objectives of sharing educational content and promoting cultural understanding.",
 
+		"38-accordion-header": "Account Deletion",
 		"38-accordion-first-text": "To delete your account on the platform, contact us at our email.",
 
-		"first-button-text": "Rules",
-		"second-button-text": "Guidelines"
+		"first-button-text": "Contest Rules",
+		"second-button-text": "Contest Guidelines"
 	},
 
 	"contact": {
@@ -459,8 +468,8 @@
 		"seventh-text": "Guidelines",
 		"eighth-text": "section on the present platform.",
 
-		"first-button-text": "Rules",
-		"second-button-text": "Guidelines"
+		"first-button-text": "Contest Rules",
+		"second-button-text": "Contest Guidelines"
 	},
 
 	"account-details": {
