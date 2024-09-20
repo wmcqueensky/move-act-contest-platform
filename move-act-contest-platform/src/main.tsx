@@ -15,9 +15,11 @@ import i18next from "i18next";
 import { BrowserRouter } from "react-router-dom";
 import { I18nextProvider } from "react-i18next";
 
+const savedLanguage = localStorage.getItem("language") || "en";
+
 i18next.init({
 	interpolation: { escapeValue: false },
-	lng: "en",
+	lng: savedLanguage,
 	resources: {
 		en: {
 			global: global_en,

@@ -36,6 +36,7 @@ const MainNavbar = () => {
 
 	const changeLanguage = (lang: LanguageCode) => {
 		i18n.changeLanguage(lang);
+		localStorage.setItem("language", lang);
 	};
 
 	const [user, setUser] = useState<{ email: string | undefined | null } | null>(
