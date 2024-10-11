@@ -154,7 +154,7 @@
 
 .card {
 	width: 22rem;
-	height: 29rem;
+	min-height: 29rem;
 	display: flex;
 	flex-direction: column;
 }
@@ -231,7 +231,7 @@
 
 .details-button {
 	padding: 0.75rem 1.1rem;
-	height: 50px;
+	min-height: 50px;
 	width: 140px;
 	font-size: 1.1rem;
 	border-radius: 16px;
