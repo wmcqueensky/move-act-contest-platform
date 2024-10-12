@@ -173,7 +173,7 @@ const MainNavbar = () => {
 					<Dropdown onSelect={handleSelect}>
 						<Dropdown.Toggle
 							variant="none"
-							className="dropdown-toggle-second d-flex align-items-center mx-3"
+							className="dropdown-toggle-second d-flex align-items-center mx-5"
 						>
 							{user?.email ? user.email : <FaUser size={32} />}
 						</Dropdown.Toggle>
