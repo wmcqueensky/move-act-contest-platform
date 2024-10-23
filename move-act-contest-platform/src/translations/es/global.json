@@ -16,7 +16,7 @@
 	},
 
 	"works": {
-		"first-header": "THE 25 NOMINATED PROJECTS",
+		"first-header": "LAS 25 FOTOS NOMINADAS",
 		"second-header": "POR LAS CUALES PUEDES VOTAR",
 		"third-header": "¿Cómo votar?",
 		"fourth-header": "La votación aún no ha comenzado. Puedes consultar todas las fases del concurso en la sección Bases y Guía.",
@@ -39,7 +39,7 @@
 		"first-subheader": "¡Bienvenido al concurso Move&Act",
 		"second-subheader": "Concurso Photo-Voice",
 		"third-subheader": "! Parte del proyecto Erasmus+",
-		"fourth-subheader": "Move & Act - Empoderar a los jóvenes a través de habilidades emprendedoras y digitales.",
+		"fourth-subheader": "Move & Act - Empower Youth through Entrepreneurial and Digital skills.",
 
 		"third-header": "Información general",
 
@@ -101,9 +101,9 @@
 
 		"seventh-accordion-header": "Requisitos técnicos",
 		"seventh-accordion-first-text": "Sólo debes presentar 1 foto en",
-		"seventh-accordion-second-text": ".jpg",
+		"seventh-accordion-second-text": "",
 		"seventh-accordion-third-text": "o",
-		"seventh-accordion-fourth-text": ".png con una resolución de",
+		"seventh-accordion-fourth-text": "con una resolución de",
 		"seventh-accordion-fifth-text": "1920x1080 píxeles.",
 		"seventh-accordion-sixth-text": "Un (1) archivo 3D (.stl) de la foto también debe enviarse",
 		"seventh-accordion-seventh-text": "(no más de 10 MB).",
@@ -123,7 +123,7 @@
 		"nineth-accordion-first-text": "Incluir un",
 		"nineth-accordion-second-text": "título",
 		"nineth-accordion-third-text": "(hasta",
-		"nineth-accordion-fourth-text": "5 palabras),",
+		"nineth-accordion-fourth-text": "5 palabras)",
 		"nineth-accordion-fifth-text": "una breve biografía del autor",
 		"nineth-accordion-sixth-text": "(250-350 palabras) y",
 		"nineth-accordion-seventh-text": "una breve descripción de la foto",
@@ -153,7 +153,7 @@
 		"eleventh-accordion-fifth-text": "total de 25 fotos finalistas.",
 		"eleventh-accordion-sixth-text": " Los finalistas se anunciarán a través de los canales oficiales del proyecto:",
 		"eleventh-accordion-seventh-text": "[Facebook, Instagram y la plataforma del concurso]",
-		"eleventh-accordion-eighth-text": "Estos 25 fotos",
+		"eleventh-accordion-eighth-text": "Estas 25 fotos",
 		"eleventh-accordion-nineth-text": "se subirán a sección «Fotos» de esta plataforma",
 		"eleventh-accordion-tenth-text": "[Facebook , Instagram y la plataforma del concurso]",
 		"eleventh-accordion-eleventh-text": "y se mostrarán como parte de la exposición del concurso",
@@ -322,7 +322,7 @@
 		"22-accordion-header": "Crear de un archivo .STL",
 		"22-accordion-first-text": "Accede a https://3dp.rocks/lithophane/",
 		"22-accordion-second-text": "Una vez allí, haz clic en «",
-		"22-accordion-third-text": "Imágenes",
+		"22-accordion-third-text": "Images",
 		"22-accordion-fourth-text": "» en la parte superior central de la página. Aparecerá un menú en el que podrás seleccionar un archivo.",
 		"22-accordion-fifth-text": "Una vez elegido y cargado el archivo, selecciona la opción «",
 		"22-accordion-sixth-text": "Flat",
