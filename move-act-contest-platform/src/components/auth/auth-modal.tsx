@@ -4,7 +4,12 @@ import { useTranslation } from "react-i18next";
 
 import supabase from "../../config/supabase-client.ts";
 import AuthToast from "./auth-toast.tsx";
-import rulesPdf from "../../pages/guidelines/docs/rules.pdf";
+
+import englishFrameworkPdf from "../../docs/en-docs/en-framework.pdf";
+import spanishFrameworkPdf from "../../docs/es-docs/es-framework.pdf";
+import italianFrameworkPdf from "../../docs/it-docs/it-framework.pdf";
+import lithuanianFrameworkPdf from "../../docs/lt-docs/lt-framework.pdf";
+import polishFrameworkPdf from "../../docs/pl-docs/pl-framework.pdf";
 
 import "./styles.css";
 
@@ -28,7 +33,7 @@ const AuthModal: React.FC<AuthModalProps> = ({
 	>(parentActiveTab);
 
 	const [forgotPasswordEmail, setForgotPasswordEmail] = useState("");
-	const [t] = useTranslation("global");
+	const [t, i18n] = useTranslation("global");
 	const [forgotPasswordToast, setForgotPasswordToast] = useState<{
 		show: boolean;
 		message: string;
@@ -52,6 +57,35 @@ const AuthModal: React.FC<AuthModalProps> = ({
 	}>({ show: false, message: "", type: "success" });
 
 	const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+
+	const getDocuments = () => {
+		const language = i18n.language;
+
+		switch (language) {
+			case "es":
+				return {
+					frameworkPdf: spanishFrameworkPdf,
+				};
+			case "it":
+				return {
+					frameworkPdf: italianFrameworkPdf,
+				};
+			case "lt":
+				return {
+					frameworkPdf: lithuanianFrameworkPdf,
+				};
+			case "pl":
+				return {
+					frameworkPdf: polishFrameworkPdf,
+				};
+			default:
+				return {
+					frameworkPdf: englishFrameworkPdf,
+				};
+		}
+	};
+
+	const { frameworkPdf } = getDocuments();
 
 	useEffect(() => {
 		const checkUser = async () => {
@@ -359,7 +393,7 @@ const AuthModal: React.FC<AuthModalProps> = ({
 										<>
 											{t("auth.first-text")}{" "}
 											<a
-												href={rulesPdf}
+												href={frameworkPdf}
 												target="_blank"
 												rel="noopener noreferrer"
 											>

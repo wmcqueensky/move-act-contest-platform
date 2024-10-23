@@ -14,14 +14,57 @@ import secondShareFolderImage from "./images/share-folder-image-2.png";
 import thirdShareFolderImage from "./images/share-folder-image-3.png";
 import firstStlImage from "./images/how-to-stl-image-1.png";
 import secondStlImage from "./images/how-to-stl-image-2.png";
-import guidelinesPdf from "./docs/guidelines.pdf";
-import rulesPdf from "./docs/rules.pdf";
+
+import englishGuidelinesPdf from "../../docs/en-docs/en-guidelines.pdf";
+import englishFrameworkPdf from "../../docs/en-docs/en-framework.pdf";
+import spanishGuidelinesPdf from "../../docs/es-docs/es-guidelines.pdf";
+import spanishFrameworkPdf from "../../docs/es-docs/es-framework.pdf";
+import italianGuidelinesPdf from "../../docs/it-docs/it-guidelines.pdf";
+import italianFrameworkPdf from "../../docs/it-docs/it-framework.pdf";
+import lithuanianGuidelinesPdf from "../../docs/lt-docs/lt-guidelines.pdf";
+import lithuanianFrameworkPdf from "../../docs/lt-docs/lt-framework.pdf";
+import polishGuidelinesPdf from "../../docs/pl-docs/pl-guidelines.pdf";
+import polishFrameworkPdf from "../../docs/pl-docs/pl-framework.pdf";
 
 import "./styles.css";
 
 const AboutPage = () => {
 	const [loading, setLoading] = useState(true);
-	const [t] = useTranslation("global");
+	const { t, i18n } = useTranslation("global");
+
+	const getDocuments = () => {
+		const language = i18n.language;
+
+		switch (language) {
+			case "es":
+				return {
+					guidelinesPdf: spanishGuidelinesPdf,
+					frameworkPdf: spanishFrameworkPdf,
+				};
+			case "it":
+				return {
+					guidelinesPdf: italianGuidelinesPdf,
+					frameworkPdf: italianFrameworkPdf,
+				};
+			case "lt":
+				return {
+					guidelinesPdf: lithuanianGuidelinesPdf,
+					frameworkPdf: lithuanianFrameworkPdf,
+				};
+			case "pl":
+				return {
+					guidelinesPdf: polishGuidelinesPdf,
+					frameworkPdf: polishFrameworkPdf,
+				};
+			default:
+				return {
+					guidelinesPdf: englishGuidelinesPdf,
+					frameworkPdf: englishFrameworkPdf,
+				};
+		}
+	};
+
+	const { guidelinesPdf, frameworkPdf } = getDocuments();
 
 	useEffect(() => {
 		const images = document.querySelectorAll("img");
@@ -1077,7 +1120,7 @@ const AboutPage = () => {
 
 						<div>
 							<a
-								href={guidelinesPdf}
+								href={englishGuidelinesPdf}
 								target="_blank"
 								rel="noopener noreferrer"
 								style={{
@@ -1395,7 +1438,7 @@ const AboutPage = () => {
 			<Container className="rules-and-guidelines-buttons">
 				<Button
 					className="rules-button"
-					onClick={() => window.open(rulesPdf, "_blank")}
+					onClick={() => window.open(frameworkPdf, "_blank")}
 				>
 					{t("guidelines.first-button-text")}
 				</Button>

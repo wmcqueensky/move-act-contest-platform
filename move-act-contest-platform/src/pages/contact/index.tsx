@@ -3,16 +3,59 @@ import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
-import rulesPdf from "../guidelines/docs/rules.pdf";
-import guidelinesPdf from "../guidelines/docs/guidelines.pdf";
 import platformLogo from "./images/e-platform-logo.png";
 import projectLogo from "./images/project-logo.png";
+
+import englishGuidelinesPdf from "../../docs/en-docs/en-guidelines.pdf";
+import englishFrameworkPdf from "../../docs/en-docs/en-framework.pdf";
+import spanishGuidelinesPdf from "../../docs/es-docs/es-guidelines.pdf";
+import spanishFrameworkPdf from "../../docs/es-docs/es-framework.pdf";
+import italianGuidelinesPdf from "../../docs/it-docs/it-guidelines.pdf";
+import italianFrameworkPdf from "../../docs/it-docs/it-framework.pdf";
+import lithuanianGuidelinesPdf from "../../docs/lt-docs/lt-guidelines.pdf";
+import lithuanianFrameworkPdf from "../../docs/lt-docs/lt-framework.pdf";
+import polishGuidelinesPdf from "../../docs/pl-docs/pl-guidelines.pdf";
+import polishFrameworkPdf from "../../docs/pl-docs/pl-framework.pdf";
 
 import "./styles.css";
 
 const ContactPage = () => {
 	const [loading, setLoading] = useState(true);
-	const [t] = useTranslation("global");
+	const { t, i18n } = useTranslation("global");
+
+	const getDocuments = () => {
+		const language = i18n.language;
+
+		switch (language) {
+			case "es":
+				return {
+					guidelinesPdf: spanishGuidelinesPdf,
+					frameworkPdf: spanishFrameworkPdf,
+				};
+			case "it":
+				return {
+					guidelinesPdf: italianGuidelinesPdf,
+					frameworkPdf: italianFrameworkPdf,
+				};
+			case "lt":
+				return {
+					guidelinesPdf: lithuanianGuidelinesPdf,
+					frameworkPdf: lithuanianFrameworkPdf,
+				};
+			case "pl":
+				return {
+					guidelinesPdf: polishGuidelinesPdf,
+					frameworkPdf: polishFrameworkPdf,
+				};
+			default:
+				return {
+					guidelinesPdf: englishGuidelinesPdf,
+					frameworkPdf: englishFrameworkPdf,
+				};
+		}
+	};
+
+	const { guidelinesPdf, frameworkPdf } = getDocuments();
 
 	useEffect(() => {
 		const images = document.querySelectorAll("img");
@@ -153,7 +196,6 @@ const ContactPage = () => {
 			<h3 className="mb-3" style={{ color: "var(--bordo-color)" }}>
 				{t("contact.sixth-text")}{" "}
 				<span style={{ color: "var(--orange-color)" }}>
-					{" "}
 					{t("contact.seventh-text")}{" "}
 				</span>
 				{t("contact.eighth-text")}
@@ -162,7 +204,7 @@ const ContactPage = () => {
 			<Container className="rules-and-guidelines-buttons">
 				<Button
 					className="rules-button"
-					onClick={() => window.open(rulesPdf, "_blank")}
+					onClick={() => window.open(frameworkPdf, "_blank")}
 				>
 					{t("contact.first-button-text")}
 				</Button>
