@@ -7,6 +7,7 @@ import AuthToast from "./auth-toast.tsx";
 
 import englishFrameworkPdf from "../../docs/en-docs/en-framework.pdf";
 import spanishFrameworkPdf from "../../docs/es-docs/es-framework.pdf";
+import greekFrameworkPdf from "../../docs/gr-docs/gr-framework.pdf";
 import italianFrameworkPdf from "../../docs/it-docs/it-framework.pdf";
 import lithuanianFrameworkPdf from "../../docs/lt-docs/lt-framework.pdf";
 import polishFrameworkPdf from "../../docs/pl-docs/pl-framework.pdf";
@@ -69,6 +70,10 @@ const AuthModal: React.FC<AuthModalProps> = ({
 			case "it":
 				return {
 					frameworkPdf: italianFrameworkPdf,
+				};
+			case "gr":
+				return {
+					frameworkPdf: greekFrameworkPdf,
 				};
 			case "lt":
 				return {

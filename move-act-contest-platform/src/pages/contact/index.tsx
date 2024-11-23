@@ -10,6 +10,8 @@ import englishGuidelinesPdf from "../../docs/en-docs/en-guidelines.pdf";
 import englishFrameworkPdf from "../../docs/en-docs/en-framework.pdf";
 import spanishGuidelinesPdf from "../../docs/es-docs/es-guidelines.pdf";
 import spanishFrameworkPdf from "../../docs/es-docs/es-framework.pdf";
+import greekGuidelinesPdf from "../../docs/gr-docs/gr-guidelines.pdf";
+import greekFrameworkPdf from "../../docs/gr-docs/gr-framework.pdf";
 import italianGuidelinesPdf from "../../docs/it-docs/it-guidelines.pdf";
 import italianFrameworkPdf from "../../docs/it-docs/it-framework.pdf";
 import lithuanianGuidelinesPdf from "../../docs/lt-docs/lt-guidelines.pdf";
@@ -31,6 +33,11 @@ const ContactPage = () => {
 				return {
 					guidelinesPdf: spanishGuidelinesPdf,
 					frameworkPdf: spanishFrameworkPdf,
+				};
+			case "gr":
+				return {
+					guidelinesPdf: greekGuidelinesPdf,
+					frameworkPdf: greekFrameworkPdf,
 				};
 			case "it":
 				return {
