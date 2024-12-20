@@ -159,6 +159,12 @@
 	flex-direction: column;
 }
 
+.card-img-top {
+	max-height: 250px;
+	width: 100%;
+	object-fit: cover;
+}
+
 .card-body {
 	display: flex;
 	flex-direction: column;

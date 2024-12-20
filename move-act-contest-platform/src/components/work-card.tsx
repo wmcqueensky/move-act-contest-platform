@@ -32,7 +32,7 @@ const WorkCard = ({
 
 	return (
 		<Card className="card">
-			<Card.Img variant="top" src={image} />
+			<Card.Img variant="top" src={image} className="card-img-top" />
 			<Card.Body className="card-body">
 				<Card.Title className="card-title">{title}</Card.Title>
 				<Card.Subtitle className="mb-2 text-muted">
