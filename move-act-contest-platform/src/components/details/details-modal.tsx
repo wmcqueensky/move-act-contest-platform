@@ -9,11 +9,14 @@ type DetailsModalProps = {
 	work: {
 		image: string;
 		title: string;
+		titleTranslation: string;
 		participantName: string;
 		category: string;
 		voteCount: number;
 		authorBio: string;
+		authorBioTranslation: string;
 		description: string;
+		descriptionTranslation: string;
 		stlFile: string;
 	};
 	isVoted: boolean;
@@ -40,6 +43,9 @@ const DetailsModal = ({
 					authorBio={work.authorBio}
 					description={work.description}
 					stlFile={work.stlFile}
+					titleTranslation={work.titleTranslation}
+					authorBioTranslation={work.authorBioTranslation}
+					descriptionTranslation={work.descriptionTranslation}
 				/>
 			</Modal.Body>
 			<Modal.Footer className="d-flex justify-content-between">

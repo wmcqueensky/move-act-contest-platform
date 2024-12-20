@@ -22,11 +22,14 @@ const WorksPage = () => {
 		workId: 0,
 		image: "",
 		title: "",
+		titleTranslation: "",
 		participantName: "",
 		category: "",
 		voteCount: 0,
 		authorBio: "",
+		authorBioTranslation: "",
 		description: "",
+		descriptionTranslation: "",
 		stlFile: "",
 	});
 	const [showAuthModal, setShowAuthModal] = useState(false);
@@ -259,7 +262,7 @@ const WorksPage = () => {
 				</ul>
 			</Container>
 
-			{0 > 0 ? (
+			{0 === 0 ? (
 				<div>
 					<Container className="flag-container text-center">
 						<button
@@ -340,11 +343,14 @@ const WorksPage = () => {
 											workId: work.work_id,
 											image: work.image_url,
 											title: work.title,
+											titleTranslation: work.title_translation,
 											participantName: work.participant_name,
 											voteCount: work.vote_count,
 											category: work.category,
 											authorBio: work.author_bio,
+											authorBioTranslation: work.author_bio_translation,
 											description: work.description,
+											descriptionTranslation: work.description_translation,
 											stlFile: work.stl_url,
 										})
 									}
