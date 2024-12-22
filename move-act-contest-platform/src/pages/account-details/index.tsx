@@ -21,11 +21,15 @@ const AccountDetailsPage = () => {
 		workId: 0,
 		image: "",
 		title: "",
+		titleTranslation: "",
 		participantName: "",
 		category: "",
+		categoryTranslation: "",
 		voteCount: 0,
 		authorBio: "",
+		authorBioTranslation: "",
 		description: "",
+		descriptionTranslation: "",
 		stlFile: "",
 	});
 	const [editMode, setEditMode] = useState({ name: false });
@@ -270,11 +274,15 @@ const AccountDetailsPage = () => {
 									workId: work.work_id,
 									image: work.image_url,
 									title: work.title,
+									titleTranslation: work.title_translation,
 									participantName: work.participant_name,
 									voteCount: work.vote_count,
 									category: work.category,
+									categoryTranslation: work.category_translation,
 									authorBio: work.author_bio,
+									authorBioTranslation: work.author_bio_translation,
 									description: work.description,
+									descriptionTranslation: work.description_translation,
 									stlFile: work.stl_url,
 								})
 							}
