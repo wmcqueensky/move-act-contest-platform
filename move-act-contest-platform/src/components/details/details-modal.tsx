@@ -12,6 +12,7 @@ type DetailsModalProps = {
 		titleTranslation: string;
 		participantName: string;
 		category: string;
+		categoryTranslation: string;
 		voteCount: number;
 		authorBio: string;
 		authorBioTranslation: string;
@@ -40,6 +41,7 @@ const DetailsModal = ({
 					title={work.title}
 					participantName={work.participantName}
 					category={work.category}
+					categoryTranslation={work.categoryTranslation}
 					authorBio={work.authorBio}
 					description={work.description}
 					stlFile={work.stlFile}

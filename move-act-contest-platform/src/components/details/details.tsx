@@ -7,6 +7,7 @@ type DetailsProps = {
 	titleTranslation: string;
 	participantName: string;
 	category: string;
+	categoryTranslation: string;
 	authorBio: string;
 	authorBioTranslation: string;
 	description: string;
@@ -20,6 +21,7 @@ const Details = ({
 	titleTranslation,
 	participantName,
 	category,
+	categoryTranslation,
 	authorBio,
 	authorBioTranslation,
 	description,
@@ -38,7 +40,7 @@ const Details = ({
 
 			<h1 className="details-title">{titleTranslation}</h1>
 			<h3 className="details-participant text-muted">
-				{participantName} - {category}
+				{categoryTranslation && `${participantName} - ${categoryTranslation}`}
 			</h3>
 			<p className="details-description">{authorBioTranslation}</p>
 			<p className="details-description">{descriptionTranslation}</p>
