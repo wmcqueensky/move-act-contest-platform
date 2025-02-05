@@ -555,7 +555,12 @@
 		"fifth-header": "Szczegóły konta",
 		"sixth-header": "Wyloguj się",
 		"seventh-header": "Zaloguj się",
-		"eighth-header": "Zarejestruj się"
+		"eighth-header": "Zarejestruj się",
+		"nineth-header": "Winners🏆"
+	},
+
+	"winners": {
+		"first-header": "ZWYCIĘZCY!"
 	},
 
 	"footer": {

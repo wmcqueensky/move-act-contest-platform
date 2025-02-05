@@ -554,7 +554,12 @@
 		"fifth-header": "Dettagli account",
 		"sixth-header": "Esci",
 		"seventh-header": "Accedi",
-		"eighth-header": "Registrati"
+		"eighth-header": "Registrati",
+		"nineth-header": "Winners🏆"
+	},
+
+	"winners": {
+		"first-header": "VINCITORI!"
 	},
 
 	"footer": {

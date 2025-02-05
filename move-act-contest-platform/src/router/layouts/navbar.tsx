@@ -2,7 +2,13 @@ import { Link, NavLink } from "react-router-dom";
 import { Navbar, Nav, Dropdown, Image } from "react-bootstrap";
 import { FiMenu } from "react-icons/fi";
 import { FaUser } from "react-icons/fa";
-import { HOME_PATH, WORKS_PATH, GUIDELINES_PATH, CONTACT_PATH } from "../paths";
+import {
+	HOME_PATH,
+	WORKS_PATH,
+	WINNERS_PATH,
+	GUIDELINES_PATH,
+	CONTACT_PATH,
+} from "../paths";
 import { useState, useEffect } from "react";
 import logo from "../../../public/logo.svg";
 import "flag-icons/css/flag-icons.min.css";
@@ -123,6 +129,15 @@ const MainNavbar = () => {
 							onClick={handleSelect}
 						>
 							{t("navbar.second-header")}
+						</Nav.Link>
+
+						<Nav.Link
+							as={NavLink}
+							to={WINNERS_PATH}
+							className="nav-link mx-2"
+							onClick={handleSelect}
+						>
+							{t("navbar.nineth-header")}
 						</Nav.Link>
 
 						<Nav.Link

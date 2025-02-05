@@ -556,7 +556,12 @@
 		"fifth-header": "Detalles de la cuenta",
 		"sixth-header": "Cerrar sesión",
 		"seventh-header": "Iniciar sesión",
-		"eighth-header": "Registrarse"
+		"eighth-header": "Registrarse",
+		"nineth-header": "Winners🏆"
+	},
+
+	"winners": {
+		"first-header": "GANADORES!"
 	},
 
 	"footer": {

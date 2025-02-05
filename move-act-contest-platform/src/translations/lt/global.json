@@ -553,7 +553,12 @@
 		"fifth-header": "Paskyros informacija",
 		"sixth-header": "Atsijungti",
 		"seventh-header": "Prisijungti",
-		"eighth-header": "Užsiregistruoti"
+		"eighth-header": "Užsiregistruoti",
+		"nineth-header": "Winners🏆"
+	},
+
+	"winners": {
+		"first-header": "NUGALĖTOJAI!"
 	},
 
 	"footer": {

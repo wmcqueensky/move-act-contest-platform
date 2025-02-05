@@ -554,7 +554,12 @@
 		"fifth-header": "Account details",
 		"sixth-header": "Log out",
 		"seventh-header": "Login",
-		"eighth-header": "Register"
+		"eighth-header": "Register",
+		"nineth-header": "Winners🏆"
+	},
+
+	"winners": {
+		"first-header": "WINNERS!"
 	},
 
 	"footer": {
