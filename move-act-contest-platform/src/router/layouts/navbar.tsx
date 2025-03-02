@@ -10,7 +10,7 @@ import {
 	CONTACT_PATH,
 } from "../paths";
 import { useState, useEffect } from "react";
-import logo from "../../../public/logo.svg";
+import logo from "../../../src/logo.svg";
 import "flag-icons/css/flag-icons.min.css";
 import "./styles.css";
 import { ACCOUNT_DETAILS_PATH } from "../../router/paths.ts";
