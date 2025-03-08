@@ -98,7 +98,7 @@ const MainNavbar = () => {
 
 	return (
 		<>
-			<Navbar fixed="top" expand="md" className="navbar" expanded={expanded}>
+			<Navbar fixed="top" expand="lg" className="navbar" expanded={expanded}>
 				<Link to={HOME_PATH} onClick={handleSelect}>
 					<Image src={logo} alt="Logo" fluid className="logo" />
 				</Link>

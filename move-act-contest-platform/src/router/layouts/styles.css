@@ -87,7 +87,7 @@
 	color: var(--light-yellow-color) !important;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
 	.custom-collapse {
 		background-color: var(--bordo-color) !important;
 	}
