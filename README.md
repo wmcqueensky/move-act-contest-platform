@@ -1,10 +1,19 @@
-# move-act-contest-platform
-Web platform for Move&Act Project contest financially supported by the European Union.
+# Move & Act Photo-Voice Contest Platform  
+
+This website was designed, developed, and launched for the **EU-funded Move & Act Photo-Voice Contest**.
+
+## Tech Stack  
+- **Frontend:** React + Vite + TypeScript  
+- **Backend & Database:** Supabase  
+- **Deployment:** Netlify  
+- **UI Frameworks:** React Bootstrap + Bootstrap  
 
 ## Website
 [Visit the Move&Act Contest Platform](https://moveandact-contest.com)
 
 ## Photos
+Here are some screenshots of the platform:
+
 <img width="1680" alt="Screenshot 2025-03-16 at 12 13 10" src="https://github.com/user-attachments/assets/64c0e501-d92a-4f1d-9505-c783304282e8" />
 <img width="1680" alt="Screenshot 2025-03-16 at 12 13 22" src="https://github.com/user-attachments/assets/2749d2ce-b1a9-4164-b005-a1ec4e86e114" />
 <img width="1680" alt="Screenshot 2025-03-16 at 12 13 39" src="https://github.com/user-attachments/assets/f38e724f-9777-4c51-b3eb-d7239652641a" />
@@ -25,3 +34,49 @@ Web platform for Move&Act Project contest financially supported by the European 
 <img width="1680" alt="Screenshot 2025-03-16 at 14 11 55" src="https://github.com/user-attachments/assets/6f5a65ee-0213-4612-89d5-d297fc83f038" />
 <img width="1680" alt="Screenshot 2025-03-16 at 14 12 52" src="https://github.com/user-attachments/assets/16802a34-cee5-41c4-b8ec-3f7c11648f7a" />
 <img width="1680" alt="Screenshot 2025-03-16 at 14 13 02" src="https://github.com/user-attachments/assets/526b8f02-0871-454c-8c7c-de905e75d2b4" />
+
+## Getting Started  
+
+### Prerequisites  
+Before running the app, ensure you have:  
+- **Node.js and npm** installed ([Download Node.js](https://nodejs.org/))  
+- **A code editor** (e.g., VS Code)  
+
+## Installation & Setup
+
+Navigate to the project directory:
+```sh
+cd move-act-contest-platform
+```
+
+Install dependencies:
+```sh
+npm install
+```
+
+Start the development server:
+```sh
+npm run dev
+```
+
+Open the app in your browser at [http://localhost:3000/](http://localhost:3000/).
+
+## Database
+
+The platform uses **Supabase** as the backend database, offering a scalable and cost-effective solution without subscription fees.
+
+## Dependencies
+
+This project utilizes the following libraries:
+
+- **react, react-dom, vite** – Core frontend technologies
+- **@supabase/supabase-js** – Database integration
+- **react-bootstrap, bootstrap** – UI styling
+- **typescript** – Ensuring type safety and maintainability
+
+## Acknowledgments
+
+This project was developed as part of the **Move & Act Photo-Voice Contest**, an EU-funded initiative promoting creative expression and engagement.
+
+
+
