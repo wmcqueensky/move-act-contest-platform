@@ -12,6 +12,9 @@ This website was designed, developed, and launched for the **EU-funded Move & Ac
 [Visit the Move&Act Contest Platform](https://moveandact-contest.com)
 
 ## Photos
+[Film](https://www.youtube.com/watch?v=lYkh_17ZcBs) quickly capturing the platform.
+
+## Photos
 Here are some screenshots of the platform:
 
 <img width="1680" alt="Screenshot 2025-03-16 at 12 13 10" src="https://github.com/user-attachments/assets/64c0e501-d92a-4f1d-9505-c783304282e8" />
