@@ -112,6 +112,25 @@ const ContactPage = () => {
 				</h1>
 			</Container>
 
+			<h3 className="mb-3" style={{ color: "var(--bordo-color)" }}>
+				{t("contact.coordinator-header")}
+			</h3>
+			<h4 className="mb-1" style={{ color: "var(--orange-color)" }}>
+				{t("contact.coordinator-org")}
+			</h4>
+			<p className="mb-1" style={{ fontWeight: "bold" }}>
+				{t("contact.coordinator-address-label")}
+			</p>
+			<p className="mb-1">{t("contact.coordinator-address")}</p>
+			<p className="mb-1" style={{ fontWeight: "bold" }}>
+				{t("contact.coordinator-contact-label")}
+			</p>
+			<p className="mb-7">
+				{t("contact.coordinator-person")} <br />
+				<a href="mailto:azajac@san.edu.pl">{t("contact.coordinator-email")}</a>
+			</p>
+
+
 			<h2 className="mb-3" style={{ color: "var(--bordo-color)" }}>
 				{t("contact.first-text")}
 			</h2>

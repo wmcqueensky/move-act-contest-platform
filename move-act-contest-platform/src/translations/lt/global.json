@@ -456,6 +456,14 @@
 	},
 
 	"contact": {
+		"coordinator-header": "PROJEKTO KOORDINATORIUS:",
+		"coordinator-org": "Społeczna Akademia Nauk (University of Social Sciences)",
+		"coordinator-address-label": "Adresas:",
+		"coordinator-address": "Henryka Sienkiewicza 9, 90-113 Łódź, Lenkija",
+		"coordinator-contact-label": "Kontaktiniai duomenys:",
+		"coordinator-person": "Aleksandra Zając",
+		"coordinator-email": "azajac@san.edu.pl",
+
 		"first-header": "SUSISIEKITE SU MUMIS",
 
 		"first-text": "Jei turite klausimų, susisiekite su mumis el. paštu:",

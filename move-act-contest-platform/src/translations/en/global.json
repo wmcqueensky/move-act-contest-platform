@@ -457,6 +457,14 @@
 	},
 
 	"contact": {
+		"coordinator-header": "PROJECT COORDINATOR:",
+		"coordinator-org": "Społeczna Akademia Nauk (University of Social Sciences)",
+		"coordinator-address-label": "Address:",
+		"coordinator-address": "Henryka Sienkiewicza 9, 90-113 Łódź, Poland",
+		"coordinator-contact-label": "Contact details:",
+		"coordinator-person": "Aleksandra Zając",
+		"coordinator-email": "azajac@san.edu.pl",
+			
 		"first-header": "FEEL FREE TO CONTACT US",
 
 		"first-text": "If you have any questions contact us at this email address:",

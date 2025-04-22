@@ -458,6 +458,14 @@
 	},
 
 	"contact": {
+		"coordinator-header": "COORDINADOR DEL PROYECTO:",
+		"coordinator-org": "Społeczna Akademia Nauk (Universidad de Ciencias Sociales)",
+		"coordinator-address-label": "Dirección:",
+		"coordinator-address": "Henryka Sienkiewicza 9, 90-113 Łódź, Polonia",
+		"coordinator-contact-label": "Datos de contacto:",
+		"coordinator-person": "Aleksandra Zając",
+		"coordinator-email": "azajac@san.edu.pl",
+
 		"first-header": "NO DUDES EN PONERTE EN CONTACTO CON NOSOTROS",
 
 		"first-text": "Si tienes alguna pregunta, ponte en contacto con nosotros a través de la dirección de correo electrónico: moveandact2022@gmail.com",
